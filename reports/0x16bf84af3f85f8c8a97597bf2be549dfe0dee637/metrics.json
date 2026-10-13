@@ -1,0 +1,415 @@
+{
+ "user": "0x16bf84af3f85f8c8a97597bf2be549dfe0dee637",
+ "generated_at": "2026-10-13T17:33:00.205694+00:00",
+ "main_coins": [
+  "BTC",
+  "xyz:SILVER",
+  "ZEC"
+ ],
+ "account_value": 9090145.800904,
+ "pnl_all_time": 6089531.040904,
+ "pnl_perp_all_time": 5739261.68,
+ "volume_all_time": 407834337.25,
+ "first_activity": "2025-10-29",
+ "n_fills": 21019,
+ "fills_from": "2025-10-24 02:19:48.312000",
+ "n_orders": 378,
+ "funding_net": -56946.289218999984,
+ "fees_fills_period": 108708.72543201549,
+ "fills_cover_full_history": true,
+ "max_drawdown_perp": -810817.0731759993,
+ "decomp_BTC": {
+  "carry": 5378585.064920001,
+  "intraday": -440122.1461899999,
+  "total": 4938462.918730001,
+  "mean_pos": 13.412831943661946,
+  "total_move": -27840.0,
+  "bias": -373413.24131154857,
+  "timing": 5751998.306231549
+ },
+ "decomp_xyz:SILVER": {
+  "carry": 424729.9999999999,
+  "intraday": 1117792.8997799992,
+  "total": 1542522.8997799992,
+  "mean_pos": 1259.8425196850394,
+  "total_move": -23.586000000000006,
+  "bias": -29714.645669291345,
+  "timing": 454444.64566929115
+ },
+ "decomp_ZEC": {
+  "carry": -735097.0000000002,
+  "intraday": 158571.19600000023,
+  "total": -576525.804,
+  "mean_pos": -31.54929577464774,
+  "total_move": 938.9000000000001,
+  "bias": -29621.633802816767,
+  "timing": -705475.3661971835
+ },
+ "leverage_median": 0.051602955796780745,
+ "order_types": {
+  "Limit/Gtc": 300,
+  "Market/FrontendMarket": 10,
+  "Stop Market/Gtc": 1
+ },
+ "taker_share_ntl": 0.6892943585238228,
+ "sessions_BTC": {
+  "sess\u00f5es": {
+   "short+": 21.0,
+   "short-": 17.0,
+   "long+": 13.0,
+   "long-": 14.0
+  },
+  "r24h": {
+   "short+": 1.935676,
+   "short-": -2.068215,
+   "long+": -3.103423,
+   "long-": 0.273913
+  },
+  "p_r24h": {
+   "short+": 0.004864,
+   "short-": 0.047778,
+   "long+": 0.000766,
+   "long-": 0.441166
+  },
+  "r72h": {
+   "short+": 2.474144,
+   "short-": -1.929583,
+   "long+": -5.086975,
+   "long-": 0.598667
+  },
+  "p_r72h": {
+   "short+": 0.003685,
+   "short-": 0.015252,
+   "long+": 1e-06,
+   "long-": 0.274632
+  },
+  "r7d": {
+   "short+": 2.165147,
+   "short-": -5.071135,
+   "long+": -7.301468,
+   "long-": 1.947158
+  },
+  "p_r7d": {
+   "short+": 0.023353,
+   "short-": 0.004577,
+   "long+": 1e-06,
+   "long-": 0.361481
+  },
+  "rng7d": {
+   "short+": 0.744345,
+   "short-": 0.186365,
+   "long+": 0.083404,
+   "long-": 0.554654
+  },
+  "p_rng7d": {
+   "short+": 0.003518,
+   "short-": 0.000757,
+   "long+": 8e-06,
+   "long-": 0.20962
+  },
+  "top30": {
+   "short+": 0.619048,
+   "short-": 0.058824,
+   "long+": 0.0,
+   "long-": 0.428571
+  },
+  "bottom30": {
+   "short+": 0.190476,
+   "short-": 0.705882,
+   "long+": 0.923077,
+   "long-": 0.214286
+  }
+ },
+ "context_BTC": {
+  "r24h": {
+   "short+": 2.298,
+   "short-": 0.67,
+   "long+": -3.614,
+   "long-": 6.588,
+   "base": 0.009
+  },
+  "r72h": {
+   "short+": 3.268,
+   "short-": 0.442,
+   "long+": -4.547,
+   "long-": 2.568,
+   "base": -0.105
+  },
+  "r7d": {
+   "short+": 1.496,
+   "short-": -5.707,
+   "long+": -7.301,
+   "long-": 3.775,
+   "base": -0.111
+  },
+  "rng7d": {
+   "short+": 0.867,
+   "short-": 0.277,
+   "long+": 0.044,
+   "long-": 0.972,
+   "base": 0.462
+  },
+  "f24h": {
+   "short+": -0.561,
+   "short-": -0.9,
+   "long+": -1.103,
+   "long-": -2.356,
+   "base": 0.009
+  },
+  "f7d": {
+   "short+": -5.789,
+   "short-": -6.444,
+   "long+": 4.916,
+   "long-": -0.803,
+   "base": -0.226
+  }
+ },
+ "averaging_BTC": {
+  "adds": 89,
+  "adds_underwater_share": 0.5617977528089888,
+  "adds_underwater_share_by_size": 0.4266374925938787,
+  "adds_median_dist_from_avg_pct": 0.2389251829304495,
+  "reductions": 89,
+  "reduction_win_rate": 0.9438202247191011,
+  "avg_win": 62603.305655880955,
+  "avg_loss": -64042.31206199998,
+  "realized": 4938466.114784
+ },
+ "sessions_xyz:SILVER": {
+  "sess\u00f5es": {
+   "long-": 7.0
+  },
+  "r24h": {
+   "long-": 2.56232
+  },
+  "p_r24h": {
+   "long-": 0.136391
+  },
+  "r72h": {
+   "long-": 0.484512
+  },
+  "p_r72h": {
+   "long-": 0.941779
+  },
+  "r7d": {
+   "long-": -22.534038
+  },
+  "p_r7d": {
+   "long-": 0.333196
+  },
+  "rng7d": {
+   "long-": 0.2479
+  },
+  "p_rng7d": {
+   "long-": 0.785047
+  },
+  "top30": {
+   "long-": 0.285714
+  },
+  "bottom30": {
+   "long-": 0.714286
+  }
+ },
+ "context_xyz:SILVER": {
+  "r24h": {
+   "long+": -9.613,
+   "long-": 4.283,
+   "base": 0.49
+  },
+  "r72h": {
+   "long+": -29.844,
+   "long-": 0.485,
+   "base": 0.123
+  },
+  "r7d": {
+   "long+": -28.716,
+   "long-": -22.534,
+   "base": -5.8
+  },
+  "rng7d": {
+   "long+": 0.0,
+   "long-": 0.248,
+   "base": 0.422
+  },
+  "f24h": {
+   "long+": 8.081,
+   "long-": 4.692,
+   "base": 0.74
+  },
+  "f7d": {
+   "long+": 5.068,
+   "long-": -4.912,
+   "base": 5.959
+  }
+ },
+ "averaging_xyz:SILVER": {
+  "adds": 3,
+  "adds_underwater_share": 0.0,
+  "adds_underwater_share_by_size": 0.0,
+  "adds_median_dist_from_avg_pct": -0.3220460696414129,
+  "reductions": 23,
+  "reduction_win_rate": 1.0,
+  "avg_win": 67066.91149847826,
+  "avg_loss": NaN,
+  "realized": 1542538.9644650002
+ },
+ "sessions_ZEC": {
+  "sess\u00f5es": {
+   "short+": 11.0,
+   "short-": 5.0
+  },
+  "r24h": {
+   "short+": 7.425497,
+   "short-": 5.025927
+  },
+  "p_r24h": {
+   "short+": 0.908463,
+   "short-": 0.874411
+  },
+  "r72h": {
+   "short+": -6.513217,
+   "short-": -11.994721
+  },
+  "p_r72h": {
+   "short+": 0.018542,
+   "short-": 0.051925
+  },
+  "r7d": {
+   "short+": -3.603396,
+   "short-": 8.773294
+  },
+  "p_r7d": {
+   "short+": 0.000783,
+   "short-": 0.036317
+  },
+  "rng7d": {
+   "short+": 0.410104,
+   "short-": 0.517706
+  },
+  "p_rng7d": {
+   "short+": 0.000359,
+   "short-": 0.022336
+  },
+  "top30": {
+   "short+": 0.0,
+   "short-": 0.2
+  },
+  "bottom30": {
+   "short+": 0.181818,
+   "short-": 0.4
+  }
+ },
+ "context_ZEC": {
+  "r24h": {
+   "short+": 7.802,
+   "short-": 6.18,
+   "base": 3.868
+  },
+  "r72h": {
+   "short+": 10.46,
+   "short-": -11.577,
+   "base": 13.586
+  },
+  "r7d": {
+   "short+": -12.789,
+   "short-": 1.51,
+   "base": 28.146
+  },
+  "rng7d": {
+   "short+": 0.41,
+   "short-": 0.577,
+   "base": 0.75
+  },
+  "f24h": {
+   "short+": 17.679,
+   "short-": 9.93,
+   "base": 3.776
+  },
+  "f7d": {
+   "short+": 16.573,
+   "short-": 10.84,
+   "base": 20.787
+  }
+ },
+ "averaging_ZEC": {
+  "adds": 83,
+  "adds_underwater_share": 0.8795180722891566,
+  "adds_underwater_share_by_size": 0.8823529411764706,
+  "adds_median_dist_from_avg_pct": 4.203265554833879,
+  "reductions": 8,
+  "reduction_win_rate": 0.25,
+  "avg_win": 36302.7213,
+  "avg_loss": -108188.69144233334,
+  "realized": -576526.706054
+ },
+ "episodes_all": {
+  "n": 22,
+  "win_rate": 0.6818181818181818,
+  "realized": 5890986.534694999,
+  "funding": -52165.530874000004,
+  "median_adverse_pct": 1.5303852020998487
+ },
+ "flow_behaviour": {
+  "deposits_usd": 0.0,
+  "withdrawals_usd": 0.0,
+  "deposit_days": 0,
+  "withdraw_days": 0,
+  "deposit_after_loss_share": NaN,
+  "withdraw_after_gain_share": NaN,
+  "all_days_after_loss_share": 0.23098591549295774,
+  "median_prev_pnl_deposit": NaN,
+  "median_prev_pnl_withdraw": NaN,
+  "corr_flow_prev_pnl": NaN,
+  "corr_flow_exposure_change": NaN
+ },
+ "copy_lag": {
+  "BTC": {
+   "0": 4951887.354515998,
+   "1": 4997239.949968999,
+   "4": 5446932.639937997,
+   "12": 4508607.41006,
+   "24": 4084379.053675998,
+   "72": 3865964.4317729995,
+   "168": 5390617.889409001
+  },
+  "xyz:SILVER": {
+   "0": 1779578.8469500006,
+   "1": 1661011.5685000014,
+   "4": 1707501.5685000005,
+   "12": 1366397.0530000003,
+   "24": 909850.7592500008,
+   "72": -406843.7241999999,
+   "168": 691703.2522000007
+  },
+  "ZEC": {
+   "0": -811031.6452000003,
+   "1": -675851.0135000001,
+   "4": -996464.2399000005,
+   "12": -199302.06949999946,
+   "24": -202915.87149999978,
+   "72": 429101.9486999997,
+   "168": 807980.0152999996
+  }
+ },
+ "replication": {
+  "train": [
+   "2025-10-24",
+   "2026-04-18"
+  ],
+  "test": [
+   "2026-04-19",
+   "2026-10-12"
+  ],
+  "best_params": {
+   "ma": 100.0,
+   "rng": 7.0,
+   "bull_frac": 0.0,
+   "fade": 0.0
+  },
+  "rule_test_pnl": 143912.6840487197,
+  "rule_test_corr": -0.5014489470096771,
+  "actual_test_pnl": 574837.4549927466,
+  "clone_r2_train": 0.6195908497656926,
+  "clone_r2_test": -6.514772332951167
+ }
+}

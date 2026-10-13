@@ -78,6 +78,8 @@ def load_ledger(path: str, user: str) -> pd.DataFrame:
         elif t in ("send", "spotTransfer", "internalTransfer"):
             v = float(d.get("usdcValue") or d.get("usdc") or 0.0)
             usd = v if d.get("destination", "").lower() == user else -v
+            if d.get("user", "").lower() == user and d.get("destination", "").lower() == user:
+                usd = 0.0  # move between the wallet's own perp/spot/HIP-3 balances, not an inflow
         elif t == "vaultDeposit":
             usd = -float(d["usdc"])
         elif t == "vaultWithdraw":
