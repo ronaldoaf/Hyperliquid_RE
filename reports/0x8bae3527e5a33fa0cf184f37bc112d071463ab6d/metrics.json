@@ -1,0 +1,325 @@
+{
+ "user": "0x8bae3527e5a33fa0cf184f37bc112d071463ab6d",
+ "generated_at": "2026-10-13T19:19:31.543610+00:00",
+ "main_coins": [
+  "GAS",
+  "NEO",
+  "BTC"
+ ],
+ "account_value": 4197447.217785,
+ "pnl_all_time": 11978448.217785,
+ "pnl_perp_all_time": 11983858.397047,
+ "volume_all_time": 369192377.85,
+ "first_activity": "2025-07-16",
+ "n_fills": 27103,
+ "fills_from": "2025-07-11 08:36:48.335000",
+ "n_orders": 1345,
+ "funding_net": -234638.774396,
+ "fees_fills_period": 51286.50280244,
+ "fills_cover_full_history": false,
+ "position_gaps": 47,
+ "decomp_GAS": {
+  "carry": -1349307.9537899995,
+  "intraday": 1147162.8186799996,
+  "total": -202145.13510999992,
+  "mean_pos": 1274468.1676630436,
+  "total_move": -1.0968999999999998,
+  "bias": -1397964.1331095921,
+  "timing": 48656.17931959266
+ },
+ "decomp_NEO": {
+  "carry": -7633.349018999942,
+  "intraday": 571002.7094789998,
+  "total": 563369.3604599999,
+  "mean_pos": 707.3248148147702,
+  "total_move": -1.9213,
+  "bias": -1358.983166703618,
+  "timing": -6274.365852296323
+ },
+ "decomp_BTC": {
+  "carry": 531556.9061400001,
+  "intraday": 5149.516139999992,
+  "total": 536706.42228,
+  "mean_pos": -2.8452992140921394,
+  "total_move": -29705.0,
+  "bias": 84519.613154607,
+  "timing": 447037.2929853931
+ },
+ "leverage_median": 1.8473585726021053,
+ "order_types": {
+  "Limit/Gtc": 120,
+  "Market/FrontendMarket": 145,
+  "Market/LiquidationMarket": 8,
+  "Stop Market/Gtc": 8
+ },
+ "taker_share_ntl": 0.5099934479151108,
+ "sessions_GAS": {
+  "sess\u00f5es": {
+   "short+": 3.0,
+   "long+": 3.0
+  },
+  "r24h": {
+   "short+": -4.078975,
+   "long+": -2.64528
+  },
+  "p_r24h": {
+   "short+": 0.090994,
+   "long+": 0.050368
+  },
+  "r72h": {
+   "short+": 1.209256,
+   "long+": -4.599167
+  },
+  "p_r72h": {
+   "short+": 0.83911,
+   "long+": 0.644248
+  },
+  "r7d": {
+   "short+": -9.59427,
+   "long+": -8.351149
+  },
+  "p_r7d": {
+   "short+": 0.128816,
+   "long+": 0.391287
+  },
+  "rng7d": {
+   "short+": 0.239545,
+   "long+": 0.040387
+  },
+  "p_rng7d": {
+   "short+": 0.414359,
+   "long+": 0.114164
+  },
+  "top30": {
+   "short+": 0.0,
+   "long+": 0.0
+  },
+  "bottom30": {
+   "short+": 0.666667,
+   "long+": 0.666667
+  }
+ },
+ "context_GAS": {
+  "r24h": {
+   "short+": -2.019,
+   "short-": -2.546,
+   "long+": -2.645,
+   "long-": 0.489,
+   "base": -0.172
+  },
+  "r72h": {
+   "short+": 1.694,
+   "short-": -3.473,
+   "long+": -4.599,
+   "long-": 0.162,
+   "base": -1.387
+  },
+  "r7d": {
+   "short+": -6.296,
+   "short-": -7.417,
+   "long+": -8.351,
+   "long-": -9.377,
+   "base": -3.454
+  },
+  "rng7d": {
+   "short+": 0.409,
+   "short-": 0.328,
+   "long+": 0.04,
+   "long-": 0.44,
+   "base": 0.391
+  },
+  "f24h": {
+   "short+": -7.358,
+   "short-": -1.308,
+   "long+": -0.57,
+   "long-": -3.3,
+   "base": -0.153
+  },
+  "f7d": {
+   "short+": -9.528,
+   "short-": -5.313,
+   "long+": -6.557,
+   "long-": -4.474,
+   "base": -2.631
+  }
+ },
+ "averaging_GAS": {
+  "adds": 2,
+  "adds_underwater_share": 1.0,
+  "adds_underwater_share_by_size": 1.0,
+  "adds_median_dist_from_avg_pct": 3.3329867749757214,
+  "reductions": 13,
+  "reduction_win_rate": 0.9230769230769231,
+  "avg_win": 56416.40605516667,
+  "avg_loss": -26.0832,
+  "realized": 676970.789462
+ },
+ "context_NEO": {
+  "r24h": {
+   "long+": 0.681,
+   "long-": -0.308,
+   "base": -0.285
+  },
+  "r72h": {
+   "long+": -2.795,
+   "long-": -5.613,
+   "base": -0.737
+  },
+  "r7d": {
+   "long+": -6.28,
+   "long-": -6.851,
+   "base": -1.555
+  },
+  "rng7d": {
+   "long+": 0.209,
+   "long-": 0.153,
+   "base": 0.36
+  },
+  "f24h": {
+   "long+": 3.599,
+   "long-": 0.079,
+   "base": -0.305
+  },
+  "f7d": {
+   "long+": -4.054,
+   "long-": -2.933,
+   "base": -1.769
+  }
+ },
+ "averaging_NEO": {
+  "adds": 0,
+  "adds_underwater_share": NaN,
+  "adds_underwater_share_by_size": NaN,
+  "adds_median_dist_from_avg_pct": NaN,
+  "reductions": 7,
+  "reduction_win_rate": 1.0,
+  "avg_win": 80481.33720857139,
+  "avg_loss": NaN,
+  "realized": 563369.3604599998
+ },
+ "context_BTC": {
+  "r24h": {
+   "short+": 0.485,
+   "short-": -2.391,
+   "long+": -0.733,
+   "long-": -8.649,
+   "base": -0.013
+  },
+  "r72h": {
+   "short+": -0.388,
+   "short-": -4.457,
+   "long+": -2.617,
+   "long-": -8.901,
+   "base": -0.2
+  },
+  "r7d": {
+   "short+": -6.301,
+   "short-": -10.189,
+   "long+": 0.994,
+   "long-": -8.832,
+   "base": -0.455
+  },
+  "rng7d": {
+   "short+": 0.232,
+   "short-": 0.13,
+   "long+": 0.247,
+   "long-": 0.0,
+   "base": 0.438
+  },
+  "f24h": {
+   "short+": -0.829,
+   "short-": 0.983,
+   "long+": -6.838,
+   "long-": -1.019,
+   "base": 0.0
+  },
+  "f7d": {
+   "short+": -8.898,
+   "short-": -10.217,
+   "long+": -10.284,
+   "long-": -3.569,
+   "base": -0.219
+  }
+ },
+ "averaging_BTC": {
+  "adds": 0,
+  "adds_underwater_share": NaN,
+  "adds_underwater_share_by_size": NaN,
+  "adds_median_dist_from_avg_pct": NaN,
+  "reductions": 6,
+  "reduction_win_rate": 0.6666666666666666,
+  "avg_win": 136081.974651,
+  "avg_loss": -7717.571091,
+  "realized": 528892.756422
+ },
+ "episodes_all": {
+  "n": 165,
+  "win_rate": 0.6835443037974683,
+  "realized": 9773331.837947,
+  "funding": -178695.049528,
+  "median_adverse_pct": 1.375324858058613
+ },
+ "flow_behaviour": {
+  "deposits_usd": 499999.0,
+  "withdrawals_usd": -8280994.0,
+  "deposit_days": 1,
+  "withdraw_days": 12,
+  "deposit_after_loss_share": 0.0,
+  "withdraw_after_gain_share": 0.4166666666666667,
+  "all_days_after_loss_share": 0.47608695652173916,
+  "median_prev_pnl_deposit": NaN,
+  "median_prev_pnl_withdraw": -27375.072565499082,
+  "corr_flow_prev_pnl": 0.026716988271880834,
+  "corr_flow_exposure_change": 0.13203120643120114
+ },
+ "copy_lag": {
+  "GAS": {
+   "0": 87299.25681999991,
+   "1": 67565.60667999994,
+   "4": 47339.51696999985,
+   "12": 30502.54023000024,
+   "24": -199801.18400999982,
+   "72": -188101.6610499996,
+   "168": 110629.01968000023
+  },
+  "NEO": {
+   "0": 30696.210684999984,
+   "1": 30606.474761999983,
+   "4": 46754.56264499996,
+   "12": -18009.36171300004,
+   "24": -13179.81654799998,
+   "72": -7270.940561000084,
+   "168": 36070.732238999975
+  },
+  "BTC": {
+   "0": 522795.7465389996,
+   "1": 573817.8707059996,
+   "4": 553670.212771,
+   "12": 518832.074695,
+   "24": 325800.68628100003,
+   "72": 258791.8240650005,
+   "168": 389124.4222930002
+  }
+ },
+ "replication": {
+  "train": [
+   "2025-07-11",
+   "2026-02-25"
+  ],
+  "test": [
+   "2026-02-26",
+   "2026-10-12"
+  ],
+  "best_params": {
+   "ma": 50.0,
+   "rng": 7.0,
+   "bull_frac": 1.0,
+   "fade": 0.0
+  },
+  "rule_test_pnl": 0.25731696441446905,
+  "rule_test_corr": NaN,
+  "actual_test_pnl": 0.0,
+  "clone_r2_train": 0.0502383810371847,
+  "clone_r2_test": -Infinity
+ }
+}
