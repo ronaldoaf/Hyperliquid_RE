@@ -19,7 +19,7 @@ from . import charts
 from .analyze import (
     Wallet, approx_price_pnl, averaging_stats, baseline_context, copy_lag_pnl, daily_exposure,
     daily_perp_pnl, episode_metrics, episodes, exact_mtm, executions, flow_behaviour, hold_decomposition,
-    leverage_frame, liquidation_events, market_context, rank_coins, session_context, sessions,
+    leverage_frame, liquidation_events, market_context, position_gaps, rank_coins, session_context, sessions,
 )
 from .market import funding_df, hourly_close
 from .replicate import features, grid_search, linear_clone
@@ -169,6 +169,15 @@ def build(user: str, data_dir: str = "data", out_dir: str = "reports", coins: li
     full_history = from_start and bool(len(dpnl)) and \
         abs(dpnl["pnl"].sum() - M["pnl_perp_all_time"]) <= max(0.02 * abs(M["pnl_perp_all_time"]), 5_000)
     M["fills_cover_full_history"] = full_history
+    gaps = position_gaps(w.fills) if len(perp_fills) else pd.DataFrame()
+    M["position_gaps"] = int(len(gaps))
+    if len(gaps):
+        g = gaps.groupby("coin")["jump_ntl"].sum().sort_values(ascending=False)
+        md += [f"**Atenção: execuções que não aparecem nos fills.** A posição muda sem fill visível em {len(gaps)} "
+               f"pontos (~{usd(gaps['jump_ntl'].sum())} de nocional; maiores: "
+               + ", ".join(f"{c} {usd(v)}" for c, v in g.head(5).items())
+               + "). O mais comum são fatias de TWAP: ficam fora de `userFills` e o endpoint de TWAP só guarda as "
+               "2.000 mais recentes. O *preço exato* e as tabelas por episódio dessas moedas não são exatos.", ""]
     if full_history:
         cum = dpnl["pnl"].cumsum()
         dd = cum - cum.cummax()

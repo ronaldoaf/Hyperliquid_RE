@@ -1,0 +1,382 @@
+{
+ "user": "0x0748e296e5a350ec36c8487a1cea406e1b57d4b2",
+ "generated_at": "2026-10-13T18:09:05.982917+00:00",
+ "main_coins": [
+  "AAVE",
+  "ZEC",
+  "BTC"
+ ],
+ "account_value": 5002546.672955,
+ "pnl_all_time": 12398918.622955,
+ "pnl_perp_all_time": 7289253.467736,
+ "volume_all_time": 972983461.09,
+ "first_activity": "2024-06-05",
+ "n_fills": 32695,
+ "fills_from": "2026-06-02 17:33:42.759000",
+ "n_orders": 312,
+ "funding_net": -887321.44083,
+ "fees_fills_period": 101504.3088006082,
+ "fills_cover_full_history": false,
+ "decomp_AAVE": {
+  "carry": 1810029.17613,
+  "intraday": 3485.2962399999597,
+  "total": 1813514.47237,
+  "mean_pos": 16133.98778625954,
+  "total_move": 97.624,
+  "bias": 1575064.4236458014,
+  "timing": 234964.7524841986
+ },
+ "decomp_ZEC": {
+  "carry": 1182560.0,
+  "intraday": -63211.70490000002,
+  "total": 1119348.2951,
+  "mean_pos": 818.1818181818181,
+  "total_move": 747.1199999999999,
+  "bias": 611279.9999999999,
+  "timing": 571280.0
+ },
+ "decomp_BTC": {
+  "carry": 737240.0,
+  "intraday": -129286.94776000001,
+  "total": 607953.05224,
+  "mean_pos": 13.333333333333334,
+  "total_move": 19331.0,
+  "bias": 257746.6666666667,
+  "timing": 479493.33333333326
+ },
+ "leverage_median": 2.947509923029975,
+ "order_types": {
+  "Limit/Alo": 396,
+  "Limit/Gtc": 192,
+  "Market/FrontendMarket": 70,
+  "Market/LiquidationMarket": 2,
+  "Take Profit Limit/Gtc": 1
+ },
+ "taker_share_ntl": 0.6255217653023177,
+ "sessions_AAVE": {
+  "sess\u00f5es": {
+   "long-": 3.0
+  },
+  "r24h": {
+   "long-": 2.323093
+  },
+  "p_r24h": {
+   "long-": 0.401316
+  },
+  "r72h": {
+   "long-": 4.622253
+  },
+  "p_r72h": {
+   "long-": 0.382763
+  },
+  "r7d": {
+   "long-": 11.132998
+  },
+  "p_r7d": {
+   "long-": 0.180823
+  },
+  "rng7d": {
+   "long-": 0.75682
+  },
+  "p_rng7d": {
+   "long-": 0.246297
+  },
+  "top30": {
+   "long-": 1.0
+  },
+  "bottom30": {
+   "long-": 0.0
+  }
+ },
+ "context_AAVE": {
+  "r24h": {
+   "long+": 5.275,
+   "long-": 4.765,
+   "base": 0.458
+  },
+  "r72h": {
+   "long+": 8.097,
+   "long-": 6.363,
+   "base": 1.093
+  },
+  "r7d": {
+   "long+": 9.699,
+   "long-": 14.213,
+   "base": 3.163
+  },
+  "rng7d": {
+   "long+": 0.793,
+   "long-": 0.794,
+   "base": 0.599
+  },
+  "f24h": {
+   "long+": 14.504,
+   "long-": -2.941,
+   "base": 0.478
+  },
+  "f7d": {
+   "long+": 6.785,
+   "long-": 7.056,
+   "base": 4.436
+  }
+ },
+ "averaging_AAVE": {
+  "adds": 3,
+  "adds_underwater_share": 0.0,
+  "adds_underwater_share_by_size": 0.0,
+  "adds_median_dist_from_avg_pct": -29.646732456241097,
+  "reductions": 6,
+  "reduction_win_rate": 1.0,
+  "avg_win": 278154.60198150005,
+  "avg_loss": NaN,
+  "realized": 1668927.6118890003
+ },
+ "sessions_ZEC": {
+  "sess\u00f5es": {
+   "long+": 6.0,
+   "long-": 8.0
+  },
+  "r24h": {
+   "long+": 2.865339,
+   "long-": -2.957377
+  },
+  "p_r24h": {
+   "long+": 0.460715,
+   "long-": 0.245905
+  },
+  "r72h": {
+   "long+": 15.304976,
+   "long-": -3.076081
+  },
+  "p_r72h": {
+   "long+": 0.059093,
+   "long-": 0.243148
+  },
+  "r7d": {
+   "long+": 14.933222,
+   "long-": 2.910991
+  },
+  "p_r7d": {
+   "long+": 0.156436,
+   "long-": 0.862993
+  },
+  "rng7d": {
+   "long+": 0.828985,
+   "long-": 0.328607
+  },
+  "p_rng7d": {
+   "long+": 0.240223,
+   "long-": 0.256596
+  },
+  "top30": {
+   "long+": 0.666667,
+   "long-": 0.375
+  },
+  "bottom30": {
+   "long+": 0.166667,
+   "long-": 0.5
+  }
+ },
+ "context_ZEC": {
+  "r24h": {
+   "long+": 2.865,
+   "long-": -3.879,
+   "base": 0.425
+  },
+  "r72h": {
+   "long+": 15.305,
+   "long-": -3.463,
+   "base": 0.769
+  },
+  "r7d": {
+   "long+": 14.933,
+   "long-": -5.98,
+   "base": 5.945
+  },
+  "rng7d": {
+   "long+": 0.829,
+   "long-": 0.123,
+   "base": 0.564
+  },
+  "f24h": {
+   "long+": 1.52,
+   "long-": 3.593,
+   "base": 0.425
+  },
+  "f7d": {
+   "long+": -6.222,
+   "long-": -2.999,
+   "base": 5.945
+  }
+ },
+ "averaging_ZEC": {
+  "adds": 3,
+  "adds_underwater_share": 0.3333333333333333,
+  "adds_underwater_share_by_size": 0.3333333333333333,
+  "adds_median_dist_from_avg_pct": -14.801494840729855,
+  "reductions": 9,
+  "reduction_win_rate": 0.3333333333333333,
+  "avg_win": 423833.86500000005,
+  "avg_loss": -64318.285183333326,
+  "realized": 885591.8839
+ },
+ "sessions_BTC": {
+  "sess\u00f5es": {
+   "long+": 6.0,
+   "long-": 5.0
+  },
+  "r24h": {
+   "long+": 1.55852,
+   "long-": -0.228958
+  },
+  "p_r24h": {
+   "long+": 0.411405,
+   "long-": 0.31648
+  },
+  "r72h": {
+   "long+": 2.226739,
+   "long-": -1.255386
+  },
+  "p_r72h": {
+   "long+": 0.193428,
+   "long-": 0.162738
+  },
+  "r7d": {
+   "long+": -4.863876,
+   "long-": 0.973906
+  },
+  "p_r7d": {
+   "long+": 0.197276,
+   "long-": 0.780103
+  },
+  "rng7d": {
+   "long+": 0.512502,
+   "long-": 0.49077
+  },
+  "p_rng7d": {
+   "long+": 0.96519,
+   "long-": 0.665594
+  },
+  "top30": {
+   "long+": 0.333333,
+   "long-": 0.2
+  },
+  "bottom30": {
+   "long+": 0.166667,
+   "long-": 0.2
+  }
+ },
+ "context_BTC": {
+  "r24h": {
+   "long+": 1.559,
+   "long-": -0.229,
+   "base": 0.151
+  },
+  "r72h": {
+   "long+": 2.227,
+   "long-": -1.255,
+   "base": 0.254
+  },
+  "r7d": {
+   "long+": -4.864,
+   "long-": 0.974,
+   "base": 0.567
+  },
+  "rng7d": {
+   "long+": 0.513,
+   "long-": 0.491,
+   "base": 0.523
+  },
+  "f24h": {
+   "long+": -2.035,
+   "long-": -0.456,
+   "base": 0.17
+  },
+  "f7d": {
+   "long+": -1.316,
+   "long-": -1.978,
+   "base": 0.729
+  }
+ },
+ "averaging_BTC": {
+  "adds": 2,
+  "adds_underwater_share": 0.0,
+  "adds_underwater_share_by_size": 0.0,
+  "adds_median_dist_from_avg_pct": -1.6449504991993047,
+  "reductions": 5,
+  "reduction_win_rate": 0.4,
+  "avg_win": 368913.67141999997,
+  "avg_loss": -43287.77514333333,
+  "realized": 607964.01741
+ },
+ "episodes_all": {
+  "n": 60,
+  "win_rate": 0.47058823529411764,
+  "realized": 3575923.3365819994,
+  "funding": -185102.721108,
+  "median_adverse_pct": 3.5718865298531686
+ },
+ "flow_behaviour": {
+  "deposits_usd": 6499306.613046,
+  "withdrawals_usd": -15718072.391114999,
+  "deposit_days": 23,
+  "withdraw_days": 35,
+  "deposit_after_loss_share": 0.5652173913043478,
+  "withdraw_after_gain_share": 0.6285714285714286,
+  "all_days_after_loss_share": 0.4470314318975553,
+  "median_prev_pnl_deposit": -11054.503688625005,
+  "median_prev_pnl_withdraw": 65846.68403149737,
+  "corr_flow_prev_pnl": -0.12887963181028064,
+  "corr_flow_exposure_change": 0.0814837201619547
+ },
+ "copy_lag": {
+  "AAVE": {
+   "0": 1669014.2851900004,
+   "1": 1648369.6756200003,
+   "4": 1680852.0323200002,
+   "12": 1609555.2138600003,
+   "24": 1528433.1278100002,
+   "72": 1782789.02641,
+   "168": 1919516.2640400003
+  },
+  "ZEC": {
+   "0": 1076750.0,
+   "1": 1076900.0000000002,
+   "4": 1081260.0,
+   "12": 1171115.0,
+   "24": 1211815.0,
+   "72": 1270870.0,
+   "168": 1372705.0
+  },
+  "BTC": {
+   "0": 609280.0,
+   "1": 599820.0,
+   "4": 644160.0,
+   "12": 732770.0,
+   "24": 815410.0,
+   "72": 695430.0,
+   "168": 490170.0
+  }
+ },
+ "replication": {
+  "train": [
+   "2024-06-08",
+   "2025-08-10"
+  ],
+  "test": [
+   "2025-08-11",
+   "2026-10-12"
+  ],
+  "best_params": {
+   "ma": 100.0,
+   "rng": 7.0,
+   "bull_frac": 0.0,
+   "fade": 0.9
+  },
+  "rule_test_pnl": 1592455.3549810837,
+  "rule_test_corr": 0.21293657059776916,
+  "actual_test_pnl": 1201742.6815580963,
+  "clone_r2_train": 0.3036018369260236,
+  "clone_r2_test": -0.6093064924946885
+ }
+}

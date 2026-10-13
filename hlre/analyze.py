@@ -48,6 +48,65 @@ def load_fills(path: str) -> pd.DataFrame:
     return df.reset_index(drop=True)
 
 
+def load_twap_fills(path: str) -> list:
+    """TWAP slice fills come from a separate endpoint and are *not* in
+    userFills (they carry a zero hash); tag them with their twapId."""
+    return [{**r["fill"], "twapId": r.get("twapId")} for r in _gz(path)]
+
+
+def merge_twap(fills: pd.DataFrame, twap: list) -> pd.DataFrame:
+    if not twap:
+        return fills
+    tw = pd.DataFrame(twap)
+    if len(fills):
+        tw = tw[~tw["tid"].isin(fills["tid"])]
+    if tw.empty:
+        return fills
+    for c in ["px", "sz", "startPosition", "closedPnl", "fee"]:
+        tw[c] = tw[c].astype(float)
+    tw["t"] = pd.to_datetime(tw["time"], unit="ms")
+    tw["q"] = np.where(tw["side"] == "B", 1.0, -1.0) * tw["sz"]
+    tw["endPosition"] = tw["startPosition"] + tw["q"]
+    tw["ntl"] = tw["px"] * tw["sz"]
+    tw["kind"] = tw["coin"].map(market_kind)
+    out = pd.concat([fills, tw], ignore_index=True)
+    # stable sort keeps the API order of fills that share a timestamp
+    return out.sort_values("time", kind="mergesort").reset_index(drop=True)
+
+
+def position_gaps(fills: pd.DataFrame, min_gap_s: float = 1.0) -> pd.DataFrame:
+    """Jumps in the startPosition chain between fills more than `min_gap_s`
+    apart: size that changed without a fill we can see (TWAP slices older than
+    the endpoint keeps, or other missing executions). When this is non-empty
+    the exact PnL from fills is not exact."""
+    rows = []
+    for coin, g in fills[fills["kind"] != "spot"].groupby("coin"):
+        g = g.sort_values("time", kind="mergesort")
+        t = g["time"].values
+        cut = np.r_[np.where(np.diff(t) > min_gap_s * 1000)[0], len(g) - 1]
+        # position at the end of each burst of fills / at the start of the next
+        start = g["startPosition"].values
+        q = g["q"].values
+        b0 = 0
+        ends, starts, times = [], [], []
+        for b1 in cut:
+            seg_s = start[b0:b1 + 1]
+            seg_e = seg_s + q[b0:b1 + 1]
+            first = [x for x in np.round(seg_s, 8) if x not in set(np.round(seg_e, 8))]
+            last = [x for x in np.round(seg_e, 8) if x not in set(np.round(seg_s, 8))]
+            starts.append(first[0] if first else seg_s[0])
+            ends.append(last[0] if last else seg_e[-1])
+            times.append((t[b0], t[b1]))
+            b0 = b1 + 1
+        for i in range(1, len(starts)):
+            jump = starts[i] - ends[i - 1]
+            if abs(jump) > 1e-6 * max(1.0, abs(ends[i - 1])):
+                rows.append({"coin": coin, "after": pd.to_datetime(times[i - 1][1], unit="ms"),
+                             "before": pd.to_datetime(times[i][0], unit="ms"), "jump": jump,
+                             "jump_ntl": abs(jump) * float(g["px"].iloc[0])})
+    return pd.DataFrame(rows, columns=["coin", "after", "before", "jump", "jump_ntl"])
+
+
 def load_funding(path: str) -> pd.DataFrame:
     rows = [{"time": r["time"], **r["delta"]} for r in _gz(path)]
     df = pd.DataFrame(rows)
@@ -123,7 +182,8 @@ class Wallet:
         self.dir = os.path.join(data_dir, self.user)
         with open(os.path.join(self.dir, "snapshot.json")) as f:
             self.snapshot = json.load(f)
-        self.fills = load_fills(os.path.join(self.dir, "fills.json.gz"))
+        self.fills = merge_twap(load_fills(os.path.join(self.dir, "fills.json.gz")),
+                                load_twap_fills(os.path.join(self.dir, "twap_fills.json.gz")))
         self.funding = load_funding(os.path.join(self.dir, "funding.json.gz"))
         self.ledger = load_ledger(os.path.join(self.dir, "ledger.json.gz"), self.user)
         self.orders = load_orders(os.path.join(self.dir, "orders.json.gz"))
