@@ -36,7 +36,8 @@ Saída em `reports/<carteira>/`:
 - `relatorio_auto.md`: números, tabelas e gráficos gerados automaticamente;
 - `img/*.png`: os gráficos;
 - `metrics.json`: os números principais, para comparar carteiras;
-- `ANALISE.md`: a interpretação da estratégia, escrita à mão a partir do relatório.
+- `ANALISE.md`: a interpretação da estratégia, escrita à mão a partir do relatório;
+- `analise_extra.py` (quando existe): recalcula os números do `ANALISE.md` que não estão no relatório automático.
 
 **Rode o coletor periodicamente.** A API só serve os fills mais recentes (aqui, os de mai/2025 em diante) e as últimas 2.000 ordens. O coletor faz merge com o que já existe em `data/`, então o histórico local cresce a cada execução.
 
