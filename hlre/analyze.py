@@ -479,8 +479,15 @@ def flows(ledger: pd.DataFrame) -> pd.DataFrame:
     return L.groupby("type")["usd"].agg(["count", "sum"]).sort_values("sum")
 
 
-def liquidation_events(fills: pd.DataFrame) -> pd.DataFrame:
+def liquidation_events(fills: pd.DataFrame, user: str | None = None) -> pd.DataFrame:
+    """Fills where the wallet itself was liquidated or auto-deleveraged. Newer
+    fills carry a `liquidation` dict instead of a special `dir`; when it names
+    another liquidatedUser the wallet was only the counterparty."""
     m = fills["dir"].str.contains("Liquidat|Deleverag", regex=True, na=False)
+    if user is not None and "liquidation" in fills:
+        own = fills["liquidation"].map(
+            lambda d: isinstance(d, dict) and str(d.get("liquidatedUser", "")).lower() == user.lower())
+        m = m | own
     return fills.loc[m, ["t", "coin", "dir", "side", "px", "sz", "startPosition", "closedPnl"]]
 
 

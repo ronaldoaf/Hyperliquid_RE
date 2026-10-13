@@ -42,7 +42,7 @@ Fonte: API pública da Hyperliquid. A conta existe desde jun/2024. A API entrega
 - **Usuário antigo da Hyperliquid.** Recebeu 11.429 HYPE no airdrop de genesis (29/nov/2024), além de WOW, LICKO, KNTQ e MAX. Movimenta dezenas de milhares de HYPE entre o spot e o staking (hoje são 15,7k delegados), o que lhe dá 20% de desconto na taxa.
 - **Uma liquidação.** Long de LIT de US$ 1,0M em 24/jul/2026 (−US$ 99k). Os outros 5 fills marcados como liquidação são a carteira **pegando o outro lado** de liquidações de terceiros (NEAR, AVAX, VVV). Nesses casos não foi ela a liquidada.
 
-**O dinheiro.** Entraram US$ 6,5M em depósitos de USDC (28 vezes, de US$ 8k a US$ 1M), US$ 3,5M em HYPE vindo da HyperEVM e US$ 0,3M em FART. Saíram **US$ 17,8M**: US$ 5,9M em saques de USDC, US$ 2,75M de USDC para a HyperEVM, US$ 3,2M em HYPE, US$ 2,5M em SOL e US$ 1,5M em BTC (comprados no spot e retirados pela Unit logo em seguida) e US$ 1,9M em PUMP. O padrão é **sacar o lucro continuamente**: desde jul/2025 a conta oscila entre US$ 3,2M e US$ 7,8M, apesar de +US$ 8,4M de PnL no período.
+**O dinheiro.** Entraram US$ 6,5M em depósitos de USDC (28 vezes, de US$ 8k a US$ 1M), US$ 3,5M em HYPE vindo da HyperEVM e US$ 0,3M em FART. Saíram **US$ 17,8M**: US$ 5,9M em saques de USDC, US$ 2,75M de USDC para a HyperEVM, US$ 3,2M em HYPE, US$ 2,5M em SOL e US$ 1,5M em BTC (comprados no spot e retirados pela Unit logo em seguida) e US$ 1,9M em PUMP. O padrão é **sacar o lucro continuamente**: 63% dos 35 dias com saque vêm depois de 3 dias de PnL positivo (mediana de +US$ 66k), contra 55% na base. Além disso, desde jul/2025 a conta oscila entre US$ 3,2M e US$ 7,8M, apesar de +US$ 8,4M de PnL no período.
 
 ## 2. O livro e como ele mudou
 
@@ -146,7 +146,7 @@ Espelhando a posição de perp com atraso (carry, sem custos):
 | 3 dias | +US$ 0,15M | +1,57M | −1,41M |
 | 7 dias | +US$ 0,26M | +1,48M | −1,22M |
 
-- **O lado long sobrevive ao atraso, e o short não.** O short depende de vender o repique e cobrir na queda, ambos em poucos dias. Copiado com 3 dias de atraso, perde US$ 1,4M.
+- **O lado long sobrevive ao atraso, e o short não.** Na marcação horária do período com fills, os três maiores longs mantêm o resultado mesmo com 7 dias de atraso: AAVE +US$ 1,67M sem atraso e +1,92M com 168h, ZEC +1,08M e +1,37M, BTC +0,61M e +0,49M (seção 9 do relatório automático). O short depende de vender o repique e cobrir na queda, ambos em poucos dias. Copiado com 3 dias de atraso, perde US$ 1,4M.
 - **O real (US$ 8,2M) fica bem acima do que um copiador de 1 dia pegaria (US$ 3,0M).** O que dá dinheiro é a reação dentro do dia.
 - **Pontos cegos do CoinGlass:** o PUMP spot (o melhor trade de 2026) não aparece como posição, e uma TWAP em andamento só aparece aos poucos.
 

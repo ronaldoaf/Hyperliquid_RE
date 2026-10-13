@@ -1,6 +1,6 @@
 {
  "user": "0x0748e296e5a350ec36c8487a1cea406e1b57d4b2",
- "generated_at": "2026-10-13T18:09:05.982917+00:00",
+ "generated_at": "2026-10-13T18:10:07.117932+00:00",
  "main_coins": [
   "AAVE",
   "ZEC",
@@ -11,12 +11,13 @@
  "pnl_perp_all_time": 7289253.467736,
  "volume_all_time": 972983461.09,
  "first_activity": "2024-06-05",
- "n_fills": 32695,
+ "n_fills": 34695,
  "fills_from": "2026-06-02 17:33:42.759000",
- "n_orders": 312,
+ "n_orders": 442,
  "funding_net": -887321.44083,
- "fees_fills_period": 101504.3088006082,
+ "fees_fills_period": 101831.00557060819,
  "fills_cover_full_history": false,
+ "position_gaps": 17,
  "decomp_AAVE": {
   "carry": 1810029.17613,
   "intraday": 3485.2962399999597,
@@ -52,7 +53,7 @@
   "Market/LiquidationMarket": 2,
   "Take Profit Limit/Gtc": 1
  },
- "taker_share_ntl": 0.6255217653023177,
+ "taker_share_ntl": 0.6291540869776616,
  "sessions_AAVE": {
   "sess\u00f5es": {
    "long-": 3.0
@@ -310,11 +311,11 @@
   "realized": 607964.01741
  },
  "episodes_all": {
-  "n": 60,
+  "n": 62,
   "win_rate": 0.47058823529411764,
   "realized": 3575923.3365819994,
-  "funding": -185102.721108,
-  "median_adverse_pct": 3.5718865298531686
+  "funding": -189688.835895,
+  "median_adverse_pct": 3.735382770211626
  },
  "flow_behaviour": {
   "deposits_usd": 6499306.613046,

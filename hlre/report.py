@@ -127,7 +127,7 @@ def build(user: str, data_dir: str = "data", out_dir: str = "reports", coins: li
                          "PnL não realizado": usd(float(p["unrealizedPnl"]), True),
                          "liq.": p.get("liquidationPx") or "—"})
     liq_led = w.ledger[w.ledger["type"] == "liquidation"]
-    liq_f = liquidation_events(fills) if len(fills) else pd.DataFrame()
+    liq_f = liquidation_events(fills, w.user) if len(fills) else pd.DataFrame()
 
     md += [f"# Relatório automático — `{w.user}`", "",
            f"Gerado em {pd.Timestamp.now('UTC'):%Y-%m-%d %H:%M} UTC a partir da API pública da Hyperliquid "

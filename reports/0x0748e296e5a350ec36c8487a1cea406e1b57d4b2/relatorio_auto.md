@@ -1,6 +1,6 @@
 # Relatório automático — `0x0748e296e5a350ec36c8487a1cea406e1b57d4b2`
 
-Gerado em 2026-10-13 18:09 UTC a partir da API pública da Hyperliquid (`POST /info`). Valores em USD. Este arquivo é regenerado por `python -m hlre.report`; a interpretação da estratégia fica em `ANALISE.md`.
+Gerado em 2026-10-13 18:10 UTC a partir da API pública da Hyperliquid (`POST /info`). Valores em USD. Este arquivo é regenerado por `python -m hlre.report`; a interpretação da estratégia fica em `ANALISE.md`.
 
 ## 1. Visão geral
 
@@ -11,12 +11,12 @@ Gerado em 2026-10-13 18:09 UTC a partir da API pública da Hyperliquid (`POST /i
 | PnL all-time só de perps | +$7.29M |
 | Volume all-time | $972.98M |
 | Primeira atividade | 2024-06-05 |
-| Fills disponíveis na API | 32,695 (desde 2026-06-02) |
-| Ordens (fills agrupados por oid) | 312 |
+| Fills disponíveis na API | 34,695 (desde 2026-06-02) |
+| Ordens (fills agrupados por oid) | 442 |
 | Funding líquido (recebido > 0) | -$887.3K |
-| Taxas pagas (período dos fills) | -$101.5K |
+| Taxas pagas (período dos fills) | -$101.8K |
 | Liquidações (ledger) | 0 |
-| Fills de liquidação/ADL | 0 |
+| Fills de liquidação/ADL | 144 |
 | Papel da conta | user |
 | API wallets (agentes) | 0 |
 
@@ -40,6 +40,8 @@ Gerado em 2026-10-13 18:09 UTC a partir da API pública da Hyperliquid (`POST /i
 
 ![PnL](img/pnl_curve.png)
 
+**Atenção: execuções que não aparecem nos fills.** A posição muda sem fill visível em 17 pontos (~$7.61M de nocional; maiores: HYPE $1.38M, LDO $1.14M, UNI $874.9K, JUP $765.8K, NEAR $747.4K). O mais comum são fatias de TWAP: ficam fora de `userFills` e o endpoint de TWAP só guarda as 2.000 mais recentes. O *preço exato* e as tabelas por episódio dessas moedas não são exatos.
+
 ## 3. De onde veio o PnL
 
 *Preço (aprox.)* usa a posição média diária de cada ativo, reconstruída a partir do histórico de funding (que traz o tamanho da posição a cada hora/dia desde o início da conta), vezes o movimento open→close do dia. Subestima o PnL de day trade, mas cobre o período sem fills. *Preço exato* marca cada fill no fechamento diário e só existe para o período coberto pelos fills.
@@ -55,15 +57,15 @@ Gerado em 2026-10-13 18:09 UTC a partir da API pública da Hyperliquid (`POST /i
 | ETH | +$933.5K | -$91.9K | +$841.7K | -$76.5K | -$1.6K |
 | SOL | +$614.1K | -$728 | +$613.4K | +$206.8K | -$3.2K |
 | XLM | +$511.3K | +$14.1K | +$525.4K | -$14.7K | -$74 |
-| UNI | +$548.0K | -$27.2K | +$520.8K | +$101.5K | -$535 |
+| UNI | +$548.0K | -$27.2K | +$520.8K | +$79.5K | -$573 |
 | IP | -$437.4K | -$76.6K | -$514.0K | — | — |
 | WLD | -$505.1K | -$1.7K | -$506.7K | +$4.4K | -$39 |
 | OM | +$465.2K | +$196 | +$465.4K | — | — |
 | ENA | +$448.9K | -$2.8K | +$446.1K | +$8.1K | -$302 |
 | kBONK | -$422.3K | -$10.0K | -$432.3K | — | — |
-| JUP | +$449.7K | -$21.5K | +$428.2K | +$252.0K | -$941 |
+| JUP | +$449.7K | -$21.5K | +$428.2K | +$250.1K | -$1.0K |
 | PENDLE | +$447.6K | -$39.4K | +$408.1K | — | — |
-| outros (77) | +$525.6K | -$329.4K | +$196.1K | -$243.8K | -$9.3K |
+| outros (77) | +$525.6K | -$329.4K | +$196.1K | -$206.6K | -$9.5K |
 
 **Decomposição no período dos fills** (preço exato): quanto veio de *carregar* a posição (e, dentro disso, do viés médio vs. do *timing* de aumentar/reduzir), quanto de trades intradiários, funding e taxas.
 
@@ -151,7 +153,7 @@ Gerado em 2026-10-13 18:09 UTC a partir da API pública da Hyperliquid (`POST /i
 | SOL | $10.51M | 10 | 91% | 1e+04 |
 | ZEC | $7.21M | 15 | 76% | 500 |
 | LIT | $6.10M | 13 | 43% | 1.996e+05 |
-| JUP | $5.24M | 17 | 47% | 1e+06 |
+| JUP | $5.57M | 38 | 50% | 4.918e+04 |
 | ETH | $4.96M | 2 | 100% | 1,000 |
 | AAVE | $4.35M | 9 | 71% | 5,000 |
 | LDO | $3.64M | 21 | 55% | 2.152e+05 |
@@ -278,7 +280,7 @@ Por sessão (ordens a menos de 30 min uma da outra contam como uma decisão; p =
 
 ![Episódios](img/episodes_timeline.png)
 
-Episódios com nocional máximo ≥ $50K: 60; fechados com lucro: 47%. Abaixo, os 25 maiores por PnL realizado, em ordem de data. *7d/30d antes* e *vs. máx. 30d*: o que o preço tinha feito até a primeira ordem; *funding a.a.*: taxa anualizada nas 24h anteriores (positiva = longs pagam shorts); *entrada média vs. 1ª ordem*: positivo = foi aumentando a posição com o preço indo contra; *contra (máx.)*: quanto o preço andou contra a primeira ordem durante o episódio; *capturado*: movimento entre o preço médio de entrada e o de saída.
+Episódios com nocional máximo ≥ $50K: 62; fechados com lucro: 47%. Abaixo, os 25 maiores por PnL realizado, em ordem de data. *7d/30d antes* e *vs. máx. 30d*: o que o preço tinha feito até a primeira ordem; *funding a.a.*: taxa anualizada nas 24h anteriores (positiva = longs pagam shorts); *entrada média vs. 1ª ordem*: positivo = foi aumentando a posição com o preço indo contra; *contra (máx.)*: quanto o preço andou contra a primeira ordem durante o episódio; *capturado*: movimento entre o preço médio de entrada e o de saída.
 
 | ativo | lado | início | dias | nocional máx. | 7d antes | 30d antes | vs. máx. 30d | funding a.a. na entrada | entrada média vs. 1ª ordem | contra (máx.) | pior PnL aberto | capturado | realizado | funding |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -306,7 +308,7 @@ Episódios com nocional máximo ≥ $50K: 60; fechados com lucro: 47%. Abaixo, o
 | JUP | long | 2026-09-17 | 12 | $2.02M | -3% | +34% | -19% | +3% | -13% | +1% | -$8.1K | +26% | +$406.9K | -$8.9K |
 | UNI | short | 2026-09-18 | 0 | $873.1K | +44% | +164% | +0% | +19% | — | -0% | -$5.2K | — | +$168.5K | -$406 |
 | BTC | long | 2026-10-02 | 1 | $4.34M | +2% | +12% | -1% | +9% | -0% | +3% | -$129.5K | -2% | -$105.3K | -$1.3K |
-| UNI | long | 2026-10-03 | 8 | $449.6K | -6% | +45% | -16% | +11% | -0% | +21% | -$96.0K | -15% | -$66.0K | -$1.0K |
+| UNI | long | 2026-10-03 | 8 | $449.6K | -6% | +45% | -16% | +11% | -0% | +21% | -$97.2K | -11% | -$66.0K | -$1.0K |
 
 ## 7. Funding
 
@@ -351,6 +353,155 @@ Ponte HyperCore↔HyperEVM (endereços de sistema `0x2000…`/`0x2222…`): 18 t
 | `0xc8e06ebfbfaf1b1720dfae86a0fc979e5649823e` | transfers | 2 | $769.0K | $0 | -$829 | 0 | — |
 | `0xa822a9ceb6d6cb5b565bd10098abcfa9cf18d748` | transfers | 4 | $405.1K | $16,221.12M | -$6,234.56M | 0 | UBONK 88,765,611,412,586, UPUMP 990,689,682,835, UDZ 9,998,579,464 |
 | `0xfa2dbdbee70ff0b29171670573a1fff1a02d1ca2` | transfers | 1 | $249.5K | $2 | -$483 | 0 | USDC 1, USOL 0, HYPE 0 |
+
+**Liquidações e ADL (auto-deleveraging) nos fills:**
+
+| quando (UTC) | ativo | tipo | lado | preço | tamanho | posição antes | PnL realizado |
+|---|---|---|---|---|---|---|---|
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0441 | 156.0 | 500000.0 | -$30 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0441 | 300.0 | 499844.0 | -$57 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0441 | 620.0 | 499544.0 | -$117 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.044 | 143.0 | 498924.0 | -$27 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0439 | 5.0 | 498781.0 | -$1 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0438 | 346.0 | 498776.0 | -$66 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0438 | 371.0 | 498430.0 | -$70 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0438 | 169.0 | 498059.0 | -$32 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0438 | 640.0 | 497890.0 | -$121 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0438 | 163.0 | 497250.0 | -$31 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0437 | 293.0 | 497087.0 | -$56 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0437 | 49.0 | 496794.0 | -$9 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0436 | 200.0 | 496745.0 | -$38 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0435 | 120.0 | 496545.0 | -$23 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0434 | 40.0 | 496425.0 | -$8 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0434 | 120.0 | 496385.0 | -$23 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0433 | 500.0 | 496265.0 | -$95 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0433 | 1250.0 | 495765.0 | -$237 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0433 | 357.0 | 494515.0 | -$68 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0432 | 777.0 | 494158.0 | -$148 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0432 | 49.0 | 493381.0 | -$9 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0431 | 10.0 | 493332.0 | -$2 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0431 | 262.0 | 493322.0 | -$50 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.043 | 24.0 | 493060.0 | -$5 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.043 | 1157.0 | 493036.0 | -$220 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0429 | 120.0 | 491879.0 | -$23 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0429 | 760.0 | 491759.0 | -$145 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0428 | 25.0 | 490999.0 | -$5 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0428 | 502.0 | 490974.0 | -$96 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0427 | 161.0 | 490472.0 | -$31 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0427 | 640.0 | 490311.0 | -$122 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0426 | 143.0 | 489671.0 | -$27 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0426 | 317.0 | 489528.0 | -$60 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0426 | 1250.0 | 489211.0 | -$238 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0422 | 6.0 | 487961.0 | -$1 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0422 | 3370.0 | 487955.0 | -$644 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0421 | 20038.0 | 484585.0 | -$3.8K |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.042 | 24.0 | 464547.0 | -$5 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.042 | 4709.0 | 464523.0 | -$901 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.042 | 641.0 | 459814.0 | -$123 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.042 | 736.0 | 459173.0 | -$141 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0419 | 485.0 | 458437.0 | -$93 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0418 | 1735.0 | 457952.0 | -$332 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0417 | 1359.0 | 456217.0 | -$260 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0416 | 317.0 | 454858.0 | -$61 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0416 | 16506.0 | 454541.0 | -$3.2K |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0415 | 195.0 | 438035.0 | -$37 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0415 | 777.0 | 437840.0 | -$149 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0414 | 5109.0 | 437063.0 | -$980 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0414 | 40.0 | 431954.0 | -$8 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0413 | 198.0 | 431914.0 | -$38 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0413 | 40.0 | 431716.0 | -$8 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0412 | 13833.0 | 431676.0 | -$2.7K |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0412 | 24.0 | 417843.0 | -$5 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0412 | 641.0 | 417819.0 | -$123 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0411 | 25.0 | 417178.0 | -$5 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0409 | 1200.0 | 417153.0 | -$231 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0407 | 484.0 | 415953.0 | -$93 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0405 | 19.0 | 415469.0 | -$4 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0405 | 10.0 | 415450.0 | -$2 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0405 | 2039.0 | 415440.0 | -$393 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0404 | 6.0 | 413401.0 | -$1 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0403 | 887.0 | 413395.0 | -$171 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0403 | 760.0 | 412508.0 | -$147 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0402 | 195.0 | 411748.0 | -$38 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0402 | 6.0 | 411553.0 | -$1 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0401 | 389.0 | 411547.0 | -$75 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0401 | 760.0 | 411158.0 | -$147 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.04 | 12.0 | 410398.0 | -$2 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.04 | 40.0 | 410386.0 | -$8 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.04 | 4709.0 | 410346.0 | -$910 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0399 | 5.0 | 405637.0 | -$1 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0398 | 10.0 | 405632.0 | -$2 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0398 | 2314.0 | 405622.0 | -$448 |
+| 2026-07-24 20:36:28 | LIT | Close Long | A | 2.0395 | 3308.0 | 403308.0 | -$641 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0379 | 4209.0 | 400000.0 | -$822 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0378 | 85.0 | 395791.0 | -$17 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0377 | 1200.0 | 395706.0 | -$235 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0377 | 25.0 | 394506.0 | -$5 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0376 | 10.0 | 394481.0 | -$2 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0376 | 161.0 | 394471.0 | -$32 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0374 | 40.0 | 394310.0 | -$8 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0372 | 13833.0 | 394270.0 | -$2.7K |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0371 | 24.0 | 380437.0 | -$5 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.037 | 2039.0 | 380413.0 | -$400 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0368 | 270.0 | 378374.0 | -$53 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0368 | 734.0 | 378104.0 | -$144 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0368 | 147.0 | 377370.0 | -$29 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0367 | 7327.0 | 377223.0 | -$1.4K |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0366 | 4173.0 | 369896.0 | -$821 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0366 | 5.0 | 365723.0 | -$1 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0364 | 49106.0 | 365718.0 | -$9.7K |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0363 | 500.0 | 316612.0 | -$98 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.036 | 334.0 | 316112.0 | -$66 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0357 | 37.0 | 315778.0 | -$7 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0356 | 16.0 | 315741.0 | -$3 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0354 | 40.0 | 315725.0 | -$8 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0353 | 11.0 | 315685.0 | -$2 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0353 | 6.0 | 315674.0 | -$1 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0353 | 40.0 | 315668.0 | -$8 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0352 | 270.0 | 315628.0 | -$53 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0352 | 147.0 | 315358.0 | -$29 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0351 | 2204.0 | 315211.0 | -$437 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0351 | 13.0 | 313007.0 | -$3 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0351 | 734.0 | 312994.0 | -$145 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.035 | 1228.0 | 312260.0 | -$243 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.035 | 9828.0 | 311032.0 | -$1.9K |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0349 | 9766.0 | 301204.0 | -$1.9K |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0349 | 9761.0 | 291438.0 | -$1.9K |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0347 | 34.0 | 281677.0 | -$7 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0347 | 803.0 | 281643.0 | -$159 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0347 | 7.0 | 280840.0 | -$1 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0345 | 5109.0 | 280833.0 | -$1.0K |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0345 | 198.0 | 275724.0 | -$39 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0344 | 1200.0 | 275526.0 | -$239 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0343 | 25.0 | 274326.0 | -$5 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0343 | 1250.0 | 274301.0 | -$249 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0343 | 2719.0 | 273051.0 | -$541 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0343 | 492.0 | 270332.0 | -$98 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.034 | 24.0 | 269840.0 | -$5 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0339 | 270.0 | 269816.0 | -$54 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0339 | 147.0 | 269546.0 | -$29 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0339 | 1295.0 | 269399.0 | -$258 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0338 | 9049.0 | 268104.0 | -$1.8K |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0338 | 10.0 | 259055.0 | -$2 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0338 | 2755.0 | 259045.0 | -$550 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0336 | 3591.0 | 256290.0 | -$717 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0333 | 40.0 | 252699.0 | -$8 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0333 | 775.0 | 252659.0 | -$155 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0332 | 5.0 | 251884.0 | -$1 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0331 | 24.0 | 251879.0 | -$5 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.033 | 4900.0 | 251855.0 | -$981 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0329 | 768.0 | 246955.0 | -$154 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0328 | 270.0 | 246187.0 | -$54 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0328 | 147.0 | 245917.0 | -$29 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0328 | 80523.0 | 245770.0 | -$16.1K |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0326 | 768.0 | 165247.0 | -$154 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0326 | 25.0 | 164479.0 | -$5 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0326 | 734.0 | 164454.0 | -$147 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0323 | 768.0 | 163720.0 | -$154 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0323 | 314.0 | 162952.0 | -$63 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0322 | 40.0 | 162638.0 | -$8 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0322 | 49.0 | 162598.0 | -$10 |
+| 2026-07-24 20:36:31 | LIT | Close Long | A | 2.0322 | 162549.0 | 162549.0 | -$32.7K |
 
 ## 9. Dá para copiar? (espelhar a posição com atraso)
 
