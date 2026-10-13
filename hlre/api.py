@@ -18,6 +18,7 @@ class InfoClient:
     def __init__(self, url: str = API_URL, min_interval: float = 1.0, timeout: float = 60.0):
         self.url = url
         self.min_interval = min_interval
+        self.base_interval = min_interval
         self.timeout = timeout
         self._last = 0.0
         self.session = requests.Session()
@@ -31,9 +32,14 @@ class InfoClient:
             self._last = time.monotonic()
             try:
                 r = self.session.post(self.url, json=body, timeout=self.timeout)
+                if r.status_code == 429:
+                    # heavy endpoints (fundingHistory, candles) weigh more per call: slow the pace,
+                    # then let it creep back to the base interval as calls succeed
+                    self.min_interval = min(self.min_interval * 1.5, 5.0)
                 if r.status_code == 429 or r.status_code >= 500:
                     raise requests.HTTPError(f"HTTP {r.status_code}: {r.text[:200]}")
                 r.raise_for_status()
+                self.min_interval = max(self.base_interval, self.min_interval * 0.98)
                 return r.json()
             except (requests.RequestException, ValueError):
                 if attempt == retries - 1:

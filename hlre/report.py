@@ -18,8 +18,8 @@ import pandas as pd
 from . import charts
 from .analyze import (
     Wallet, approx_price_pnl, averaging_stats, baseline_context, copy_lag_pnl, daily_exposure,
-    episodes, exact_mtm, executions, hold_decomposition, leverage_frame, liquidation_events,
-    market_context, rank_coins, session_context, sessions,
+    daily_perp_pnl, episode_metrics, episodes, exact_mtm, executions, flow_behaviour, hold_decomposition,
+    leverage_frame, liquidation_events, market_context, rank_coins, session_context, sessions,
 )
 from .market import funding_df, hourly_close
 from .replicate import features, grid_search, linear_clone
@@ -28,6 +28,7 @@ KNOWN = {
     "0x8dafbe89302656a7df43c470e9ebcb4c540835c0": "Unit: emissor/ponte do UETH (depósitos de ETH nativo)",
     "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303": "HLP (vault do protocolo)",
     "0x2222222222222222222222222222222222222222": "sistema: ponte de HYPE HyperCore↔HyperEVM",
+    "0x6b9e773128f453f5c2c60935ee2de2cbc5390a24": "hot wallet de serviço (recebe USDC da HyperEVM e repassa a centenas de usuários: exchange/ponte)",
 }
 
 CLASS_LABEL = {"short+": "aumenta short", "short-": "reduz short", "long+": "aumenta long",
@@ -160,6 +161,29 @@ def build(user: str, data_dir: str = "data", out_dir: str = "reports", coins: li
     p1 = charts.pnl_curve({"PnL all-time (perp + spot)": pa["pnl"], "PnL só perps": pp["pnl"]}, events,
                           os.path.join(img, "pnl_curve.png"), "PnL acumulado segundo o portfolio da Hyperliquid")
     md += ["## 2. Curva de PnL", "", f"![PnL]({rel(p1)})", ""]
+
+    # exact daily perp PnL: only when the fills reach back to the first trade
+    dpnl = daily_perp_pnl(w) if len(perp_fills) else pd.DataFrame()
+    starts = [x for x in [fund["t"].min() if len(fund) else None, w.ledger["t"].min() if len(w.ledger) else None] if x is not None]
+    from_start = bool(len(perp_fills)) and bool(starts) and perp_fills["t"].min() <= min(starts) + pd.Timedelta(days=2)
+    full_history = from_start and bool(len(dpnl)) and \
+        abs(dpnl["pnl"].sum() - M["pnl_perp_all_time"]) <= max(0.02 * abs(M["pnl_perp_all_time"]), 5_000)
+    M["fills_cover_full_history"] = full_history
+    if full_history:
+        cum = dpnl["pnl"].cumsum()
+        dd = cum - cum.cummax()
+        trough = dd.idxmin()
+        peak = cum.loc[:trough].idxmax()
+        qtr = dpnl.groupby(dpnl.index.to_period("Q")).sum()
+        qtr.index = pd.Index([str(q) for q in qtr.index], name="trimestre")
+        qtr.columns = ["preço", "funding", "taxas", "total"]
+        M["max_drawdown_perp"] = float(dd.min())
+        md += [f"Os fills cobrem todo o histórico: o PnL diário exato de perps (preço + funding − taxas) soma "
+               f"{usd(dpnl['pnl'].sum(), True)}, contra {usd(M['pnl_perp_all_time'], True)} do portfolio. "
+               f"Maior drawdown: **{usd(dd.min())}** (pico em {peak:%Y-%m-%d}, fundo em {trough:%Y-%m-%d}); "
+               f"dias positivos: {pct((dpnl['pnl'][dpnl['pnl'] != 0] > 0).mean(), 0)}.", "",
+               "<details><summary>PnL de perps por trimestre</summary>", "",
+               md_table(qtr.map(lambda v: usd(v, True))), "", "</details>", ""]
 
     # ------------------------------------------------------------ attribution
     top = attrib.reindex(attrib["total"].abs().sort_values(ascending=False).index[:12])
@@ -353,6 +377,40 @@ def build(user: str, data_dir: str = "data", out_dir: str = "reports", coins: li
                    md_table(tope[["início", "fim", "dias", "lado", "tam_max", "nocional_max", "ordens", "entrada", "saída", "realizado"]], index=False),
                    "", "</details>", ""]
 
+    # cross-coin episode table: what every sizeable trade looked like at entry
+    em = episode_metrics(w, ex) if len(ex) else pd.DataFrame()
+    if len(em):
+        closed = em[~em["open"]]
+        M["episodes_all"] = {"n": int(len(em)), "win_rate": float((closed["realized"] > 0).mean()) if len(closed) else None,
+                             "realized": float(em["realized"].sum()), "funding": float(em["funding"].sum()),
+                             "median_adverse_pct": float(em["adverse_pct"].median()) if "adverse_pct" in em else None}
+        f1 = lambda v: "—" if pd.isna(v) else f"{v:+.0f}%"
+        tb = em.reindex(em["realized"].abs().sort_values(ascending=False).index[:25]).sort_values("start")
+        tb = pd.DataFrame({
+            "ativo": tb["coin"], "lado": tb["side"], "início": tb["start"].dt.strftime("%Y-%m-%d"),
+            "dias": tb["days"].map(lambda v: f"{v:.0f}"), "nocional máx.": tb["max_ntl"].map(usd),
+            "7d antes": tb.get("r7d", pd.Series(np.nan, index=tb.index)).map(f1),
+            "30d antes": tb.get("r30d", pd.Series(np.nan, index=tb.index)).map(f1),
+            "vs. máx. 30d": tb.get("vs_30d_high", pd.Series(np.nan, index=tb.index)).map(f1),
+            "funding a.a. na entrada": tb.get("funding_ann_pre", pd.Series(np.nan, index=tb.index)).map(f1),
+            "entrada média vs. 1ª ordem": tb["scale_in_pct"].map(f1),
+            "contra (máx.)": tb.get("adverse_pct", pd.Series(np.nan, index=tb.index)).map(f1),
+            "pior PnL aberto": tb.get("worst_upnl", pd.Series(np.nan, index=tb.index)).map(lambda v: usd(v, True)),
+            "capturado": tb["captured_pct"].map(f1),
+            "realizado": tb["realized"].map(lambda v: usd(v, True)), "funding": tb["funding"].map(lambda v: usd(v, True)),
+        })
+        p_tl = charts.episode_timeline(em, os.path.join(img, "episodes_timeline.png"),
+                                       "Episódios de posição por ativo (nocional máximo ≥ $50K)".replace("$", r"\$"))
+        md += ["### Todos os episódios relevantes (todas as moedas)", "", f"![Episódios]({rel(p_tl)})", "",
+               f"Episódios com nocional máximo ≥ $50K: {len(em)}; fechados com lucro: "
+               f"{pct((closed['realized'] > 0).mean() if len(closed) else np.nan, 0)}. Abaixo, os 25 maiores por PnL "
+               "realizado, em ordem de data. *7d/30d antes* e *vs. máx. 30d*: o que o preço tinha feito até a "
+               "primeira ordem; *funding a.a.*: taxa anualizada nas 24h anteriores (positiva = longs pagam shorts); "
+               "*entrada média vs. 1ª ordem*: positivo = foi aumentando a posição com o preço indo contra; "
+               "*contra (máx.)*: quanto o preço andou contra a primeira ordem durante o episódio; *capturado*: "
+               "movimento entre o preço médio de entrada e o de saída.", "",
+               md_table(tb, index=False), ""]
+
     # ----------------------------------------------------------------- funding
     if len(fund):
         fd = fund.copy()
@@ -383,6 +441,27 @@ def build(user: str, data_dir: str = "data", out_dir: str = "reports", coins: li
     fl["usd"] = fl["usd"].map(lambda v: usd(v, True) if v else "— (sem valor em USD)")
     fl = fl.rename_axis("tipo").rename(columns={"usd": "USD (+ entra / − sai)"})
     md += [md_table(fl), ""]
+    # margin management: are deposits a response to losses / new positions, withdrawals to gains?
+    if full_history:
+        pnl_d = dpnl["pnl"]
+    else:
+        pnl_d = (approx.sum(axis=1) if len(approx) else pd.Series(dtype=float)).add(
+            fund.groupby("day")["usdc"].sum() if len(fund) else pd.Series(dtype=float), fill_value=0.0)
+    fb = flow_behaviour(L, pnl_d, lev["gross"]) if len(pnl_d) else {}
+    if fb:
+        M["flow_behaviour"] = fb
+        md += [f"**Gestão de margem.** Dias com depósito: {fb['deposit_days']}; em {pct(fb['deposit_after_loss_share'], 0)} "
+               f"deles o PnL dos 3 dias anteriores era negativo (mediana {usd(fb['median_prev_pnl_deposit'], True)}). "
+               f"Dias com saque: {fb['withdraw_days']}; em {pct(fb['withdraw_after_gain_share'], 0)} deles o PnL dos 3 dias "
+               f"anteriores era positivo (mediana {usd(fb['median_prev_pnl_withdraw'], True)}). Base: "
+               f"{pct(fb['all_days_after_loss_share'], 0)} de todos os dias vêm depois de 3 dias negativos. Correlação "
+               f"entre o fluxo do dia e a variação da exposição bruta: {fb.get('corr_flow_exposure_change', float('nan')):.2f} "
+               "(positiva = deposita para abrir posição e saca ao reduzir).", ""]
+        fl_d = L[L["type"].isin(["deposit", "withdraw", "send"])].assign(day=lambda x: x["t"].dt.floor("D")).groupby("day")["usd"].sum()
+        p_fl = charts.flows_and_exposure(lev["gross"].rolling(7, min_periods=1).mean(), fl_d,
+                                         os.path.join(img, "flows_exposure.png"),
+                                         "Exposição bruta (média de 7 dias) e depósitos/saques diários")
+        md += [f"![Fluxos]({rel(p_fl)})", ""]
     sysm = L["counterparty"].fillna("").str.lower().str.startswith(("0x2000000000000000000000000000000000000",
                                                                      "0x2222222222222222222222222222222222222222"))
     if sysm.any():

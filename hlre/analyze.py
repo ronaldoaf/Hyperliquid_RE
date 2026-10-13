@@ -240,7 +240,10 @@ def daily_exposure(funding: pd.DataFrame) -> pd.DataFrame:
     an hourly position snapshot covering the whole account history, even the
     periods where fills are no longer served by the API.
     """
-    return funding.groupby(["day", "coin"])["expo"].sum().unstack().fillna(0.0)
+    e = funding.groupby(["day", "coin"])["expo"].sum().unstack().fillna(0.0)
+    if len(e):  # days with no funding row were flat: keep them as zeros, not gaps
+        e = e.reindex(pd.date_range(e.index.min(), e.index.max(), freq="D", name="day"), fill_value=0.0)
+    return e
 
 
 def approx_price_pnl(expo: pd.DataFrame, opens: pd.DataFrame, closes: pd.DataFrame) -> pd.DataFrame:
@@ -401,7 +404,8 @@ def leverage_frame(funding: pd.DataFrame, closes: pd.DataFrame, perp_equity: pd.
     ntl = (expo * c.reindex(columns=expo.columns)).fillna(0.0)
     eq = perp_equity.copy()
     eq.index = eq.index.floor("D")
-    eq = eq[~eq.index.duplicated(keep="last")].reindex(ntl.index.union(eq.index)).ffill().reindex(ntl.index)
+    eq = eq[~eq.index.duplicated(keep="last")]
+    eq = eq.reindex(ntl.index.union(eq.index)).ffill().reindex(ntl.index)
     out = pd.DataFrame({"gross": ntl.abs().sum(axis=1), "net": ntl.sum(axis=1), "perp_equity": eq})
     out["leverage"] = out["gross"] / out["perp_equity"].where(out["perp_equity"] > 0)
     return out, ntl
@@ -471,3 +475,121 @@ def rank_coins(w: "Wallet", top: int = 3) -> list[str]:
             mtm = exact_mtm(pf, cl).sum().abs()
             score = pd.concat([score, mtm], axis=1).max(axis=1)
     return list(score.sort_values(ascending=False).index[:top])
+
+
+# ------------------------------------------------ cross-coin episode metrics
+def daily_perp_pnl(w: "Wallet") -> pd.DataFrame:
+    """Exact daily perp PnL from fills: price (marked to UTC closes) + funding
+    - fees. Only meaningful when the fills cover the whole history (check
+    against the portfolio's perp PnL)."""
+    pf = w.fills[w.fills["kind"] != "spot"]
+    if pf.empty:
+        return pd.DataFrame(columns=["price", "funding", "fees", "pnl"])
+    cl = w.closes(sorted(pf["coin"].unique()))
+    price = exact_mtm(pf, cl, end=cl.index.max()).sum(axis=1)
+    fund = w.funding.groupby("day")["usdc"].sum() if len(w.funding) else pd.Series(dtype=float)
+    fees = pf.groupby(pf["t"].dt.floor("D"))["fee"].sum()
+    idx = price.index.union(fund.index).union(fees.index)
+    out = pd.DataFrame({"price": price.reindex(idx).fillna(0.0), "funding": fund.reindex(idx).fillna(0.0),
+                        "fees": -fees.reindex(idx).fillna(0.0)})
+    out["pnl"] = out.sum(axis=1)
+    return out
+
+
+def episode_metrics(w: "Wallet", ex: pd.DataFrame, min_ntl: float = 50_000, coins=None) -> pd.DataFrame:
+    """One row per position episode (flat to flat) with at least `min_ntl` of
+    peak notional, across every perp coin: what the market looked like before
+    the first order (returns, distance from the 30-day high/low, funding rate),
+    how the position was built (average entry vs. first fill), how far the
+    price went against it (adverse excursion, worst unrealised PnL on hourly
+    marks), how much of the move was captured and what came after the exit."""
+    from .market import funding_df, hourly_close
+
+    pe = ex[ex["kind"] != "spot"]
+    coins = coins or list(pe["coin"].unique())
+    rows = []
+    for coin in coins:
+        ep = episodes(ex, coin)
+        if ep.empty:
+            continue
+        ep = ep[ep["max_ntl"] >= min_ntl]
+        if ep.empty:
+            continue
+        h = hourly_close(coin, w.data_dir)
+        fr = funding_df(coin, w.data_dir)
+        fc = w.fills[w.fills["coin"] == coin]
+        for _, e in ep.iterrows():
+            sel = pe[(pe["coin"] == coin) & (pe["t"] >= e["start"]) & (pe["t"] <= e["end"])]
+            p0, t0 = float(sel["vwap"].iloc[0]), sel["t"].iloc[0]
+            sgn = -1.0 if e["side"] == "short" else 1.0
+            r = {"coin": coin, "side": e["side"], "start": t0, "end": e["end"], "days": e["days"], "open": e["open"],
+                 "orders": e["n_orders"], "max_ntl": e["max_ntl"], "first_px": p0, "entry_vwap": e["entry_vwap"],
+                 "exit_vwap": e["exit_vwap"], "realized": e["realized"]}
+            if len(h):
+                hh = h.loc[: t0.floor("h") - pd.Timedelta(hours=1)].dropna()
+                for k, n in {"r24h": 24, "r7d": 168, "r30d": 720}.items():
+                    r[k] = (hh.iloc[-1] / hh.iloc[-1 - n] - 1) * 100 if len(hh) > n else np.nan
+                win = hh.iloc[-720:]
+                r["vs_30d_high"] = (hh.iloc[-1] / win.max() - 1) * 100 if len(win) else np.nan
+                r["vs_30d_low"] = (hh.iloc[-1] / win.min() - 1) * 100 if len(win) else np.nan
+                during = h.loc[t0.floor("h"): e["end"].ceil("h")].dropna()
+                if len(during):
+                    worst = during.max() if sgn < 0 else during.min()
+                    r["adverse_pct"] = (worst / p0 - 1) * 100 * -sgn
+                    # worst unrealised PnL: hourly position x (price - average entry)
+                    fe = fc[(fc["t"] >= e["start"]) & (fc["t"] <= e["end"])]
+                    ae = avg_entry_path(fe, coin).set_index("t")
+                    pos_h = ae["pos"].groupby(level=0).last().resample("h").last().reindex(during.index).ffill()
+                    avg_h = ae["avg_entry"].groupby(level=0).last().resample("h").last().reindex(during.index).ffill()
+                    upnl = (pos_h * (during - avg_h)).dropna()
+                    if len(upnl):
+                        r["worst_upnl"], r["worst_upnl_t"] = float(upnl.min()), upnl.idxmin()
+                after = h.loc[e["end"].ceil("h"): e["end"] + pd.Timedelta(days=30)].dropna()
+                if len(after) and not e["open"]:
+                    best = after.min() if sgn < 0 else after.max()
+                    r["next30d_more_pct"] = (best / e["exit_vwap"] - 1) * 100 * sgn
+            if len(fr):
+                pre = fr.loc[t0 - pd.Timedelta(hours=24): t0, "fundingRate"]
+                r["funding_ann_pre"] = pre.mean() * 24 * 365 * 100 if len(pre) else np.nan
+            fz = w.funding[(w.funding["coin"] == coin) & (w.funding["t"] >= e["start"].floor("D")) &
+                           (w.funding["t"] <= e["end"] + pd.Timedelta(days=1))]["usdc"].sum() if len(w.funding) else 0.0
+            r["funding"] = float(fz)
+            rows.append(r)
+    out = pd.DataFrame(rows)
+    if len(out):
+        out = out.sort_values("start").reset_index(drop=True)
+        side = np.where(out["side"] == "short", 1.0, -1.0)
+        out["scale_in_pct"] = (out["entry_vwap"] / out["first_px"] - 1) * 100 * side
+        out["captured_pct"] = (1 - out["exit_vwap"] / out["entry_vwap"]) * 100 * side
+    return out
+
+
+def flow_behaviour(ledger: pd.DataFrame, daily_pnl: pd.Series, gross: pd.Series | None = None,
+                   lookback: int = 3) -> dict:
+    """How deposits and withdrawals relate to recent PnL (topping up margin
+    after losses / sweeping profits after gains) and to changes in exposure
+    (funding new positions)."""
+    fl = ledger[ledger["type"].isin(["deposit", "withdraw", "send"])].copy()
+    if fl.empty or daily_pnl.empty:
+        return {}
+    fl["day"] = fl["t"].dt.floor("D")
+    flow = fl.groupby("day")["usd"].sum()
+    idx = daily_pnl.index.union(flow.index)
+    pnl = daily_pnl.reindex(idx).fillna(0.0)
+    flow = flow.reindex(idx).fillna(0.0)
+    prev = pnl.rolling(lookback, min_periods=1).sum().shift(1)  # PnL of the days *before* the flow
+    dep, wd = flow > 0, flow < 0
+    out = {
+        "deposits_usd": float(fl.loc[fl["usd"] > 0, "usd"].sum()), "withdrawals_usd": float(fl.loc[fl["usd"] < 0, "usd"].sum()),
+        "deposit_days": int(dep.sum()), "withdraw_days": int(wd.sum()),
+        "deposit_after_loss_share": float((prev[dep] < 0).mean()) if dep.any() else np.nan,
+        "withdraw_after_gain_share": float((prev[wd] > 0).mean()) if wd.any() else np.nan,
+        "all_days_after_loss_share": float((prev < 0).mean()),
+        "median_prev_pnl_deposit": float(prev[dep].median()) if dep.any() else np.nan,
+        "median_prev_pnl_withdraw": float(prev[wd].median()) if wd.any() else np.nan,
+        "corr_flow_prev_pnl": float(flow.corr(prev)),
+    }
+    if gross is not None and len(gross):
+        g = gross.reindex(idx).ffill().fillna(0.0)
+        out["corr_flow_exposure_change"] = float(flow.corr(g.diff()))
+    return out

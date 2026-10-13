@@ -76,6 +76,8 @@ def related_wallets(c: InfoClient, user: str, ledger: list, snapshot: dict, top:
         vol.setdefault(other, [0, 0.0])
         vol[other][0] += 1
         vol[other][1] += v
+    # zero-value counterparties are unsolicited spam-token airdrops, not relationships
+    vol = {a: x for a, x in vol.items() if x[1] > 0}
     cands = {a: {"relation": "transfers", "n_transfers": n, "transfer_usd": v}
              for a, (n, v) in sorted(vol.items(), key=lambda kv: -kv[1][1])[:top]}
     link = ((snapshot.get("userFees") or {}).get("stakingLink") or {})

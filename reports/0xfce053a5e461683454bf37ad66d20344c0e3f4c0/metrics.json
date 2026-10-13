@@ -1,0 +1,414 @@
+{
+ "user": "0xfce053a5e461683454bf37ad66d20344c0e3f4c0",
+ "generated_at": "2026-10-13T16:48:26.865497+00:00",
+ "main_coins": [
+  "BTC",
+  "ETH",
+  "POPCAT"
+ ],
+ "account_value": 4571284.538422,
+ "pnl_all_time": 10829114.968422,
+ "pnl_perp_all_time": 9452705.406742,
+ "volume_all_time": 168358675.54,
+ "first_activity": "2024-12-18",
+ "n_fills": 25305,
+ "fills_from": "2024-12-16 14:32:06.243000",
+ "n_orders": 3559,
+ "funding_net": 648753.1825079999,
+ "fees_fills_period": 39679.77828346,
+ "fills_cover_full_history": true,
+ "max_drawdown_perp": -3420798.4382329993,
+ "decomp_BTC": {
+  "carry": 3723680.4654200003,
+  "intraday": -41424.69039000001,
+  "total": 3682255.77503,
+  "mean_pos": -46.23826612030075,
+  "total_move": -16720.0,
+  "bias": 773103.8095314285,
+  "timing": 2950576.655888572
+ },
+ "decomp_ETH": {
+  "carry": 2205493.1599600003,
+  "intraday": -44906.28664000005,
+  "total": 2160586.8733200002,
+  "mean_pos": -1235.7347192708332,
+  "total_move": -1350.5,
+  "bias": 1668859.7383752603,
+  "timing": 536633.4215847397
+ },
+ "decomp_POPCAT": {
+  "carry": 998934.6,
+  "intraday": 74617.39564000005,
+  "total": 1073551.99564,
+  "mean_pos": -133149.92503748127,
+  "total_move": -1.0025579999999998,
+  "bias": 133490.52254572712,
+  "timing": 865444.0774542728
+ },
+ "leverage_median": 5.153071681603695,
+ "order_types": {
+  "Limit/Gtc": 147,
+  "Market/FrontendMarket": 18
+ },
+ "taker_share_ntl": 0.46731272200529184,
+ "sessions_BTC": {
+  "sess\u00f5es": {
+   "short+": 72.0,
+   "short-": 81.0,
+   "long+": 3.0
+  },
+  "r24h": {
+   "short+": -0.151284,
+   "short-": 0.487541,
+   "long+": 0.371084
+  },
+  "p_r24h": {
+   "short+": 0.363027,
+   "short-": 0.118347,
+   "long+": 0.496347
+  },
+  "r72h": {
+   "short+": 0.847668,
+   "short-": 0.033508,
+   "long+": 3.664623
+  },
+  "p_r72h": {
+   "short+": 0.021857,
+   "short-": 0.325763,
+   "long+": 0.027228
+  },
+  "r7d": {
+   "short+": -2.49022,
+   "short-": -0.502449,
+   "long+": 4.328201
+  },
+  "p_r7d": {
+   "short+": 0.023399,
+   "short-": 0.372515,
+   "long+": 0.063049
+  },
+  "rng7d": {
+   "short+": 0.48072,
+   "short-": 0.477166,
+   "long+": 0.882353
+  },
+  "p_rng7d": {
+   "short+": 0.740237,
+   "short-": 0.459687,
+   "long+": 0.021026
+  },
+  "top30": {
+   "short+": 0.291667,
+   "short-": 0.308642,
+   "long+": 1.0
+  },
+  "bottom30": {
+   "short+": 0.277778,
+   "short-": 0.320988,
+   "long+": 0.0
+  }
+ },
+ "context_BTC": {
+  "r24h": {
+   "short+": 0.171,
+   "short-": 0.477,
+   "long+": 0.726,
+   "long-": 1.022,
+   "base": 0.03
+  },
+  "r72h": {
+   "short+": 2.378,
+   "short-": -0.017,
+   "long+": 3.927,
+   "long-": 2.421,
+   "base": 0.045
+  },
+  "r7d": {
+   "short+": -3.406,
+   "short-": -0.544,
+   "long+": 4.724,
+   "long-": 2.545,
+   "base": 0.018
+  },
+  "rng7d": {
+   "short+": 0.469,
+   "short-": 0.411,
+   "long+": 0.941,
+   "long-": 0.967,
+   "base": 0.496
+  },
+  "f24h": {
+   "short+": -0.122,
+   "short-": 0.016,
+   "long+": 0.74,
+   "long-": 1.878,
+   "base": 0.032
+  },
+  "f7d": {
+   "short+": -0.199,
+   "short-": -0.139,
+   "long+": -0.544,
+   "long-": -0.703,
+   "base": 0.024
+  }
+ },
+ "averaging_BTC": {
+  "adds": 230,
+  "adds_underwater_share": 0.27391304347826084,
+  "adds_underwater_share_by_size": 0.34107421390024734,
+  "adds_median_dist_from_avg_pct": -4.612847828544309,
+  "reductions": 127,
+  "reduction_win_rate": 0.6456692913385826,
+  "avg_win": 53778.251251780486,
+  "avg_loss": -16168.868010444443,
+  "realized": 3682217.542176
+ },
+ "sessions_ETH": {
+  "sess\u00f5es": {
+   "short+": 18.0,
+   "short-": 11.0
+  },
+  "r24h": {
+   "short+": -1.618373,
+   "short-": -0.360125
+  },
+  "p_r24h": {
+   "short+": 0.026501,
+   "short-": 0.955482
+  },
+  "r72h": {
+   "short+": -4.503703,
+   "short-": 3.460569
+  },
+  "p_r72h": {
+   "short+": 0.174341,
+   "short-": 0.030631
+  },
+  "r7d": {
+   "short+": -8.318381,
+   "short-": 4.383744
+  },
+  "p_r7d": {
+   "short+": 0.000813,
+   "short-": 0.030779
+  },
+  "rng7d": {
+   "short+": 0.128418,
+   "short-": 0.799862
+  },
+  "p_rng7d": {
+   "short+": 0.032258,
+   "short-": 0.021339
+  },
+  "top30": {
+   "short+": 0.277778,
+   "short-": 0.545455
+  },
+  "bottom30": {
+   "short+": 0.611111,
+   "short-": 0.181818
+  }
+ },
+ "context_ETH": {
+  "r24h": {
+   "short+": 1.539,
+   "short-": 0.076,
+   "base": 0.037
+  },
+  "r72h": {
+   "short+": 4.991,
+   "short-": 3.461,
+   "base": -0.074
+  },
+  "r7d": {
+   "short+": -5.518,
+   "short-": 4.023,
+   "base": -0.11
+  },
+  "rng7d": {
+   "short+": 0.488,
+   "short-": 0.633,
+   "base": 0.439
+  },
+  "f24h": {
+   "short+": 0.025,
+   "short-": -1.388,
+   "base": 0.043
+  },
+  "f7d": {
+   "short+": 5.272,
+   "short-": -1.031,
+   "base": -0.008
+  }
+ },
+ "averaging_ETH": {
+  "adds": 109,
+  "adds_underwater_share": 0.07339449541284404,
+  "adds_underwater_share_by_size": 0.069900412906432,
+  "adds_median_dist_from_avg_pct": -12.51102225175128,
+  "reductions": 57,
+  "reduction_win_rate": 1.0,
+  "avg_win": 31252.111827105262,
+  "avg_loss": NaN,
+  "realized": 1781370.374145
+ },
+ "sessions_POPCAT": {
+  "sess\u00f5es": {
+   "short+": 24.0,
+   "short-": 9.0
+  },
+  "r24h": {
+   "short+": 6.611522,
+   "short-": -6.481481
+  },
+  "p_r24h": {
+   "short+": 0.001355,
+   "short-": 0.037339
+  },
+  "r72h": {
+   "short+": 9.200049,
+   "short-": -5.164319
+  },
+  "p_r72h": {
+   "short+": 0.000259,
+   "short-": 0.040439
+  },
+  "r7d": {
+   "short+": 4.927421,
+   "short-": -26.470957
+  },
+  "p_r7d": {
+   "short+": 0.018807,
+   "short-": 0.023878
+  },
+  "rng7d": {
+   "short+": 0.570283,
+   "short-": 0.167485
+  },
+  "p_rng7d": {
+   "short+": 0.002322,
+   "short-": 0.029027
+  },
+  "top30": {
+   "short+": 0.375,
+   "short-": 0.0
+  },
+  "bottom30": {
+   "short+": 0.208333,
+   "short-": 0.777778
+  }
+ },
+ "context_POPCAT": {
+  "r24h": {
+   "short+": 7.935,
+   "short-": -12.809,
+   "base": -0.713
+  },
+  "r72h": {
+   "short+": 11.103,
+   "short-": -32.344,
+   "base": -2.289
+  },
+  "r7d": {
+   "short+": 7.286,
+   "short-": -26.471,
+   "base": -4.818
+  },
+  "rng7d": {
+   "short+": 0.589,
+   "short-": 0.018,
+   "base": 0.352
+  },
+  "f24h": {
+   "short+": -6.357,
+   "short-": -0.358,
+   "base": -0.638
+  },
+  "f7d": {
+   "short+": -28.076,
+   "short-": 22.788,
+   "base": -3.153
+  }
+ },
+ "averaging_POPCAT": {
+  "adds": 450,
+  "adds_underwater_share": 0.5111111111111111,
+  "adds_underwater_share_by_size": 0.41333829286437307,
+  "adds_median_dist_from_avg_pct": 0.03296767443777826,
+  "reductions": 268,
+  "reduction_win_rate": 1.0,
+  "avg_win": 4005.7866079477617,
+  "avg_loss": NaN,
+  "realized": 1073550.8109300002
+ },
+ "episodes_all": {
+  "n": 33,
+  "win_rate": 0.75,
+  "realized": 8429320.084131,
+  "funding": 641915.938104,
+  "median_adverse_pct": 6.399956540767116
+ },
+ "flow_behaviour": {
+  "deposits_usd": 26914898.400000002,
+  "withdrawals_usd": -33172640.800476,
+  "deposit_days": 57,
+  "withdraw_days": 75,
+  "deposit_after_loss_share": 0.6666666666666666,
+  "withdraw_after_gain_share": 0.76,
+  "all_days_after_loss_share": 0.3868065967016492,
+  "median_prev_pnl_deposit": -31886.349863000018,
+  "median_prev_pnl_withdraw": 195759.86728399975,
+  "corr_flow_prev_pnl": -0.24868869716400116,
+  "corr_flow_exposure_change": 0.44426774863622104
+ },
+ "copy_lag": {
+  "BTC": {
+   "0": 3753505.7591220005,
+   "1": 3754122.281616999,
+   "4": 3845362.7687070016,
+   "12": 3766817.8808389995,
+   "24": 3760676.7704859995,
+   "72": 4008372.4779229998,
+   "168": 4399342.777319001
+  },
+  "ETH": {
+   "0": 2170116.556288,
+   "1": 2155729.264524,
+   "4": 2151783.1992940004,
+   "12": 2244108.215018,
+   "24": 2222627.6632080004,
+   "72": 2271817.7566440003,
+   "168": 2374783.1166660003
+  },
+  "POPCAT": {
+   "0": 1075691.6179999998,
+   "1": 1060597.312,
+   "4": 1047677.4599999998,
+   "12": 1013578.836,
+   "24": 886019.9859999998,
+   "72": 586876.6240000001,
+   "168": 231261.01800000004
+  }
+ },
+ "replication": {
+  "train": [
+   "2024-12-16",
+   "2025-11-13"
+  ],
+  "test": [
+   "2025-11-14",
+   "2026-10-12"
+  ],
+  "best_params": {
+   "ma": 100.0,
+   "rng": 30.0,
+   "bull_frac": 1.0,
+   "fade": 0.9
+  },
+  "rule_test_pnl": 36224.48239475768,
+  "rule_test_corr": -0.23708437160656126,
+  "actual_test_pnl": 3638937.11094164,
+  "clone_r2_train": 0.28650939543825493,
+  "clone_r2_test": -1.0717924258401106
+ }
+}

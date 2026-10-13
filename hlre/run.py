@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import argparse
 
-from .analyze import Wallet, rank_coins
+from .analyze import Wallet, episodes, executions, rank_coins
 from .api import InfoClient
 from .binance import fetch_klines
 from .collect import collect
@@ -30,6 +30,26 @@ def run(user: str, data_dir: str = "data", out: str = "reports", top: int = 3, b
             print(f"  skip {coin}: {e}")
     mains = rank_coins(w, top)
     print("main coins:", mains, flush=True)
+    # 4h candles (one request covers ~800 days) give hourly-ish entry context for every traded coin;
+    # the funding-rate history is fetched for coins that carried sizeable positions
+    traded = sorted(set(w.fills.loc[w.fills["kind"] != "spot", "coin"])) if len(w.fills) else []
+    for coin in traded:
+        try:
+            fetch_candles(c, coin, "4h", data_dir)
+        except Exception as e:
+            print(f"  skip 4h {coin}: {e}")
+    big = set()
+    if len(w.fills):
+        ex = executions(w.fills)
+        for coin in traded:
+            ep = episodes(ex, coin)
+            if len(ep) and ep["max_ntl"].max() >= 100_000:
+                big.add(coin)
+    for coin in sorted(big - set(mains)):
+        try:
+            fetch_funding_history(c, coin, data_dir)
+        except Exception as e:
+            print(f"  skip funding {coin}: {e}")
     for coin in mains:
         for iv in ("1h", "4h"):
             fetch_candles(c, coin, iv, data_dir)

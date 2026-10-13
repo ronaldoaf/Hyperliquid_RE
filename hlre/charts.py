@@ -39,15 +39,20 @@ plt.rcParams.update({
 })
 
 
+def _trim(v: float) -> str:
+    # up to two decimals, no trailing zeros: 1.25, 1.5, 2 (keeps 1,250 and 1,500 ticks distinct)
+    return f"{v:.2f}".rstrip("0").rstrip(".")
+
+
 def _money(x, _=None):
     a = abs(x)
     s = "-" if x < 0 else ""
     if a >= 1e9:
-        return f"{s}${a / 1e9:.1f}B"
+        return f"{s}${_trim(a / 1e9)}B"
     if a >= 1e6:
-        return f"{s}${a / 1e6:.1f}M"
+        return f"{s}${_trim(a / 1e6)}M"
     if a >= 1e3:
-        return f"{s}${a / 1e3:.0f}K"
+        return f"{s}${_trim(a / 1e3)}K"
     return f"{s}${a:.0f}"
 
 
@@ -55,9 +60,9 @@ def _compact(x, _=None):
     a = abs(x)
     s = "-" if x < 0 else ""
     if a >= 1e6:
-        return f"{s}{a / 1e6:.1f}M"
+        return f"{s}{_trim(a / 1e6)}M"
     if a >= 1e3:
-        return f"{s}{a / 1e3:.0f}K"
+        return f"{s}{_trim(a / 1e3)}K"
     return f"{s}{a:g}"
 
 
@@ -234,6 +239,56 @@ def lines_panels(top: dict[str, pd.Series], bottom: dict[str, pd.Series], path: 
     if money_bottom:
         a2.yaxis.set_major_formatter(mticker.FuncFormatter(_money))
     a2.legend(loc="upper left")
+    _dates(a2)
+    fig.tight_layout()
+    return _save(fig, path)
+
+
+def episode_timeline(em: pd.DataFrame, path: str, title: str):
+    """One row per coin, one bar per position episode (start to end), coloured
+    by realised PnL sign; each row ends with the coin's total realised PnL."""
+    em = em.sort_values("start")
+    coins = list(dict.fromkeys(em["coin"]))
+    fig, ax = plt.subplots(figsize=(11, 0.32 * len(coins) + 1.6))
+    y = {c: i for i, c in enumerate(coins)}
+    for _, e in em.iterrows():
+        start, end = mdates.date2num(e["start"]), mdates.date2num(max(e["end"], e["start"] + pd.Timedelta(days=1)))
+        col = POS if e["realized"] >= 0 else NEG
+        ax.barh(y[e["coin"]], end - start, left=start, height=0.62, color=col, alpha=0.45 if e["open"] else 0.9)
+    tot = em.groupby("coin")["realized"].sum()
+    n = em.groupby("coin").size()
+    for c in coins:
+        v = tot[c]
+        txt = ("+" if v > 0 else "") + _money(v).replace("$", r"\$") + (f"  ({n[c]})" if n[c] > 1 else "")
+        ax.annotate(txt, (1.0, y[c]), xycoords=("axes fraction", "data"), xytext=(6, 0), textcoords="offset points",
+                    va="center", fontsize=8, color=POS if v >= 0 else NEG, annotation_clip=False)
+    ax.set_yticks(range(len(coins)), coins)
+    ax.invert_yaxis()
+    ax.grid(axis="y", visible=False)
+    ax.xaxis_date()
+    _dates(ax)
+    ax.set_title(title)
+    ax.set_xlabel("azul = lucro realizado, vermelho = prejuízo, claro = ainda aberta; à direita, o total realizado "
+                  "por ativo (nº de episódios)", color=MUTED, fontsize=8)
+    fig.tight_layout()
+    return _save(fig, path)
+
+
+def flows_and_exposure(gross: pd.Series, flows: pd.Series, path: str, title: str):
+    """Gross exposure on top; daily net deposits (up) and withdrawals (down) below."""
+    fig, (a1, a2) = plt.subplots(2, 1, figsize=(11, 5.2), sharex=True, gridspec_kw={"height_ratios": [1.2, 1]})
+    a1.fill_between(gross.index, gross.values, color=SERIES[0], alpha=0.18, lw=0)
+    a1.plot(gross.index, gross.values, color=SERIES[0], lw=1.5)
+    a1.yaxis.set_major_formatter(mticker.FuncFormatter(_money))
+    a1.set_title(title)
+    a1.set_ylabel("exposição bruta")
+    f = flows[flows != 0]
+    a2.bar(f.index, f.clip(lower=0).values, width=1.0, color=POS, label="depósitos")
+    a2.bar(f.index, f.clip(upper=0).values, width=1.0, color=NEG, label="saques")
+    a2.axhline(0, color=AXIS, lw=1)
+    a2.yaxis.set_major_formatter(mticker.FuncFormatter(_money))
+    a2.set_ylabel("fluxo líquido do dia")
+    a2.legend(loc="lower left")
     _dates(a2)
     fig.tight_layout()
     return _save(fig, path)
