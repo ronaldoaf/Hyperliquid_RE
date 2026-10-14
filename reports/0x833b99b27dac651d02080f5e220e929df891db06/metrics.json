@@ -1,0 +1,342 @@
+{
+ "user": "0x833b99b27dac651d02080f5e220e929df891db06",
+ "generated_at": "2026-10-14T09:32:47.325891+00:00",
+ "main_coins": [
+  "BTC",
+  "xyz:SP500",
+  "XPL"
+ ],
+ "account_value": 663624.381317,
+ "pnl_all_time": 7784986.031317,
+ "pnl_perp_all_time": 7781310.127383,
+ "volume_all_time": 1332692851.85,
+ "first_activity": "2025-05-28",
+ "n_fills": 19382,
+ "fills_from": "2026-08-06 01:47:03.380000",
+ "n_orders": 1214,
+ "funding_net": 862660.858408,
+ "fees_fills_period": 8897.804314,
+ "fills_cover_full_history": false,
+ "position_gaps": 0,
+ "decomp_BTC": {
+  "carry": -43166.31047999967,
+  "intraday": -55945.577200000014,
+  "total": -99111.8876799997,
+  "mean_pos": -48.78195855072462,
+  "total_move": 18366.0,
+  "bias": -895929.4507426083,
+  "timing": 852763.1402626086
+ },
+ "decomp_xyz:SP500": {
+  "carry": 28716.653900000252,
+  "intraday": -34677.608999999946,
+  "total": -5960.955099999694,
+  "mean_pos": 75.86395714285716,
+  "total_move": 108.80000000000018,
+  "bias": 8253.998537142872,
+  "timing": 20462.65536285739
+ },
+ "leverage_median": 9.372385521138144,
+ "order_types": {
+  "Limit/Alo": 727,
+  "Limit/Gtc": 164,
+  "Stop Limit/Gtc": 1
+ },
+ "taker_share_ntl": 0.10971656870846912,
+ "sessions_BTC": {
+  "sess\u00f5es": {
+   "short+": 76.0,
+   "short-": 33.0,
+   "long+": 6.0,
+   "long-": 4.0
+  },
+  "r24h": {
+   "short+": 0.008443,
+   "short-": 0.337079,
+   "long+": 1.428909,
+   "long-": 3.815076
+  },
+  "p_r24h": {
+   "short+": 0.760152,
+   "short-": 0.355247,
+   "long+": 0.006467,
+   "long-": 0.089981
+  },
+  "r72h": {
+   "short+": -0.202397,
+   "short-": 0.780494,
+   "long+": 2.293813,
+   "long-": 9.26222
+  },
+  "p_r72h": {
+   "short+": 0.798082,
+   "short-": 0.62797,
+   "long+": 0.045308,
+   "long-": 0.023792
+  },
+  "r7d": {
+   "short+": 0.204057,
+   "short-": 1.893263,
+   "long+": 1.395698,
+   "long-": 10.175218
+  },
+  "p_r7d": {
+   "short+": 0.588947,
+   "short-": 0.893292,
+   "long+": 0.786598,
+   "long-": 0.105435
+  },
+  "rng7d": {
+   "short+": 0.441157,
+   "short-": 0.693599,
+   "long+": 0.983059,
+   "long-": 0.923847
+  },
+  "p_rng7d": {
+   "short+": 0.325804,
+   "short-": 0.037403,
+   "long+": 0.000825,
+   "long-": 0.011325
+  },
+  "top30": {
+   "short+": 0.381579,
+   "short-": 0.484848,
+   "long+": 1.0,
+   "long-": 1.0
+  },
+  "bottom30": {
+   "short+": 0.434211,
+   "short-": 0.121212,
+   "long+": 0.0,
+   "long-": 0.0
+  }
+ },
+ "context_BTC": {
+  "r24h": {
+   "short+": -0.027,
+   "short-": 1.188,
+   "long+": 1.725,
+   "long-": 7.389,
+   "base": 0.115
+  },
+  "r72h": {
+   "short+": -0.51,
+   "short-": 1.898,
+   "long+": 2.21,
+   "long-": 16.164,
+   "base": 0.107
+  },
+  "r7d": {
+   "short+": 0.054,
+   "short-": 3.532,
+   "long+": 0.391,
+   "long-": 17.262,
+   "base": 0.984
+  },
+  "rng7d": {
+   "short+": 0.396,
+   "short-": 0.883,
+   "long+": 0.92,
+   "long-": 0.944,
+   "base": 0.531
+  },
+  "f24h": {
+   "short+": 0.19,
+   "short-": 0.379,
+   "long+": 0.316,
+   "long-": 4.572,
+   "base": 0.115
+  },
+  "f7d": {
+   "short+": 1.652,
+   "short-": 2.697,
+   "long+": 22.537,
+   "long-": 7.236,
+   "base": 0.843
+  }
+ },
+ "averaging_BTC": {
+  "adds": 203,
+  "adds_underwater_share": 0.4729064039408867,
+  "adds_underwater_share_by_size": 0.5392504452046928,
+  "adds_median_dist_from_avg_pct": -0.15490621385489955,
+  "reductions": 176,
+  "reduction_win_rate": 0.24431818181818182,
+  "avg_win": 6902.17988616279,
+  "avg_loss": -3559.002364210526,
+  "realized": -176553.579335
+ },
+ "sessions_xyz:SP500": {
+  "sess\u00f5es": {
+   "short+": 4.0,
+   "long+": 5.0,
+   "long-": 10.0
+  },
+  "r24h": {
+   "short+": 0.054884,
+   "long+": -0.063091,
+   "long-": -0.041186
+  },
+  "p_r24h": {
+   "short+": 0.739503,
+   "long+": 0.693782,
+   "long-": 0.67911
+  },
+  "r72h": {
+   "short+": 0.236509,
+   "long+": 1.375374,
+   "long-": 0.981004
+  },
+  "p_r72h": {
+   "short+": 0.254734,
+   "long+": 0.044048,
+   "long-": 0.000805
+  },
+  "r7d": {
+   "short+": 0.280216,
+   "long+": 2.309365,
+   "long-": 3.173793
+  },
+  "p_r7d": {
+   "short+": 0.610996,
+   "long+": 0.046939,
+   "long-": 9e-06
+  },
+  "rng7d": {
+   "short+": 0.89184,
+   "long+": 0.950311,
+   "long-": 0.872808
+  },
+  "p_rng7d": {
+   "short+": 0.051157,
+   "long+": 0.015624,
+   "long-": 0.001012
+  },
+  "top30": {
+   "short+": 0.75,
+   "long+": 0.8,
+   "long-": 0.9
+  },
+  "bottom30": {
+   "short+": 0.0,
+   "long+": 0.0,
+   "long-": 0.0
+  }
+ },
+ "context_xyz:SP500": {
+  "r24h": {
+   "short+": -0.053,
+   "short-": -0.408,
+   "long+": -0.104,
+   "long-": -0.255,
+   "base": -0.009
+  },
+  "r72h": {
+   "short+": 0.243,
+   "short-": 0.359,
+   "long+": 0.536,
+   "long-": 0.981,
+   "base": 0.009
+  },
+  "r7d": {
+   "short+": -0.827,
+   "short-": -0.656,
+   "long+": 1.841,
+   "long-": 3.174,
+   "base": 0.084
+  },
+  "rng7d": {
+   "short+": 0.551,
+   "short-": 0.531,
+   "long+": 0.952,
+   "long-": 0.775,
+   "base": 0.602
+  },
+  "f24h": {
+   "short+": 0.175,
+   "short-": 0.057,
+   "long+": -0.019,
+   "long-": 0.576,
+   "base": -0.001
+  },
+  "f7d": {
+   "short+": 0.391,
+   "short-": 0.302,
+   "long+": -0.942,
+   "long-": 0.224,
+   "base": 0.104
+  }
+ },
+ "averaging_xyz:SP500": {
+  "adds": 45,
+  "adds_underwater_share": 0.5555555555555556,
+  "adds_underwater_share_by_size": 0.5916119079241169,
+  "adds_median_dist_from_avg_pct": 0.005128665393050458,
+  "reductions": 66,
+  "reduction_win_rate": 0.7424242424242424,
+  "avg_win": 5279.8755079183675,
+  "avg_loss": -3290.8344,
+  "realized": 202769.71508800003
+ },
+ "episodes_all": {
+  "n": 22,
+  "win_rate": 0.6,
+  "realized": -24950.03769799996,
+  "funding": 150615.188167,
+  "median_adverse_pct": 0.35144263779748885
+ },
+ "flow_behaviour": {
+  "deposits_usd": 53675441.660000004,
+  "withdrawals_usd": -60796475.25554,
+  "deposit_days": 138,
+  "withdraw_days": 125,
+  "deposit_after_loss_share": 0.5289855072463768,
+  "withdraw_after_gain_share": 0.68,
+  "all_days_after_loss_share": 0.43137254901960786,
+  "median_prev_pnl_deposit": -982.984551,
+  "median_prev_pnl_withdraw": 65726.1724771264,
+  "corr_flow_prev_pnl": -0.2026668337530103,
+  "corr_flow_exposure_change": 0.40195548695992883
+ },
+ "copy_lag": {
+  "BTC": {
+   "0": -147585.4448599998,
+   "1": -141150.73798999976,
+   "4": -102693.03007999973,
+   "12": 44339.96176000009,
+   "24": 59946.26943999989,
+   "72": -1007409.70242,
+   "168": -938023.6801399998
+  },
+  "xyz:SP500": {
+   "0": -21505.547500000364,
+   "1": -18635.652199999815,
+   "4": -25934.52990000055,
+   "12": 4729.4404999998005,
+   "24": 64083.82539999965,
+   "72": -21318.620199999757,
+   "168": 19078.92500000017
+  }
+ },
+ "replication": {
+  "train": [
+   "2025-05-23",
+   "2026-02-01"
+  ],
+  "test": [
+   "2026-02-02",
+   "2026-10-13"
+  ],
+  "best_params": {
+   "ma": 50.0,
+   "rng": 7.0,
+   "bull_frac": 1.0,
+   "fade": 0.0
+  },
+  "rule_test_pnl": -428953.0324310815,
+  "rule_test_corr": -5.428050016982348e-16,
+  "actual_test_pnl": 1102020.1693606456,
+  "clone_r2_train": 0.26904600003588097,
+  "clone_r2_test": -0.4770247378111121
+ }
+}
