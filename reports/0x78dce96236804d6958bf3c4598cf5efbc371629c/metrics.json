@@ -1,0 +1,174 @@
+{
+ "user": "0x78dce96236804d6958bf3c4598cf5efbc371629c",
+ "generated_at": "2026-10-14T12:16:42.194185+00:00",
+ "main_coins": [
+  "BTC"
+ ],
+ "account_value": 28042.659491,
+ "pnl_all_time": 251507.107207,
+ "pnl_perp_all_time": 251507.107207,
+ "volume_all_time": 4756697863.97,
+ "first_activity": "2025-07-30",
+ "n_fills": 11923,
+ "fills_from": "2026-10-08 14:21:17.029000",
+ "n_orders": 5742,
+ "funding_net": 13384.209388,
+ "fees_fills_period": -1904.5728669999999,
+ "fills_cover_full_history": false,
+ "position_gaps": 0,
+ "decomp_BTC": {
+  "carry": -19241.93954,
+  "intraday": -2725.03097,
+  "total": -21966.97051,
+  "mean_pos": -9.543358571428572,
+  "total_move": 2049.0,
+  "bias": -19554.341712857142,
+  "timing": 312.4021728571464
+ },
+ "leverage_median": 2.2006825587228613,
+ "order_types": {
+  "Limit/Alo": 1989
+ },
+ "taker_share_ntl": 0.0,
+ "sessions_BTC": {
+  "sess\u00f5es": {
+   "short+": 4.0,
+   "short-": 7.0
+  },
+  "r24h": {
+   "short+": 0.375665,
+   "short-": 0.316521
+  },
+  "p_r24h": {
+   "short+": 0.521278,
+   "short-": 0.974951
+  },
+  "r72h": {
+   "short+": 0.339695,
+   "short-": 0.4308
+  },
+  "p_r72h": {
+   "short+": 0.71463,
+   "short-": 0.939216
+  },
+  "r7d": {
+   "short+": -2.460465,
+   "short-": -2.261271
+  },
+  "p_r7d": {
+   "short+": 0.569053,
+   "short-": 0.08912
+  },
+  "rng7d": {
+   "short+": 0.392416,
+   "short-": 0.384798
+  },
+  "p_rng7d": {
+   "short+": 0.644401,
+   "short-": 0.743323
+  },
+  "top30": {
+   "short+": 0.0,
+   "short-": 0.142857
+  },
+  "bottom30": {
+   "short+": 0.0,
+   "short-": 0.285714
+  }
+ },
+ "context_BTC": {
+  "r24h": {
+   "short+": -0.314,
+   "short-": -0.212,
+   "base": 0.325
+  },
+  "r72h": {
+   "short+": -0.57,
+   "short-": -0.295,
+   "base": -0.031
+  },
+  "r7d": {
+   "short+": -3.297,
+   "short-": -3.146,
+   "base": -2.558
+  },
+  "rng7d": {
+   "short+": 0.344,
+   "short-": 0.361,
+   "base": 0.385
+  },
+  "f24h": {
+   "short+": 0.388,
+   "short-": 0.388,
+   "base": 0.403
+  },
+  "f7d": {
+   "short+": NaN,
+   "short-": NaN,
+   "base": NaN
+  }
+ },
+ "averaging_BTC": {
+  "adds": 3352,
+  "adds_underwater_share": 0.48687350835322196,
+  "adds_underwater_share_by_size": 0.5402014476238133,
+  "adds_median_dist_from_avg_pct": -0.01581203481277882,
+  "reductions": 2390,
+  "reduction_win_rate": 0.45523012552301256,
+  "avg_win": 48.849629946691174,
+  "avg_loss": -49.00242705453149,
+  "realized": -10652.762642999998
+ },
+ "episodes_all": {
+  "n": 1,
+  "win_rate": null,
+  "realized": -10652.762642999998,
+  "funding": 879.175322,
+  "median_adverse_pct": 1.8622717537299938
+ },
+ "flow_behaviour": {
+  "deposits_usd": 28000.0,
+  "withdrawals_usd": -18000.0,
+  "deposit_days": 3,
+  "withdraw_days": 1,
+  "deposit_after_loss_share": 0.6666666666666666,
+  "withdraw_after_gain_share": 1.0,
+  "all_days_after_loss_share": 0.47297297297297297,
+  "median_prev_pnl_deposit": -1135.576363250801,
+  "median_prev_pnl_withdraw": 4691.4185629599,
+  "corr_flow_prev_pnl": -0.01745978079728866,
+  "corr_flow_exposure_change": 0.032126050415221694
+ },
+ "copy_lag": {
+  "BTC": {
+   "0": -13148.294629999999,
+   "1": -29263.715370000005,
+   "4": -18665.89957,
+   "12": -20659.875660000005,
+   "24": -17535.537900000003,
+   "72": -2593.7172200000045,
+   "168": 0.0
+  }
+ },
+ "replication": {
+  "train": [
+   "2025-07-28",
+   "2026-03-06"
+  ],
+  "test": [
+   "2026-03-07",
+   "2026-10-13"
+  ],
+  "best_params": {
+   "ma": 50.0,
+   "rng": 7.0,
+   "bull_frac": 1.0,
+   "fade": 0.0
+  },
+  "rule_test_pnl": -81883.9187156132,
+  "rule_test_corr": -1.0528451744853542e-16,
+  "actual_test_pnl": -135709.23397204277,
+  "clone_r2_train": 0.08268209692872319,
+  "clone_r2_test": -0.6509664172957714
+ }
+}
