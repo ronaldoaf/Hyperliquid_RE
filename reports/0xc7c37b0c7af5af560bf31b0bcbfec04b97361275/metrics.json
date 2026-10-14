@@ -1,0 +1,418 @@
+{
+ "user": "0xc7c37b0c7af5af560bf31b0bcbfec04b97361275",
+ "generated_at": "2026-10-14T12:43:35.826252+00:00",
+ "main_coins": [
+  "BTC",
+  "ETH",
+  "xyz:GOLD"
+ ],
+ "account_value": 19576.184932,
+ "pnl_all_time": 22167.114932,
+ "pnl_perp_all_time": 22167.154932,
+ "volume_all_time": 2249020.18,
+ "first_activity": "2026-07-15",
+ "n_fills": 621,
+ "fills_from": "2026-07-15 08:02:30.860000",
+ "n_orders": 243,
+ "funding_net": -186.945784,
+ "fees_fills_period": 1237.374341,
+ "fills_cover_full_history": true,
+ "position_gaps": 0,
+ "max_drawdown_perp": -2477.6444759999963,
+ "decomp_BTC": {
+  "carry": 12578.80846,
+  "intraday": 3600.7454000000002,
+  "total": 16179.55386,
+  "mean_pos": 0.04977288461538469,
+  "total_move": 3780.0,
+  "bias": 188.14150384615414,
+  "timing": 12390.666956153847
+ },
+ "decomp_ETH": {
+  "carry": 7716.206749999998,
+  "intraday": -5046.961509999999,
+  "total": 2669.2452399999984,
+  "mean_pos": 6.2544375,
+  "total_move": 588.0,
+  "bias": 3677.60925,
+  "timing": 4038.5974999999976
+ },
+ "decomp_xyz:GOLD": {
+  "carry": 2206.3959900000127,
+  "intraday": 969.2595800000042,
+  "total": 3175.655570000017,
+  "mean_pos": -1.7926285714285697,
+  "total_move": -431.3000000000002,
+  "bias": 773.1607028571424,
+  "timing": 1433.2352871428702
+ },
+ "leverage_median": 12.820708028475114,
+ "order_types": {
+  "Limit/Gtc": 2,
+  "Market/FrontendMarket": 13,
+  "Stop Market/Gtc": 1,
+  "Take Profit Market/Gtc": 2
+ },
+ "taker_share_ntl": 1.0,
+ "sessions_BTC": {
+  "sess\u00f5es": {
+   "short+": 5.0,
+   "short-": 3.0,
+   "long-": 3.0
+  },
+  "r24h": {
+   "short+": 1.291207,
+   "short-": -0.930908,
+   "long-": 4.055322
+  },
+  "p_r24h": {
+   "short+": 0.101994,
+   "short-": 0.170306,
+   "long-": 0.245942
+  },
+  "r72h": {
+   "short+": 1.680682,
+   "short-": -2.876291,
+   "long-": 2.237882
+  },
+  "p_r72h": {
+   "short+": 0.138984,
+   "short-": 0.201824,
+   "long-": 0.312585
+  },
+  "r7d": {
+   "short+": 10.60816,
+   "short-": 4.808833,
+   "long-": 1.637163
+  },
+  "p_r7d": {
+   "short+": 0.035972,
+   "short-": 0.316519,
+   "long-": 0.700149
+  },
+  "rng7d": {
+   "short+": 0.860499,
+   "short-": 0.5237,
+   "long-": 0.854089
+  },
+  "p_rng7d": {
+   "short+": 0.007208,
+   "short-": 0.79611,
+   "long-": 0.515132
+  },
+  "top30": {
+   "short+": 1.0,
+   "short-": 0.333333,
+   "long-": 0.666667
+  },
+  "bottom30": {
+   "short+": 0.0,
+   "short-": 0.333333,
+   "long-": 0.333333
+  }
+ },
+ "context_BTC": {
+  "r24h": {
+   "short+": -0.393,
+   "short-": -0.393,
+   "long+": -0.931,
+   "long-": -0.931,
+   "base": 0.113
+  },
+  "r72h": {
+   "short+": 0.336,
+   "short-": 0.336,
+   "long+": 2.4,
+   "long-": 2.4,
+   "base": -0.017
+  },
+  "r7d": {
+   "short+": -0.951,
+   "short-": -0.951,
+   "long+": 21.794,
+   "long-": 15.507,
+   "base": 0.729
+  },
+  "rng7d": {
+   "short+": 0.776,
+   "short-": 0.776,
+   "long+": 0.858,
+   "long-": 0.858,
+   "base": 0.499
+  },
+  "f24h": {
+   "short+": -2.549,
+   "short-": 0.52,
+   "long+": 1.992,
+   "long-": 1.656,
+   "base": 0.074
+  },
+  "f7d": {
+   "short+": -2.771,
+   "short-": -2.771,
+   "long+": -2.165,
+   "long-": -2.165,
+   "base": 0.337
+  }
+ },
+ "averaging_BTC": {
+  "adds": 72,
+  "adds_underwater_share": 0.3055555555555556,
+  "adds_underwater_share_by_size": 0.44887423850829583,
+  "adds_median_dist_from_avg_pct": -0.00871012564688245,
+  "reductions": 44,
+  "reduction_win_rate": 0.2727272727272727,
+  "avg_win": 1194.0590679999998,
+  "avg_loss": -38.98762096875,
+  "realized": 13081.104945
+ },
+ "sessions_ETH": {
+  "sess\u00f5es": {
+   "long+": 3.0
+  },
+  "r24h": {
+   "long+": 2.143094
+  },
+  "p_r24h": {
+   "long+": 0.288368
+  },
+  "r72h": {
+   "long+": 2.436084
+  },
+  "p_r72h": {
+   "long+": 0.233061
+  },
+  "r7d": {
+   "long+": 5.629032
+  },
+  "p_r7d": {
+   "long+": 0.41817
+  },
+  "rng7d": {
+   "long+": 0.900504
+  },
+  "p_rng7d": {
+   "long+": 0.139585
+  },
+  "top30": {
+   "long+": 0.666667
+  },
+  "bottom30": {
+   "long+": 0.0
+  }
+ },
+ "context_ETH": {
+  "r24h": {
+   "long+": -1.157,
+   "long-": -1.157,
+   "base": 0.182
+  },
+  "r72h": {
+   "long+": -0.024,
+   "long-": -0.024,
+   "base": 0.368
+  },
+  "r7d": {
+   "long+": -4.347,
+   "long-": -4.347,
+   "base": 0.562
+  },
+  "rng7d": {
+   "long+": 0.442,
+   "long-": 0.442,
+   "base": 0.511
+  },
+  "f24h": {
+   "long+": -1.875,
+   "long-": 3.547,
+   "base": 0.175
+  },
+  "f7d": {
+   "long+": -3.524,
+   "long-": -2.889,
+   "base": 0.706
+  }
+ },
+ "averaging_ETH": {
+  "adds": 33,
+  "adds_underwater_share": 0.6363636363636364,
+  "adds_underwater_share_by_size": 0.6363649834593487,
+  "adds_median_dist_from_avg_pct": 0.009855798472180322,
+  "reductions": 30,
+  "reduction_win_rate": 0.03333333333333333,
+  "avg_win": 5858.0,
+  "avg_loss": -21.777775862068967,
+  "realized": 5226.4445
+ },
+ "sessions_xyz:GOLD": {
+  "sess\u00f5es": {
+   "short+": 3.0,
+   "short-": 3.0
+  },
+  "r24h": {
+   "short+": 1.594448,
+   "short-": -0.02288
+  },
+  "p_r24h": {
+   "short+": 0.119948,
+   "short-": 0.917792
+  },
+  "r72h": {
+   "short+": -0.349319,
+   "short-": -0.253384
+  },
+  "p_r72h": {
+   "short+": 0.573127,
+   "short-": 0.804878
+  },
+  "r7d": {
+   "short+": -1.563068,
+   "short-": -2.164398
+  },
+  "p_r7d": {
+   "short+": 0.889649,
+   "short-": 0.568528
+  },
+  "rng7d": {
+   "short+": 0.409146,
+   "short-": 0.558712
+  },
+  "p_rng7d": {
+   "short+": 0.362633,
+   "short-": 0.843724
+  },
+  "top30": {
+   "short+": 0.333333,
+   "short-": 0.333333
+  },
+  "bottom30": {
+   "short+": 0.0,
+   "short-": 0.333333
+  }
+ },
+ "context_xyz:GOLD": {
+  "r24h": {
+   "short+": -0.345,
+   "short-": -0.345,
+   "long+": 0.768,
+   "long-": -0.166,
+   "base": -0.085
+  },
+  "r72h": {
+   "short+": 0.358,
+   "short-": 0.358,
+   "long+": 0.1,
+   "long-": 0.309,
+   "base": -0.533
+  },
+  "r7d": {
+   "short+": 5.938,
+   "short-": 5.938,
+   "long+": -0.355,
+   "long-": 0.092,
+   "base": -1.395
+  },
+  "rng7d": {
+   "short+": 0.799,
+   "short-": 0.799,
+   "long+": 0.328,
+   "long-": 0.323,
+   "base": 0.35
+  },
+  "f24h": {
+   "short+": -0.978,
+   "short-": -0.978,
+   "long+": 1.406,
+   "long-": -0.742,
+   "base": -0.085
+  },
+  "f7d": {
+   "short+": -6.775,
+   "short-": -6.775,
+   "long+": 0.857,
+   "long-": 0.857,
+   "base": -1.486
+  }
+ },
+ "averaging_xyz:GOLD": {
+  "adds": 20,
+  "adds_underwater_share": 0.35,
+  "adds_underwater_share_by_size": 0.2781108744889444,
+  "adds_median_dist_from_avg_pct": -0.011118338861476618,
+  "reductions": 30,
+  "reduction_win_rate": 0.06666666666666667,
+  "avg_win": 2261.658904,
+  "avg_loss": -42.239684357142856,
+  "realized": 3340.6066459999997
+ },
+ "episodes_all": {
+  "n": 10,
+  "win_rate": 0.5714285714285714,
+  "realized": 15566.024630999997,
+  "funding": -5.303659999999974,
+  "median_adverse_pct": 1.4490417081939544
+ },
+ "flow_behaviour": {
+  "deposits_usd": 3999.8,
+  "withdrawals_usd": -6588.73,
+  "deposit_days": 1,
+  "withdraw_days": 2,
+  "deposit_after_loss_share": 0.0,
+  "withdraw_after_gain_share": 1.0,
+  "all_days_after_loss_share": 0.31521739130434784,
+  "median_prev_pnl_deposit": NaN,
+  "median_prev_pnl_withdraw": 1557.054039500001,
+  "corr_flow_prev_pnl": -0.08586296875144955,
+  "corr_flow_exposure_change": 0.19346933444347042
+ },
+ "copy_lag": {
+  "BTC": {
+   "0": 15903.27906,
+   "1": 19150.59571,
+   "4": 21238.34933,
+   "12": 11648.41407,
+   "24": 8526.071549999999,
+   "72": 4627.494790000001,
+   "168": -870.3123800000008
+  },
+  "ETH": {
+   "0": 2401.0868499999965,
+   "1": 2267.6986899999824,
+   "4": 1583.4872299999843,
+   "12": 7319.479000000003,
+   "24": 9225.833999999999,
+   "72": 8557.841249999994,
+   "168": 11129.125500000006
+  },
+  "xyz:GOLD": {
+   "0": 2993.2919399999987,
+   "1": 2616.6581100000303,
+   "4": 2254.8111900000013,
+   "12": 2890.570089999998,
+   "24": 3445.396789999997,
+   "72": 2606.2319399999988,
+   "168": -1242.1946999999973
+  }
+ },
+ "replication": {
+  "train": [
+   "2026-07-15",
+   "2026-08-29"
+  ],
+  "test": [
+   "2026-08-30",
+   "2026-10-13"
+  ],
+  "best_params": {
+   "ma": 50.0,
+   "rng": 7.0,
+   "bull_frac": 0.0,
+   "fade": 0.9
+  },
+  "rule_test_pnl": 0.0,
+  "rule_test_corr": NaN,
+  "actual_test_pnl": 13890.871924224193,
+  "clone_r2_train": 0.6177772631817665,
+  "clone_r2_test": -21.30398213424921
+ }
+}
