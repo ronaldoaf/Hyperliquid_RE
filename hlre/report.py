@@ -86,7 +86,7 @@ def build(user: str, data_dir: str = "data", out_dir: str = "reports", coins: li
     rel = lambda p: os.path.relpath(p, out)
 
     fills, fund = w.fills, w.funding
-    perp_fills = fills[fills["kind"] != "spot"] if len(fills) else fills
+    perp_fills = fills[fills["kind"].isin(("perp", "hip3"))] if len(fills) else fills
     ex = executions(fills) if len(fills) else pd.DataFrame()
     pa, pp = w.portfolio("allTime"), w.portfolio("perpAllTime")
     ch = S["clearinghouseState"]
@@ -278,7 +278,7 @@ def build(user: str, data_dir: str = "data", out_dir: str = "reports", coins: li
                "gatilhos (`isTrigger`) seriam stop/take-profit.", ""]
         M["order_types"] = {f"{r.orderType}/{r.tif}": int(r.ordens) for r in ot.itertuples()}
     if len(ex):
-        pe = ex[ex["kind"] != "spot"]
+        pe = ex[ex["kind"].isin(("perp", "hip3"))]
         tk = pe.groupby("coin").apply(lambda g: (g["ntl"] * g["taker"]).sum() / g["ntl"].sum(), include_groups=False)
         vol = pe.groupby("coin")["ntl"].sum()
         exr = pd.DataFrame({"volume": vol.map(usd), "ordens": pe.groupby("coin").size(),

@@ -21,7 +21,7 @@ def run(user: str, data_dir: str = "data", out: str = "reports", top: int = 3, b
     c = InfoClient()
     coins = set(w.funding["coin"].unique()) if len(w.funding) else set()
     if len(w.fills):
-        coins |= set(w.fills.loc[w.fills["kind"] != "spot", "coin"].unique())
+        coins |= set(w.fills.loc[w.fills["kind"].isin(("perp", "hip3")), "coin"].unique())
     print(f"daily candles for {len(coins)} coins", flush=True)
     for coin in sorted(coins):
         try:
@@ -32,7 +32,7 @@ def run(user: str, data_dir: str = "data", out: str = "reports", top: int = 3, b
     print("main coins:", mains, flush=True)
     # 4h candles (one request covers ~800 days) give hourly-ish entry context for every traded coin;
     # the funding-rate history is fetched for coins that carried sizeable positions
-    traded = sorted(set(w.fills.loc[w.fills["kind"] != "spot", "coin"])) if len(w.fills) else []
+    traded = sorted(set(w.fills.loc[w.fills["kind"].isin(("perp", "hip3")), "coin"])) if len(w.fills) else []
     for coin in traded:
         try:
             fetch_candles(c, coin, "4h", data_dir)

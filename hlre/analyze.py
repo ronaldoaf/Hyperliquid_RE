@@ -27,6 +27,8 @@ def _gz(path: str) -> list:
 def market_kind(coin: str) -> str:
     if coin.startswith("@") or "/" in coin:
         return "spot"
+    if coin.startswith("#"):
+        return "outcome"  # HIP-4 outcome market: shares settle at 0 or 1, no candles or funding
     if ":" in coin:
         return "hip3"  # builder-deployed perp dex (e.g. xyz:CL)
     return "perp"
@@ -80,7 +82,7 @@ def position_gaps(fills: pd.DataFrame, min_gap_s: float = 1.0) -> pd.DataFrame:
     the endpoint keeps, or other missing executions). When this is non-empty
     the exact PnL from fills is not exact."""
     rows = []
-    for coin, g in fills[fills["kind"] != "spot"].groupby("coin"):
+    for coin, g in fills[fills["kind"].isin(("perp", "hip3"))].groupby("coin"):
         g = g.sort_values("time", kind="mergesort")
         t = g["time"].values
         cut = np.r_[np.where(np.diff(t) > min_gap_s * 1000)[0], len(g) - 1]
@@ -318,7 +320,7 @@ def approx_price_pnl(expo: pd.DataFrame, opens: pd.DataFrame, closes: pd.DataFra
 def exact_mtm(fills: pd.DataFrame, closes: pd.DataFrame, end=None) -> pd.DataFrame:
     """Exact daily mark-to-market price PnL per coin from fills (UTC closes):
     carry of the start-of-day position plus each fill marked to the close."""
-    f = fills[fills["kind"] != "spot"].copy()
+    f = fills[fills["kind"].isin(("perp", "hip3"))].copy()
     f["day"] = f["t"].dt.floor("D")
     end = pd.Timestamp(end) if end is not None else f["day"].max()
     out = {}
@@ -538,7 +540,7 @@ def rank_coins(w: "Wallet", top: int = 3) -> list[str]:
         fund = w.funding.groupby("coin")["usdc"].sum()
         score = approx.add(fund, fill_value=0.0).abs()
     if len(w.fills):
-        pf = w.fills[w.fills["kind"] != "spot"]
+        pf = w.fills[w.fills["kind"].isin(("perp", "hip3"))]
         if len(pf):
             cl = w.closes(sorted(pf["coin"].unique()))
             mtm = exact_mtm(pf, cl).sum().abs()
@@ -551,7 +553,7 @@ def daily_perp_pnl(w: "Wallet") -> pd.DataFrame:
     """Exact daily perp PnL from fills: price (marked to UTC closes) + funding
     - fees. Only meaningful when the fills cover the whole history (check
     against the portfolio's perp PnL)."""
-    pf = w.fills[w.fills["kind"] != "spot"]
+    pf = w.fills[w.fills["kind"].isin(("perp", "hip3"))]
     if pf.empty:
         return pd.DataFrame(columns=["price", "funding", "fees", "pnl"])
     cl = w.closes(sorted(pf["coin"].unique()))
@@ -574,7 +576,7 @@ def episode_metrics(w: "Wallet", ex: pd.DataFrame, min_ntl: float = 50_000, coin
     marks), how much of the move was captured and what came after the exit."""
     from .market import funding_df, hourly_close
 
-    pe = ex[ex["kind"] != "spot"]
+    pe = ex[ex["kind"].isin(("perp", "hip3"))]
     coins = coins or list(pe["coin"].unique())
     rows = []
     for coin in coins:
