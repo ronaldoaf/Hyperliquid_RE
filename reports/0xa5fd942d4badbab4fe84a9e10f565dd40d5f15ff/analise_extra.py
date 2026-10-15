@@ -291,6 +291,55 @@ def universe_ladder():
     print(pd.DataFrame(out).round(2).to_string())
 
 
+def copy_delay(w: Wallet, F: pd.DataFrame):
+    print("\n======== 9. Copiar cada execução com ~30 min de atraso (mercado, taxa taker)")
+    # O preço "depois" é a abertura do próximo candle, nunca o candle do próprio fill
+    # (que costuma ser o pavio): 1h → atraso de 0–60 min (média 30); 15m a partir de
+    # t + 22,5 min → 22,5–37,5 min. Candles de 1h e 15m: python -m hlre.market <moedas> --intervals 1h 15m
+    ex = executions(F[F["t"] >= FILLS_FROM])
+    ex["taker"] = ex["taker"].astype(float) > 0.5
+    C = {iv: {c: candles_df(c, iv, DATA) for c in ex["coin"].unique()} for iv in ("1h", "15m")}
+
+    def next_open(coin, ts, iv):
+        d = C[iv][coin]
+        i = d.index.searchsorted(ts, side="left")
+        return d["open"].iloc[i] if i < len(d) and d.index[i] - ts < pd.Timedelta("2h") else np.nan
+
+    ex["pend"] = ex["coin"].map({c: C["1h"][c]["close"].iloc[-1] for c in ex["coin"].unique()})
+
+    def sim(s, p):
+        ok = ~np.isnan(p)
+        s, p = s[ok], p[ok]
+        wal = (s["q"] * (s["pend"] - s["vwap"])).sum() - s["fee"].sum()
+        cop = (s["q"] * (s["pend"] - p)).sum() - (0.00045 * s["q"].abs() * p).sum()
+        return pd.Series({"execuções": len(s), "carteira": wal, "cópia": cop,
+                          "preço pior": (s["q"] * (s["vwap"] - p)).sum(),
+                          "taxa extra": s["fee"].sum() - (0.00045 * s["q"].abs() * p).sum(), "fica com": cop / wal})
+
+    for lab, sh in (("~30 min", "0h"), ("4h", "3.5h"), ("24h", "23.5h")):
+        p = np.array([next_open(c, t + pd.Timedelta(sh), "1h") for c, t in zip(ex["coin"], ex["t"])])
+        if lab == "~30 min":
+            ex["p30"] = p
+        print(lab, sim(ex, p).round(2).to_dict())
+    start15 = max(d.index[0] for d in C["15m"].values()) + pd.Timedelta("1h")
+    s = ex[ex["t"] >= start15]
+    p15 = np.array([next_open(c, t + pd.Timedelta("22.5min"), "15m") for c, t in zip(s["coin"], s["t"])])
+    print(f"desde {start15:%Y-%m-%d}:", pd.DataFrame({"15m": sim(s, p15), "1h": sim(s, s["p30"].values)}).round(2).to_string())
+    g = {k: sim(d, d["p30"].values) for k, d in ex.groupby(ex["coin"].map(cat))}
+    g["entrada maker"] = sim(ex[~ex["taker"]], ex.loc[~ex["taker"], "p30"].values)
+    g["entrada taker"] = sim(ex[ex["taker"]], ex.loc[ex["taker"], "p30"].values)
+    print(pd.DataFrame(g).round(2).to_string())
+    print(pd.DataFrame({k: sim(d, d["p30"].values) for k, d in ex.groupby("coin")
+                        if k in ("LIT", "MET", "HYPE", "VIRTUAL", "CASHCAT", "ENA", "XMR", "REZ", "BTC", "ETH")}
+                       ).T[["carteira", "cópia", "fica com"]].round(2).to_string())
+    # espelhar as escadas: quantas execuções maker vieram de ordens com mais de 30 min no livro
+    first = w.orders.groupby("oid")["timestamp"].min()
+    m = ex[~ex["taker"]].join(first, on="oid").dropna(subset=["timestamp"])
+    age = (m["t"] - pd.to_datetime(m["timestamp"], unit="ms")).dt.total_seconds() / 60
+    print(f"execuções maker com hora de criação conhecida: {len(m)} de {(~ex['taker']).sum()}; ordem com ≥30 min no livro: "
+          f"{(age >= 30).mean():.0%} das execuções, {m.loc[age >= 30, 'ntl'].sum() / m['ntl'].sum():.0%} do nocional")
+
+
 def main():
     w = Wallet(USER, DATA)
     capital(w)
@@ -300,6 +349,7 @@ def main():
     entry_context(F)
     open_orders(w)
     funding_cost(w)
+    copy_delay(w, F)
     universe_ladder()
 
 

@@ -176,6 +176,24 @@ Há ainda escadas em moedas sem posição aberta: compra de ZEC (US$ 215–290) 
 
 A posição em LIT e HYPE ainda rende com 24h de atraso. Mas quem copia a posição com ordem a mercado entra no preço médio do dia, e é justamente esse pedaço que a carteira captura: 58% do PnL de preço no período com fills.
 
+**Copiar cada execução com ~30 minutos de atraso.** O copiador repete cada execução da carteira no mesmo tamanho, 30 minutos depois, a mercado e pagando taxa *taker*. Tudo é marcado no mesmo preço final. O preço "depois" é a abertura do próximo candle, nunca o candle do próprio fill (que costuma ser o pavio):
+
+- candle de 1h: atraso de 0 a 60 min (média de 30), de 29/mai a 15/out;
+- candle de 15m: atraso de 22,5 a 37,5 min, só a partir de 16/set.
+
+| atraso | carteira | cópia | fica com |
+|---|---|---|---|
+| ~30 min | +US$ 496 mil | +US$ 400 mil | 81% |
+| 4h | | +US$ 314 mil | 63% |
+| 24h | | +US$ 254 mil | 51% |
+| ~30 min, só 16/set–15/out (15m e 1h) | +US$ 131 mil | +US$ 85 mil / +US$ 83 mil | 65% / 64% |
+
+Os valores cobrem só as operações do período. As posições herdadas em 29/mai e o funding seriam iguais para os dois. O custo dos 30 minutos é de US$ 65 mil em preço pior e US$ 31 mil em taxa, ~9 bp sobre US$ 111M de volume.
+
+- **Onde a cópia perde.** Nas compras em escada (ordens limite), a cópia fica com 79% do resultado. Nas entradas a mercado da carteira, ela se sai melhor (+US$ 38 mil de preço).
+- **Por moeda.** HYPE, MET, ENA e REZ ficam com 95–100%. LIT fica com 54%, CASHCAT com 47%, e em BTC a cópia zera.
+- **Espelhar as escadas funciona melhor que copiar os fills.** Das execuções *maker* com hora de criação conhecida (727 de 2.039), 83% vieram de ordens que estavam no livro havia mais de 30 minutos (60% do nocional). Quem copia as ordens abertas com 30 minutos de atraso pegaria esses fills no mesmo preço e com taxa *maker*. Isso supõe que o preço passe do limite e não só encoste nele, porque quem colocou a ordem antes tem prioridade na fila.
+
 **Replicar o método com regra fixa.** Teste no universo inteiro de perps (232 alts, inclusive deslistadas): limite de compra X% abaixo do fechamento, válida no dia seguinte; venda X% acima do preço de entrada; saída no fechamento em 30 dias se o alvo não for atingido. A comparação é com comprar na abertura de qualquer dia, com as mesmas regras de saída. Taxas *maker* incluídas, IC de 95% por bootstrap de semanas.
 
 | período | queda/alvo | filtro | trades | média | % com lucro | pior 10% | base | diferença (IC95) |
