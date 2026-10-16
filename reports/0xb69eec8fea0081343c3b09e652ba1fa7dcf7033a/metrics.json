@@ -1,0 +1,554 @@
+{
+ "user": "0xb69eec8fea0081343c3b09e652ba1fa7dcf7033a",
+ "generated_at": "2026-10-16T21:09:30.043610+00:00",
+ "main_coins": [
+  "BTC",
+  "NEAR",
+  "xyz:DRAM"
+ ],
+ "account_value": 1498742.552173,
+ "pnl_all_time": 2478764.002173,
+ "pnl_perp_all_time": 2474734.297496,
+ "volume_all_time": 166519019.17,
+ "first_activity": "2026-01-07",
+ "n_fills": 29114,
+ "fills_from": "2026-02-14 15:43:38.013000",
+ "n_orders": 956,
+ "funding_net": -87249.77299200001,
+ "fees_fills_period": 43854.910167,
+ "fills_cover_full_history": false,
+ "position_gaps": 0,
+ "decomp_BTC": {
+  "carry": 457509.54377,
+  "intraday": 7558.555169999992,
+  "total": 465068.09894,
+  "mean_pos": 9.80989201923077,
+  "total_move": 10770.0,
+  "bias": 105652.53704711539,
+  "timing": 351857.0067228848
+ },
+ "decomp_NEAR": {
+  "carry": 82402.1747399999,
+  "intraday": 401418.3885400002,
+  "total": 483820.5632800001,
+  "mean_pos": 202200.40416666665,
+  "total_move": 0.6357999999999997,
+  "bias": 128559.0169691666,
+  "timing": -46156.84222916665
+ },
+ "decomp_xyz:DRAM": {
+  "carry": 216875.28689999966,
+  "intraday": 260721.51630000034,
+  "total": 477596.80319999997,
+  "mean_pos": 575.6278145695377,
+  "total_move": -3.4450000000000003,
+  "bias": -1983.0378211920574,
+  "timing": 218858.32472119178
+ },
+ "leverage_median": 9.665640189541623,
+ "order_types": {
+  "Limit/Gtc": 112,
+  "Market/FrontendMarket": 287,
+  "Market/LiquidationMarket": 30,
+  "Stop Market/Gtc": 1
+ },
+ "taker_share_ntl": 0.704148783802011,
+ "sessions_BTC": {
+  "sess\u00f5es": {
+   "short+": 6.0,
+   "short-": 5.0,
+   "long+": 15.0,
+   "long-": 8.0
+  },
+  "r24h": {
+   "short+": -0.320084,
+   "short-": -1.926812,
+   "long+": 0.294584,
+   "long-": 1.235605
+  },
+  "p_r24h": {
+   "short+": 0.896469,
+   "short-": 0.005548,
+   "long+": 0.581567,
+   "long-": 0.114234
+  },
+  "r72h": {
+   "short+": 0.232615,
+   "short-": -1.785266,
+   "long+": 1.017008,
+   "long-": 2.685207
+  },
+  "p_r72h": {
+   "short+": 0.975501,
+   "short-": 0.066818,
+   "long+": 0.548255,
+   "long-": 0.024245
+  },
+  "r7d": {
+   "short+": 0.01922,
+   "short-": -3.574784,
+   "long+": -0.180178,
+   "long-": -1.112953
+  },
+  "p_r7d": {
+   "short+": 0.962064,
+   "short-": 0.016311,
+   "long+": 0.691277,
+   "long-": 0.264248
+  },
+  "rng7d": {
+   "short+": 0.502476,
+   "short-": 0.060603,
+   "long+": 0.601883,
+   "long-": 0.461257
+  },
+  "p_rng7d": {
+   "short+": 0.962859,
+   "short-": 0.015718,
+   "long+": 0.980054,
+   "long-": 0.996546
+  },
+  "top30": {
+   "short+": 0.333333,
+   "short-": 0.0,
+   "long+": 0.4,
+   "long-": 0.25
+  },
+  "bottom30": {
+   "short+": 0.166667,
+   "short-": 0.6,
+   "long+": 0.333333,
+   "long-": 0.25
+  }
+ },
+ "context_BTC": {
+  "r24h": {
+   "short+": -0.32,
+   "short-": -1.788,
+   "long+": 0.295,
+   "long-": 1.236,
+   "base": 0.106
+  },
+  "r72h": {
+   "short+": 0.233,
+   "short-": -0.724,
+   "long+": 1.51,
+   "long-": 2.685,
+   "base": 0.132
+  },
+  "r7d": {
+   "short+": 0.019,
+   "short-": -2.851,
+   "long+": -0.18,
+   "long-": -1.113,
+   "base": 0.391
+  },
+  "rng7d": {
+   "short+": 0.502,
+   "short-": 0.144,
+   "long+": 0.602,
+   "long-": 0.461,
+   "base": 0.502
+  },
+  "f24h": {
+   "short+": 0.282,
+   "short-": 0.141,
+   "long+": 1.188,
+   "long-": -1.64,
+   "base": 0.102
+  },
+  "f7d": {
+   "short+": -1.247,
+   "short-": -1.858,
+   "long+": 1.058,
+   "long-": -1.105,
+   "base": 0.52
+  }
+ },
+ "averaging_BTC": {
+  "adds": 23,
+  "adds_underwater_share": 0.2608695652173913,
+  "adds_underwater_share_by_size": 0.18639977573776262,
+  "adds_median_dist_from_avg_pct": -0.11376144563592927,
+  "reductions": 28,
+  "reduction_win_rate": 0.42857142857142855,
+  "avg_win": 38718.03501283333,
+  "avg_loss": -8503.3071744375,
+  "realized": 328563.50536300003
+ },
+ "sessions_NEAR": {
+  "sess\u00f5es": {
+   "long+": 10.0,
+   "long-": 7.0
+  },
+  "r24h": {
+   "long+": -2.011398,
+   "long-": 8.552577
+  },
+  "p_r24h": {
+   "long+": 0.427998,
+   "long-": 0.075979
+  },
+  "r72h": {
+   "long+": -0.280292,
+   "long-": 16.836803
+  },
+  "p_r72h": {
+   "long+": 0.358681,
+   "long-": 0.005059
+  },
+  "r7d": {
+   "long+": 3.536452,
+   "long-": 17.527499
+  },
+  "p_r7d": {
+   "long+": 0.792675,
+   "long-": 0.07239
+  },
+  "rng7d": {
+   "long+": 0.552693,
+   "long-": 0.928147
+  },
+  "p_rng7d": {
+   "long+": 0.466015,
+   "long-": 0.008699
+  },
+  "top30": {
+   "long+": 0.4,
+   "long-": 0.714286
+  },
+  "bottom30": {
+   "long+": 0.4,
+   "long-": 0.0
+  }
+ },
+ "context_NEAR": {
+  "r24h": {
+   "long+": -5.616,
+   "long-": 8.898,
+   "base": 1.314
+  },
+  "r72h": {
+   "long+": -3.827,
+   "long-": 16.837,
+   "base": 2.159
+  },
+  "r7d": {
+   "long+": 20.4,
+   "long-": 17.527,
+   "base": 8.013
+  },
+  "rng7d": {
+   "long+": 0.599,
+   "long-": 0.986,
+   "base": 0.606
+  },
+  "f24h": {
+   "long+": 1.292,
+   "long-": -9.239,
+   "base": 2.351
+  },
+  "f7d": {
+   "long+": 2.382,
+   "long-": -10.511,
+   "base": 1.355
+  }
+ },
+ "averaging_NEAR": {
+  "adds": 26,
+  "adds_underwater_share": 0.4230769230769231,
+  "adds_underwater_share_by_size": 0.4792029472229865,
+  "adds_median_dist_from_avg_pct": -0.05579414565785035,
+  "reductions": 32,
+  "reduction_win_rate": 0.78125,
+  "avg_win": 19767.7124404,
+  "avg_loss": -2519.9312694285713,
+  "realized": 476553.292124
+ },
+ "sessions_xyz:DRAM": {
+  "sess\u00f5es": {
+   "short+": 3.0,
+   "short-": 3.0,
+   "long+": 10.0,
+   "long-": 12.0
+  },
+  "r24h": {
+   "short+": 0.708553,
+   "short-": -6.727395,
+   "long+": 0.933565,
+   "long-": 6.431726
+  },
+  "p_r24h": {
+   "short+": 0.723256,
+   "short-": 0.042837,
+   "long+": 0.587874,
+   "long-": 0.026774
+  },
+  "r72h": {
+   "short+": 5.609586,
+   "short-": -6.478005,
+   "long+": -5.448312,
+   "long-": 6.991756
+  },
+  "p_r72h": {
+   "short+": 0.289728,
+   "short-": 0.106664,
+   "long+": 0.013946,
+   "long-": 0.051475
+  },
+  "r7d": {
+   "short+": 13.398545,
+   "short-": 2.499386,
+   "long+": -6.861149,
+   "long-": -2.398461
+  },
+  "p_r7d": {
+   "short+": 0.08094,
+   "short-": 0.632744,
+   "long+": 0.030221,
+   "long-": 0.933721
+  },
+  "rng7d": {
+   "short+": 0.903782,
+   "short-": 0.177219,
+   "long+": 0.298096,
+   "long-": 0.728714
+  },
+  "p_rng7d": {
+   "short+": 0.130875,
+   "short-": 0.047346,
+   "long+": 0.002336,
+   "long-": 0.637389
+  },
+  "top30": {
+   "short+": 1.0,
+   "short-": 0.0,
+   "long+": 0.0,
+   "long-": 0.583333
+  },
+  "bottom30": {
+   "short+": 0.0,
+   "short-": 1.0,
+   "long+": 0.6,
+   "long-": 0.25
+  }
+ },
+ "context_xyz:DRAM": {
+  "r24h": {
+   "short+": 0.709,
+   "short-": -6.727,
+   "long+": 0.36,
+   "long-": 5.676,
+   "base": 0.612
+  },
+  "r72h": {
+   "short+": 6.295,
+   "short-": -6.478,
+   "long+": -8.384,
+   "long-": 8.247,
+   "base": 1.48
+  },
+  "r7d": {
+   "short+": 13.399,
+   "short-": 2.499,
+   "long+": -8.056,
+   "long-": -0.313,
+   "base": 0.314
+  },
+  "rng7d": {
+   "short+": 0.937,
+   "short-": 0.177,
+   "long+": 0.088,
+   "long-": 0.787,
+   "base": 0.547
+  },
+  "f24h": {
+   "short+": 3.552,
+   "short-": 5.183,
+   "long+": 3.946,
+   "long-": -0.965,
+   "base": 0.629
+  },
+  "f7d": {
+   "short+": 0.107,
+   "short-": 4.151,
+   "long+": 12.562,
+   "long-": -2.081,
+   "base": 0.102
+  }
+ },
+ "averaging_xyz:DRAM": {
+  "adds": 57,
+  "adds_underwater_share": 0.10526315789473684,
+  "adds_underwater_share_by_size": 0.13604100683922726,
+  "adds_median_dist_from_avg_pct": -0.1355055851277931,
+  "reductions": 40,
+  "reduction_win_rate": 0.85,
+  "avg_win": 14867.562328999998,
+  "avg_loss": -4649.988177833333,
+  "realized": 477597.190119
+ },
+ "episodes_all": {
+  "n": 124,
+  "win_rate": 0.5882352941176471,
+  "realized": 2620032.839399,
+  "funding": -85334.43255499999,
+  "median_adverse_pct": 2.231325054427813
+ },
+ "flow_behaviour": {
+  "deposits_usd": 2724185.71805,
+  "withdrawals_usd": -3704194.1590710003,
+  "deposit_days": 18,
+  "withdraw_days": 17,
+  "deposit_after_loss_share": 0.5,
+  "withdraw_after_gain_share": 1.0,
+  "all_days_after_loss_share": 0.3821138211382114,
+  "median_prev_pnl_deposit": -1340.9602478750508,
+  "median_prev_pnl_withdraw": 122786.64509474975,
+  "corr_flow_prev_pnl": -0.18512283282842174,
+  "corr_flow_exposure_change": 0.22208050833385906
+ },
+ "copyability": {
+  "copyable": true,
+  "reasons": [],
+  "notes": [],
+  "min_executions": 20,
+  "max_fast_share": 0.5,
+  "fast_minutes": 30.0,
+  "bot_orders_per_day": 300,
+  "bot_maker_share": 0.8,
+  "executions": 956,
+  "active_days": 132,
+  "executions_per_active_day": 7.242424242424242,
+  "maker_share_ntl": 0.29585121619798904,
+  "closed_ntl": 78970995.34707,
+  "median_hold_hours": 61.926744444444445,
+  "fast_share": 0.011926412599584189,
+  "spot_share_ntl": 0.0,
+  "from": "2026-02-14 15:43:38.013000",
+  "to": "2026-10-15 15:12:00.867000"
+ },
+ "copy_sim": {
+  "window_start": null,
+  "period": [
+   "2026-02-27 07:57:33.045000",
+   "2026-10-15 15:12:00.867000"
+  ],
+  "coverage": {
+   "copied": 0.9490574372566992,
+   "inherited": 0.0,
+   "unpriced": 0.05094256274330088,
+   "synthetic": 0.0
+  },
+  "taker_fee": 0.00045,
+  "wallet_max_drawdown": -532737.0954410024,
+  "summary": {
+   "30 min": {
+    "fills": 27293.0,
+    "synthetic": 0.0,
+    "mean_delay_min": 30.73681774508726,
+    "wallet": 2295107.6732,
+    "copy": 2391001.4578189654,
+    "kept": 1.0417818238938061,
+    "price_cost": -123785.55547200014,
+    "fee_cost": 27891.77085303454,
+    "cost_bps": -6.067834997395466,
+    "cost_bps_lo": -17.90836028911805,
+    "cost_bps_hi": 5.772690294327117,
+    "max_drawdown": -545448.800346612
+   },
+   "1h": {
+    "fills": 27293.0,
+    "synthetic": 0.0,
+    "mean_delay_min": 57.88114046519864,
+    "wallet": 2295107.6732,
+    "copy": 2389035.255053884,
+    "kept": 1.04092513085581,
+    "price_cost": -121842.10805200036,
+    "fee_cost": 27914.52619811584,
+    "cost_bps": -5.9434203234169205,
+    "cost_bps_lo": -20.65761858014712,
+    "cost_bps_hi": 8.77077793331328,
+    "max_drawdown": -548423.0548638524
+   },
+   "2h": {
+    "fills": 27293.0,
+    "synthetic": 0.0,
+    "mean_delay_min": 117.88114046519867,
+    "wallet": 2295107.6732,
+    "copy": 2086511.5521715982,
+    "kept": 0.9091127081033359,
+    "price_cost": 180682.9237139998,
+    "fee_cost": 27913.197314401856,
+    "cost_bps": 13.199258414155329,
+    "cost_bps_lo": -6.828299191195957,
+    "cost_bps_hi": 33.226816019506614,
+    "max_drawdown": -560940.1636345256
+   },
+   "4h": {
+    "fills": 27293.0,
+    "synthetic": 0.0,
+    "mean_delay_min": 237.88114046519865,
+    "wallet": 2295107.6732,
+    "copy": 2104946.967008819,
+    "kept": 0.9171451917434245,
+    "price_cost": 162196.40020000056,
+    "fee_cost": 27964.305991180547,
+    "cost_bps": 12.032727592733693,
+    "cost_bps_lo": -14.06403896033186,
+    "cost_bps_hi": 38.12949414579924,
+    "max_drawdown": -575827.0284078252
+   }
+  }
+ },
+ "copy_lag": {
+  "BTC": {
+   "0": 499700.8936200002,
+   "1": 468337.30711000017,
+   "4": 455751.22846000025,
+   "12": 444965.2820300002,
+   "24": 309023.6058500001,
+   "72": 404895.1140300003,
+   "168": 251202.2107700003
+  },
+  "NEAR": {
+   "0": 491785.2309700001,
+   "1": 422889.41846000013,
+   "4": 377650.36793000007,
+   "12": 240054.31047000017,
+   "24": 26115.47520000022,
+   "72": -18072.940780000063,
+   "168": -259982.6289599999
+  },
+  "xyz:DRAM": {
+   "0": 496877.0741999999,
+   "1": 438003.53259999986,
+   "4": 461984.2728,
+   "12": 297976.5636,
+   "24": 163571.95530000015,
+   "72": 99864.05210000015,
+   "168": 6220.680800000031
+  }
+ },
+ "replication": {
+  "train": [
+   "2026-02-14",
+   "2026-06-15"
+  ],
+  "test": [
+   "2026-06-16",
+   "2026-10-15"
+  ],
+  "best_params": {
+   "ma": 200.0,
+   "rng": 90.0,
+   "bull_frac": 0.0,
+   "fade": 0.9
+  },
+  "rule_test_pnl": -53522.03978813477,
+  "rule_test_corr": 0.7255454558888927,
+  "actual_test_pnl": 136087.98672086452,
+  "clone_r2_train": 0.4268524965871616,
+  "clone_r2_test": -1.313343699607291
+ }
+}
