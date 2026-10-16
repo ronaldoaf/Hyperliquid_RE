@@ -1,0 +1,394 @@
+{
+ "user": "0x63d417a577b50c96f4f09148d4e4d70950db0522",
+ "generated_at": "2026-10-16T09:50:02.091031+00:00",
+ "main_coins": [
+  "MERL",
+  "MET",
+  "ETH"
+ ],
+ "account_value": 3050808.428665,
+ "pnl_all_time": 3287967.298665,
+ "pnl_perp_all_time": 3101070.878478,
+ "volume_all_time": 365071674.77,
+ "first_activity": "2023-08-23",
+ "n_fills": 26407,
+ "fills_from": "2026-07-08 09:00:04.116000",
+ "n_orders": 2563,
+ "funding_net": -196895.792189,
+ "fees_fills_period": 12030.67060712,
+ "fills_cover_full_history": false,
+ "position_gaps": 3,
+ "decomp_MERL": {
+  "carry": 3649.4092019999985,
+  "intraday": -1716.3753749999958,
+  "total": 1933.0338270000027,
+  "mean_pos": -77438.16,
+  "total_move": -0.0029169999999999995,
+  "bias": 225.88711271999998,
+  "timing": 3423.5220892799985
+ },
+ "decomp_ETH": {
+  "carry": 51798.21201000012,
+  "intraday": 26421.78212999975,
+  "total": 78219.99413999986,
+  "mean_pos": 88.93042708333326,
+  "total_move": 675.1000000000001,
+  "bias": 60036.93132395829,
+  "timing": -8238.719313958158
+ },
+ "leverage_median": 1.8166403729209206,
+ "order_types": {
+  "Limit/Alo": 73,
+  "Limit/Gtc": 178,
+  "Market/FrontendMarket": 2,
+  "Market/LiquidationMarket": 14,
+  "Stop Market/Gtc": 3,
+  "Take Profit Limit/Gtc": 3,
+  "Take Profit Market/Gtc": 11
+ },
+ "taker_share_ntl": 0.2261775866244511,
+ "sessions_MERL": {
+  "sess\u00f5es": {
+   "short+": 3.0,
+   "short-": 5.0
+  },
+  "r24h": {
+   "short+": 11.451572,
+   "short-": 11.436426
+  },
+  "p_r24h": {
+   "short+": 0.011962,
+   "short-": 0.001474
+  },
+  "r72h": {
+   "short+": 30.299027,
+   "short-": 25.15148
+  },
+  "p_r72h": {
+   "short+": 0.006805,
+   "short-": 0.000493
+  },
+  "r7d": {
+   "short+": 39.255102,
+   "short-": 44.027017
+  },
+  "p_r7d": {
+   "short+": 0.010034,
+   "short-": 0.000311
+  },
+  "rng7d": {
+   "short+": 1.0,
+   "short-": 0.97666
+  },
+  "p_rng7d": {
+   "short+": 0.005567,
+   "short-": 0.000772
+  },
+  "top30": {
+   "short+": 1.0,
+   "short-": 1.0
+  },
+  "bottom30": {
+   "short+": 0.0,
+   "short-": 0.0
+  }
+ },
+ "context_MERL": {
+  "r24h": {
+   "short+": 10.983,
+   "short-": 11.436,
+   "base": 0.798
+  },
+  "r72h": {
+   "short+": 30.299,
+   "short-": 24.377,
+   "base": 2.49
+  },
+  "r7d": {
+   "short+": 44.199,
+   "short-": 39.368,
+   "base": 16.605
+  },
+  "rng7d": {
+   "short+": 0.986,
+   "short-": 0.977,
+   "base": 0.592
+  },
+  "f24h": {
+   "short+": -9.548,
+   "short-": -8.755,
+   "base": -0.487
+  },
+  "f7d": {
+   "short+": -9.431,
+   "short-": -4.755,
+   "base": 2.995
+  }
+ },
+ "averaging_MERL": {
+  "adds": 10,
+  "adds_underwater_share": 1.0,
+  "adds_underwater_share_by_size": 1.0,
+  "adds_median_dist_from_avg_pct": 3.112475651658131,
+  "reductions": 9,
+  "reduction_win_rate": 0.7777777777777778,
+  "avg_win": 309.5097147142857,
+  "avg_loss": -117.5520315,
+  "realized": 1931.46394
+ },
+ "sessions_ETH": {
+  "sess\u00f5es": {
+   "long+": 33.0,
+   "long-": 15.0
+  },
+  "r24h": {
+   "long+": -1.582703,
+   "long-": 0.538386
+  },
+  "p_r24h": {
+   "long+": 0.015123,
+   "long-": 0.193144
+  },
+  "r72h": {
+   "long+": 3.629236,
+   "long-": 0.110777
+  },
+  "p_r72h": {
+   "long+": 0.002363,
+   "long-": 0.275244
+  },
+  "r7d": {
+   "long+": 2.700324,
+   "long-": 0.982649
+  },
+  "p_r7d": {
+   "long+": 0.000792,
+   "long-": 0.569926
+  },
+  "rng7d": {
+   "long+": 0.665274,
+   "long-": 0.666288
+  },
+  "p_rng7d": {
+   "long+": 0.068372,
+   "long-": 0.053485
+  },
+  "top30": {
+   "long+": 0.484848,
+   "long-": 0.466667
+  },
+  "bottom30": {
+   "long+": 0.121212,
+   "long-": 0.066667
+  }
+ },
+ "context_ETH": {
+  "r24h": {
+   "short+": -1.744,
+   "short-": -0.497,
+   "long+": -0.731,
+   "long-": 0.538,
+   "base": 0.193
+  },
+  "r72h": {
+   "short+": -2.369,
+   "short-": 0.108,
+   "long+": 3.629,
+   "long-": -0.005,
+   "base": 0.368
+  },
+  "r7d": {
+   "short+": 8.457,
+   "short-": 0.797,
+   "long+": 2.899,
+   "long-": 1.825,
+   "base": 0.843
+  },
+  "rng7d": {
+   "short+": 0.659,
+   "short-": 0.622,
+   "long+": 0.692,
+   "long-": 0.666,
+   "base": 0.532
+  },
+  "f24h": {
+   "short+": 0.929,
+   "short-": -0.084,
+   "long+": -1.297,
+   "long-": 0.11,
+   "base": 0.201
+  },
+  "f7d": {
+   "short+": 1.086,
+   "short-": -2.596,
+   "long+": 0.54,
+   "long-": 0.727,
+   "base": 0.657
+  }
+ },
+ "averaging_ETH": {
+  "adds": 103,
+  "adds_underwater_share": 0.970873786407767,
+  "adds_underwater_share_by_size": 0.8823142815723184,
+  "adds_median_dist_from_avg_pct": 1.0760113460899667,
+  "reductions": 28,
+  "reduction_win_rate": 0.6785714285714286,
+  "avg_win": 4753.8888822105255,
+  "avg_loss": -4060.9275182222223,
+  "realized": 53775.541098
+ },
+ "episodes_all": {
+  "n": 125,
+  "win_rate": 0.6981132075471698,
+  "realized": 936795.0667750001,
+  "funding": -76615.99214999999,
+  "median_adverse_pct": 4.4512905103823
+ },
+ "flow_behaviour": {
+  "deposits_usd": 183801.76747099997,
+  "withdrawals_usd": -517436.9445,
+  "deposit_days": 9,
+  "withdraw_days": 11,
+  "deposit_after_loss_share": 0.4444444444444444,
+  "withdraw_after_gain_share": 0.8181818181818182,
+  "all_days_after_loss_share": 0.46868884540117417,
+  "median_prev_pnl_deposit": -13.306528499999903,
+  "median_prev_pnl_withdraw": 26510.552917751047,
+  "corr_flow_prev_pnl": -0.04895322917219104,
+  "corr_flow_exposure_change": -0.023549596905873445
+ },
+ "copyability": {
+  "copyable": true,
+  "reasons": [],
+  "notes": [],
+  "min_executions": 20,
+  "max_fast_share": 0.5,
+  "fast_minutes": 30.0,
+  "bot_orders_per_day": 300,
+  "bot_maker_share": 0.8,
+  "executions": 2065,
+  "active_days": 91,
+  "executions_per_active_day": 22.692307692307693,
+  "maker_share_ntl": 0.7738224133755489,
+  "closed_ntl": 33017709.592248,
+  "median_hold_hours": 45.791980555555554,
+  "fast_share": 0.05020834575434074,
+  "spot_share_ntl": 0.00022026393873577957,
+  "from": "2026-07-08 09:00:04.116000",
+  "to": "2026-10-15 02:28:52.593000"
+ },
+ "copy_sim": {
+  "window_start": null,
+  "period": [
+   "2026-07-10 11:09:27.543000",
+   "2026-10-15 02:28:52.593000"
+  ],
+  "coverage": {
+   "copied": 0.9512616784327532,
+   "inherited": 0.048738321567246744,
+   "unpriced": 0.0,
+   "synthetic": 0.0
+  },
+  "taker_fee": 0.00045,
+  "wallet_max_drawdown": -270674.3855600008,
+  "summary": {
+   "30 min": {
+    "fills": 22431.0,
+    "synthetic": 0.0,
+    "mean_delay_min": 30.25806146998945,
+    "wallet": 1021500.0650099528,
+    "copy": 841032.458501814,
+    "kept": 0.8233307929291416,
+    "price_cost": 161327.5234370001,
+    "fee_cost": 19140.083071138644,
+    "cost_bps": 26.72116895021596,
+    "cost_bps_lo": -3.1517555416546976,
+    "cost_bps_hi": 56.594093442086624,
+    "max_drawdown": -279003.64234401984
+   },
+   "1h": {
+    "fills": 22431.0,
+    "synthetic": 0.0,
+    "mean_delay_min": 59.838106942772654,
+    "wallet": 1021500.0650099528,
+    "copy": 856978.6568675379,
+    "kept": 0.8389413630230049,
+    "price_cost": 145386.10898299987,
+    "fee_cost": 19135.29915941475,
+    "cost_bps": 24.360074519537914,
+    "cost_bps_lo": -8.91335584905887,
+    "cost_bps_hi": 57.633504888134695,
+    "max_drawdown": -275280.55152411154
+   },
+   "2h": {
+    "fills": 22431.0,
+    "synthetic": 0.0,
+    "mean_delay_min": 119.83810694277265,
+    "wallet": 1021500.0650099528,
+    "copy": 877997.5904054481,
+    "kept": 0.8595178996850025,
+    "price_cost": 124311.61977699987,
+    "fee_cost": 19190.854827504747,
+    "cost_bps": 21.247879012060338,
+    "cost_bps_lo": -14.19280961940398,
+    "cost_bps_hi": 56.688567643524664,
+    "max_drawdown": -274294.93019133474
+   },
+   "4h": {
+    "fills": 22431.0,
+    "synthetic": 0.0,
+    "mean_delay_min": 239.83810694277267,
+    "wallet": 1021500.0650099528,
+    "copy": 1005766.1376248229,
+    "kept": 0.9845972331044575,
+    "price_cost": -3483.5823440001695,
+    "fee_cost": 19217.5097291301,
+    "cost_bps": 2.3296642541193338,
+    "cost_bps_lo": -37.497806837780736,
+    "cost_bps_hi": 42.1571353460194,
+    "max_drawdown": -261872.04011157155
+   }
+  }
+ },
+ "copy_lag": {
+  "MERL": {
+   "0": 264.63887599999936,
+   "1": -1022.3352259999973,
+   "4": -777.8327519999993,
+   "12": 3181.4837150000003,
+   "24": 1753.2352129999997,
+   "72": -150.76953199999903,
+   "168": -2936.4893490000013
+  },
+  "ETH": {
+   "0": 75360.95266000007,
+   "1": 103548.35240000009,
+   "4": 106215.89444999988,
+   "12": 70585.90787999998,
+   "24": 59640.53215000006,
+   "72": 37049.69693000005,
+   "168": 17606.03074999999
+  }
+ },
+ "replication": {
+  "train": [
+   "2024-01-01",
+   "2025-05-24"
+  ],
+  "test": [
+   "2025-05-25",
+   "2026-10-15"
+  ],
+  "best_params": {
+   "ma": 50.0,
+   "rng": 7.0,
+   "bull_frac": 1.0,
+   "fade": 0.0
+  },
+  "rule_test_pnl": -344148.7804807743,
+  "rule_test_corr": NaN,
+  "actual_test_pnl": 1684706.9142692178,
+  "clone_r2_train": 0.12616617558605492,
+  "clone_r2_test": -0.12641684053668567
+ }
+}

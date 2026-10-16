@@ -1,0 +1,9068 @@
+{
+ "user": "0x63d417a577b50c96f4f09148d4e4d70950db0522",
+ "collected_at": 1792143182607,
+ "userRole": {
+  "role": "user"
+ },
+ "clearinghouseState": {
+  "marginSummary": {
+   "accountValue": "1658384.1409489999",
+   "totalNtlPos": "3546004.88558",
+   "totalRawUsd": "-1280991.209939",
+   "totalMarginUsed": "758845.9261179999"
+  },
+  "crossMarginSummary": {
+   "accountValue": "1493522.6319830001",
+   "totalNtlPos": "3351467.4190159999",
+   "totalRawUsd": "-1251315.2523409999",
+   "totalMarginUsed": "593984.417152"
+  },
+  "crossMaintenanceMarginUsed": "225272.858193",
+  "withdrawable": "52661.822004",
+  "assetPositions": [
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "ETH",
+     "szi": "191.2409",
+     "leverage": {
+      "type": "cross",
+      "value": 9
+     },
+     "entryPx": "2324.0",
+     "positionValue": "469037.43134",
+     "unrealizedPnl": "24593.57974",
+     "returnOnEquity": "0.498020654",
+     "liquidationPx": null,
+     "marginUsed": "52115.270148",
+     "maxLeverage": 25,
+     "cumFunding": {
+      "allTime": "56061.321261",
+      "sinceOpen": "130.175041",
+      "sinceChange": "130.175041"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "AVAX",
+     "szi": "8901.54",
+     "leverage": {
+      "type": "cross",
+      "value": 10
+     },
+     "entryPx": "11.2264",
+     "positionValue": "91445.52042",
+     "unrealizedPnl": "-8487.56145",
+     "returnOnEquity": "-0.8493244971",
+     "liquidationPx": null,
+     "marginUsed": "9144.552042",
+     "maxLeverage": 10,
+     "cumFunding": {
+      "allTime": "698.056377",
+      "sinceOpen": "698.056377",
+      "sinceChange": "698.056377"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "DOGE",
+     "szi": "191376.0",
+     "leverage": {
+      "type": "cross",
+      "value": 10
+     },
+     "entryPx": "0.098281",
+     "positionValue": "15743.929392",
+     "unrealizedPnl": "-3064.790952",
+     "returnOnEquity": "-1.6294521349",
+     "liquidationPx": null,
+     "marginUsed": "1574.392939",
+     "maxLeverage": 10,
+     "cumFunding": {
+      "allTime": "569.134219",
+      "sinceOpen": "569.134219",
+      "sinceChange": "547.552957"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "INJ",
+     "szi": "8907.6",
+     "leverage": {
+      "type": "cross",
+      "value": 5
+     },
+     "entryPx": "7.7959",
+     "positionValue": "81763.75116",
+     "unrealizedPnl": "12320.92706",
+     "returnOnEquity": "0.8871274476",
+     "liquidationPx": null,
+     "marginUsed": "16352.750232",
+     "maxLeverage": 5,
+     "cumFunding": {
+      "allTime": "91.010745",
+      "sinceOpen": "91.010745",
+      "sinceChange": "90.0705"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "SUI",
+     "szi": "-98026.9",
+     "leverage": {
+      "type": "cross",
+      "value": 10
+     },
+     "entryPx": "0.765",
+     "positionValue": "102275.385846",
+     "unrealizedPnl": "-27284.68854",
+     "returnOnEquity": "-3.6384097655",
+     "liquidationPx": "20.9429423998",
+     "marginUsed": "10227.538584",
+     "maxLeverage": 10,
+     "cumFunding": {
+      "allTime": "-1200.667687",
+      "sinceOpen": "-1200.667687",
+      "sinceChange": "-976.608447"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "XRP",
+     "szi": "600532.0",
+     "leverage": {
+      "type": "cross",
+      "value": 20
+     },
+     "entryPx": "1.445959",
+     "positionValue": "805013.1459999999",
+     "unrealizedPnl": "-63332.0683",
+     "returnOnEquity": "-1.4586841099",
+     "liquidationPx": null,
+     "marginUsed": "40250.6573",
+     "maxLeverage": 20,
+     "cumFunding": {
+      "allTime": "2081.568532",
+      "sinceOpen": "2081.568532",
+      "sinceChange": "1062.016942"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "APT",
+     "szi": "-11084.43",
+     "leverage": {
+      "type": "cross",
+      "value": 3
+     },
+     "entryPx": "0.622",
+     "positionValue": "9674.490504",
+     "unrealizedPnl": "-2779.975044",
+     "returnOnEquity": "-1.2096463023",
+     "liquidationPx": "176.8580635171",
+     "marginUsed": "3224.830168",
+     "maxLeverage": 10,
+     "cumFunding": {
+      "allTime": "-21973.373244",
+      "sinceOpen": "-823.980444",
+      "sinceChange": "-3.265335"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "WLD",
+     "szi": "337076.3",
+     "leverage": {
+      "type": "cross",
+      "value": 8
+     },
+     "entryPx": "0.49019",
+     "positionValue": "176287.534137",
+     "unrealizedPnl": "11055.299874",
+     "returnOnEquity": "0.5352611697",
+     "liquidationPx": null,
+     "marginUsed": "22035.941767",
+     "maxLeverage": 10,
+     "cumFunding": {
+      "allTime": "576.57467",
+      "sinceOpen": "1205.151738",
+      "sinceChange": "862.20566"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "NEAR",
+     "szi": "55012.5",
+     "leverage": {
+      "type": "cross",
+      "value": 10
+     },
+     "entryPx": "5.1708",
+     "positionValue": "287968.4325",
+     "unrealizedPnl": "3509.745",
+     "returnOnEquity": "0.1233832945",
+     "liquidationPx": null,
+     "marginUsed": "28796.84325",
+     "maxLeverage": 10,
+     "cumFunding": {
+      "allTime": "160.464516",
+      "sinceOpen": "182.055331",
+      "sinceChange": "181.491607"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "IMX",
+     "szi": "-100597.2",
+     "leverage": {
+      "type": "cross",
+      "value": 5
+     },
+     "entryPx": "0.14301",
+     "positionValue": "16880.21016",
+     "unrealizedPnl": "-2493.804588",
+     "returnOnEquity": "-0.8667226068",
+     "liquidationPx": "18.6775430076",
+     "marginUsed": "3376.042032",
+     "maxLeverage": 5,
+     "cumFunding": {
+      "allTime": "-1259.453323",
+      "sinceOpen": "-455.472353",
+      "sinceChange": "-455.472353"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "XAI",
+     "szi": "-1386321.6000000001",
+     "leverage": {
+      "type": "cross",
+      "value": 3
+     },
+     "entryPx": "0.02164",
+     "positionValue": "12144.177216",
+     "unrealizedPnl": "17855.822208",
+     "returnOnEquity": "1.7855822551",
+     "liquidationPx": "1.2751520847",
+     "marginUsed": "4048.059072",
+     "maxLeverage": 3,
+     "cumFunding": {
+      "allTime": "6285.729101",
+      "sinceOpen": "6371.063127",
+      "sinceChange": "6371.063127"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "ONDO",
+     "szi": "-127014.0",
+     "leverage": {
+      "type": "cross",
+      "value": 10
+     },
+     "entryPx": "0.30641",
+     "positionValue": "59739.76476",
+     "unrealizedPnl": "-20821.332288",
+     "returnOnEquity": "-5.3499925268",
+     "liquidationPx": "15.8284606362",
+     "marginUsed": "5973.976476",
+     "maxLeverage": 10,
+     "cumFunding": {
+      "allTime": "-3048.868887",
+      "sinceOpen": "-3048.868887",
+      "sinceChange": "-747.752564"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "ENA",
+     "szi": "203871.0",
+     "leverage": {
+      "type": "cross",
+      "value": 5
+     },
+     "entryPx": "0.218",
+     "positionValue": "41693.65821",
+     "unrealizedPnl": "-2750.21979",
+     "returnOnEquity": "-0.3094036697",
+     "liquidationPx": null,
+     "marginUsed": "8338.731642",
+     "maxLeverage": 10,
+     "cumFunding": {
+      "allTime": "-42.344782",
+      "sinceOpen": "33.426648",
+      "sinceChange": "33.426648"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "REZ",
+     "szi": "55745534.0",
+     "leverage": {
+      "type": "cross",
+      "value": 3
+     },
+     "entryPx": "0.003748",
+     "positionValue": "205645.274926",
+     "unrealizedPnl": "-3312.838518",
+     "returnOnEquity": "-0.0475622381",
+     "liquidationPx": null,
+     "marginUsed": "68548.424975",
+     "maxLeverage": 3,
+     "cumFunding": {
+      "allTime": "5636.138104",
+      "sinceOpen": "5636.138104",
+      "sinceChange": "5567.459507"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "HYPE",
+     "szi": "5216.47",
+     "leverage": {
+      "type": "cross",
+      "value": 3
+     },
+     "entryPx": "85.2",
+     "positionValue": "425361.39674",
+     "unrealizedPnl": "-19081.84726",
+     "returnOnEquity": "-0.1288028169",
+     "liquidationPx": null,
+     "marginUsed": "141787.132246",
+     "maxLeverage": 10,
+     "cumFunding": {
+      "allTime": "46918.395538",
+      "sinceOpen": "1749.293789",
+      "sinceChange": "1749.293789"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "LAYER",
+     "szi": "-416658.0",
+     "leverage": {
+      "type": "cross",
+      "value": 3
+     },
+     "entryPx": "0.12",
+     "positionValue": "28995.23022",
+     "unrealizedPnl": "21003.767658",
+     "returnOnEquity": "1.260251318",
+     "liquidationPx": "4.2831817252",
+     "marginUsed": "9665.07674",
+     "maxLeverage": 3,
+     "cumFunding": {
+      "allTime": "4719.454224",
+      "sinceOpen": "4719.454224",
+      "sinceChange": "4730.842879"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "NIL",
+     "szi": "693767.0",
+     "leverage": {
+      "type": "cross",
+      "value": 3
+     },
+     "entryPx": "0.096358",
+     "positionValue": "57733.902206",
+     "unrealizedPnl": "-9116.33761",
+     "returnOnEquity": "-0.4091086719",
+     "liquidationPx": null,
+     "marginUsed": "19244.634068",
+     "maxLeverage": 3,
+     "cumFunding": {
+      "allTime": "425.835273",
+      "sinceOpen": "425.835273",
+      "sinceChange": "371.167127"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "XPL",
+     "szi": "463769.0",
+     "leverage": {
+      "type": "isolated",
+      "value": 2,
+      "rawUsd": "-28159.62936"
+     },
+     "entryPx": "0.11979",
+     "positionValue": "39568.307311",
+     "unrealizedPnl": "-15986.581199",
+     "returnOnEquity": "-0.5755238334",
+     "liquidationPx": "0.0639148264",
+     "marginUsed": "11408.677951",
+     "maxLeverage": 10,
+     "cumFunding": {
+      "allTime": "-242.216071",
+      "sinceOpen": "375.851852",
+      "sinceChange": "375.851852"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "0G",
+     "szi": "-247729.0",
+     "leverage": {
+      "type": "cross",
+      "value": 3
+     },
+     "entryPx": "0.262382",
+     "positionValue": "62388.07136",
+     "unrealizedPnl": "2611.61014",
+     "returnOnEquity": "0.1205364432",
+     "liquidationPx": "7.3387240589",
+     "marginUsed": "20796.023786",
+     "maxLeverage": 3,
+     "cumFunding": {
+      "allTime": "1243.667956",
+      "sinceOpen": "1243.667956",
+      "sinceChange": "-765.363825"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "2Z",
+     "szi": "-335952.0",
+     "leverage": {
+      "type": "cross",
+      "value": 3
+     },
+     "entryPx": "0.11022",
+     "positionValue": "11217.43728",
+     "unrealizedPnl": "25811.36448",
+     "returnOnEquity": "2.0911855032",
+     "liquidationPx": "5.2592160139",
+     "marginUsed": "3739.14576",
+     "maxLeverage": 3,
+     "cumFunding": {
+      "allTime": "3698.507554",
+      "sinceOpen": "3698.507554",
+      "sinceChange": "447.872922"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "MON",
+     "szi": "1977046.0",
+     "leverage": {
+      "type": "isolated",
+      "value": 1,
+      "rawUsd": "-117.178221"
+     },
+     "entryPx": "0.028391",
+     "positionValue": "46318.233688",
+     "unrealizedPnl": "-9812.079298",
+     "returnOnEquity": "-0.1748089183",
+     "liquidationPx": "0.0000658548",
+     "marginUsed": "46201.055467",
+     "maxLeverage": 5,
+     "cumFunding": {
+      "allTime": "-384.930854",
+      "sinceOpen": "110.779399",
+      "sinceChange": "110.779399"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "MEGA",
+     "szi": "2318381.0",
+     "leverage": {
+      "type": "isolated",
+      "value": 1,
+      "rawUsd": "-1399.150017"
+     },
+     "entryPx": "0.052743",
+     "positionValue": "108650.925565",
+     "unrealizedPnl": "-13629.365599",
+     "returnOnEquity": "-0.1114600355",
+     "liquidationPx": "0.0007242037",
+     "marginUsed": "107251.775548",
+     "maxLeverage": 3,
+     "cumFunding": {
+      "allTime": "1126.149632",
+      "sinceOpen": "1385.21025",
+      "sinceChange": "927.920252"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "XMR",
+     "szi": "72.016",
+     "leverage": {
+      "type": "cross",
+      "value": 5
+     },
+     "entryPx": "515.985",
+     "positionValue": "40563.73216",
+     "unrealizedPnl": "3404.5564",
+     "returnOnEquity": "0.4581044023",
+     "liquidationPx": null,
+     "marginUsed": "8112.746432",
+     "maxLeverage": 5,
+     "cumFunding": {
+      "allTime": "28.095697",
+      "sinceOpen": "28.095697",
+      "sinceChange": "26.914371"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "CHIP",
+     "szi": "6788389.0",
+     "leverage": {
+      "type": "cross",
+      "value": 3
+     },
+     "entryPx": "0.046447",
+     "positionValue": "340851.800079",
+     "unrealizedPnl": "25544.984721",
+     "returnOnEquity": "0.2430488351",
+     "liquidationPx": null,
+     "marginUsed": "113617.266693",
+     "maxLeverage": 3,
+     "cumFunding": {
+      "allTime": "1894.980001",
+      "sinceOpen": "1894.980001",
+      "sinceChange": "1495.999614"
+     }
+    }
+   },
+   {
+    "type": "oneWay",
+    "position": {
+     "coin": "PONS",
+     "szi": "26610.0",
+     "leverage": {
+      "type": "cross",
+      "value": 3
+     },
+     "entryPx": "0.458236",
+     "positionValue": "9043.1424",
+     "unrealizedPnl": "-3150.526498",
+     "returnOnEquity": "-0.7751218746",
+     "liquidationPx": null,
+     "marginUsed": "3014.3808",
+     "maxLeverage": 3,
+     "cumFunding": {
+      "allTime": "69.166565",
+      "sinceOpen": "69.166565",
+      "sinceChange": "63.989224"
+     }
+    }
+   }
+  ],
+  "time": 1792143183594
+ },
+ "spotClearinghouseState": {
+  "balances": [
+   {
+    "coin": "USDC",
+    "token": 0,
+    "total": "2802152.2913154801",
+    "hold": "2032049.751042",
+    "entryNtl": "0.0"
+   },
+   {
+    "coin": "HFUN",
+    "token": 2,
+    "total": "0.28821182",
+    "hold": "0.0",
+    "entryNtl": "5.20568189"
+   },
+   {
+    "coin": "LICK",
+    "token": 3,
+    "total": "64378.76349",
+    "hold": "0.0",
+    "entryNtl": "0.0"
+   },
+   {
+    "coin": "JEFF",
+    "token": 5,
+    "total": "28.53719",
+    "hold": "0.0",
+    "entryNtl": "734.34229397"
+   },
+   {
+    "coin": "GMEOW",
+    "token": 11,
+    "total": "32770.85817019",
+    "hold": "0.0",
+    "entryNtl": "0.0"
+   },
+   {
+    "coin": "XULIAN",
+    "token": 13,
+    "total": "22056.23952",
+    "hold": "0.0",
+    "entryNtl": "0.0"
+   },
+   {
+    "coin": "RUG",
+    "token": 14,
+    "total": "2643.59333",
+    "hold": "0.0",
+    "entryNtl": "0.0"
+   },
+   {
+    "coin": "ILIENS",
+    "token": 15,
+    "total": "20188.86573",
+    "hold": "0.0",
+    "entryNtl": "0.0"
+   },
+   {
+    "coin": "CZ",
+    "token": 17,
+    "total": "25.1194785",
+    "hold": "0.0",
+    "entryNtl": "0.0"
+   },
+   {
+    "coin": "VEGAS",
+    "token": 25,
+    "total": "0.04983255",
+    "hold": "0.0",
+    "entryNtl": "0.00004978"
+   },
+   {
+    "coin": "MBAPPE",
+    "token": 50,
+    "total": "320.1005175",
+    "hold": "0.0",
+    "entryNtl": "0.32010051"
+   },
+   {
+    "coin": "MAGA",
+    "token": 51,
+    "total": "257.8017518",
+    "hold": "0.0",
+    "entryNtl": "0.02578017"
+   },
+   {
+    "coin": "OMNIX",
+    "token": 53,
+    "total": "13487.009297",
+    "hold": "0.0",
+    "entryNtl": "47.04409609"
+   },
+   {
+    "coin": "MEOW",
+    "token": 61,
+    "total": "6206.614684",
+    "hold": "0.0",
+    "entryNtl": "0.357501"
+   },
+   {
+    "coin": "PEAR",
+    "token": 71,
+    "total": "7436.056337",
+    "hold": "0.0",
+    "entryNtl": "0.74360563"
+   },
+   {
+    "coin": "NEIRO",
+    "token": 78,
+    "total": "8556.962368",
+    "hold": "0.0",
+    "entryNtl": "0.86596459"
+   },
+   {
+    "coin": "BERA",
+    "token": 80,
+    "total": "567.131671",
+    "hold": "0.0",
+    "entryNtl": "0.56004252"
+   },
+   {
+    "coin": "WOW",
+    "token": 98,
+    "total": "199.217",
+    "hold": "0.0",
+    "entryNtl": "0.0199217"
+   },
+   {
+    "coin": "VAULT",
+    "token": 106,
+    "total": "497.07824763",
+    "hold": "0.0",
+    "entryNtl": "0.49707824"
+   },
+   {
+    "coin": "BOZO",
+    "token": 113,
+    "total": "8.2612502",
+    "hold": "0.0",
+    "entryNtl": "0.00228836"
+   },
+   {
+    "coin": "UP",
+    "token": 115,
+    "total": "4.2047557",
+    "hold": "0.0",
+    "entryNtl": "0.00420475"
+   },
+   {
+    "coin": "PIP",
+    "token": 127,
+    "total": "4.58958814",
+    "hold": "0.0",
+    "entryNtl": "168.48400651"
+   },
+   {
+    "coin": "LQNA",
+    "token": 129,
+    "total": "0.05493901",
+    "hold": "0.0",
+    "entryNtl": "0.09302273"
+   },
+   {
+    "coin": "HGOD",
+    "token": 137,
+    "total": "16603.80229677",
+    "hold": "0.0",
+    "entryNtl": "12645.67905168"
+   },
+   {
+    "coin": "LUCKY",
+    "token": 143,
+    "total": "1003.21407",
+    "hold": "0.0",
+    "entryNtl": "0.01083471"
+   },
+   {
+    "coin": "MUNCH",
+    "token": 146,
+    "total": "1084.56807",
+    "hold": "0.0",
+    "entryNtl": "0.0040129"
+   },
+   {
+    "coin": "HYPE",
+    "token": 150,
+    "total": "1055.29325372",
+    "hold": "0.0",
+    "entryNtl": "87706.57718996"
+   },
+   {
+    "coin": "STAR",
+    "token": 154,
+    "total": "123.5584392",
+    "hold": "0.0",
+    "entryNtl": "0.01235584"
+   },
+   {
+    "coin": "HYENA",
+    "token": 168,
+    "total": "9.96191287",
+    "hold": "0.0",
+    "entryNtl": "0.08301261"
+   },
+   {
+    "coin": "UETH",
+    "token": 221,
+    "total": "31.301476581",
+    "hold": "0.0",
+    "entryNtl": "64875.52832"
+   },
+   {
+    "coin": "USDE",
+    "token": 235,
+    "total": "0.0",
+    "hold": "0.0",
+    "entryNtl": "0.0"
+   },
+   {
+    "coin": "RAT",
+    "token": 253,
+    "total": "30.555941",
+    "hold": "0.0",
+    "entryNtl": "0.65582216"
+   },
+   {
+    "coin": "USDT0",
+    "token": 268,
+    "total": "0.0",
+    "hold": "0.0",
+    "entryNtl": "0.0"
+   },
+   {
+    "coin": "USDH",
+    "token": 360,
+    "total": "208.16809706",
+    "hold": "0.0",
+    "entryNtl": "208.16809706"
+   },
+   {
+    "coin": "UMON",
+    "token": 383,
+    "total": "3976.392346",
+    "hold": "0.0",
+    "entryNtl": "111.859897"
+   },
+   {
+    "coin": "TREAD",
+    "token": 512,
+    "total": "74813.23218959",
+    "hold": "0.0",
+    "entryNtl": "90087.84032"
+   },
+   {
+    "coin": "MAX",
+    "token": 734,
+    "total": "11477323.3733690009",
+    "hold": "0.0",
+    "entryNtl": "0.0"
+   }
+  ],
+  "tokenToAvailableAfterMaintenance": [
+   [
+    0,
+    "2048320.3838104799"
+   ],
+   [
+    360,
+    "208.16809706"
+   ]
+  ]
+ },
+ "frontendOpenOrders": [
+  {
+   "coin": "ENA",
+   "side": "A",
+   "limitPx": "0.2493",
+   "sz": "203871.0",
+   "oid": 571537344745,
+   "timestamp": 1791766046260,
+   "triggerCondition": "Price above 0.277",
+   "isTrigger": true,
+   "triggerPx": "0.277",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Take Profit Market",
+   "origSz": "203871.0",
+   "tif": null,
+   "cloid": null
+  },
+  {
+   "coin": "ENA",
+   "side": "A",
+   "limitPx": "0.14321",
+   "sz": "203871.0",
+   "oid": 571537344744,
+   "timestamp": 1791766046260,
+   "triggerCondition": "Price below 0.15913",
+   "isTrigger": true,
+   "triggerPx": "0.15913",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Stop Market",
+   "origSz": "203871.0",
+   "tif": null,
+   "cloid": null
+  },
+  {
+   "coin": "NEAR",
+   "side": "A",
+   "limitPx": "6.5",
+   "sz": "606.0",
+   "oid": 570568385975,
+   "timestamp": 1791641290105,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "606.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "NEAR",
+   "side": "A",
+   "limitPx": "6.4688",
+   "sz": "606.0",
+   "oid": 570568385974,
+   "timestamp": 1791641290105,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "606.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "NEAR",
+   "side": "A",
+   "limitPx": "6.4375",
+   "sz": "606.0",
+   "oid": 570568385973,
+   "timestamp": 1791641290105,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "606.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "NEAR",
+   "side": "A",
+   "limitPx": "6.4063",
+   "sz": "606.0",
+   "oid": 570568385972,
+   "timestamp": 1791641290105,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "606.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "NEAR",
+   "side": "A",
+   "limitPx": "6.375",
+   "sz": "606.0",
+   "oid": 570568385971,
+   "timestamp": 1791641290105,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "606.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "NEAR",
+   "side": "A",
+   "limitPx": "6.3438",
+   "sz": "606.0",
+   "oid": 570568385970,
+   "timestamp": 1791641290105,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "606.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "NEAR",
+   "side": "A",
+   "limitPx": "6.3125",
+   "sz": "606.0",
+   "oid": 570568385969,
+   "timestamp": 1791641290105,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "606.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "NEAR",
+   "side": "A",
+   "limitPx": "6.2813",
+   "sz": "606.0",
+   "oid": 570568385968,
+   "timestamp": 1791641290105,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "606.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "NEAR",
+   "side": "A",
+   "limitPx": "6.25",
+   "sz": "606.0",
+   "oid": 570568385967,
+   "timestamp": 1791641290105,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "606.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "NEAR",
+   "side": "A",
+   "limitPx": "6.2188",
+   "sz": "606.0",
+   "oid": 570568385966,
+   "timestamp": 1791641290105,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "606.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "NEAR",
+   "side": "A",
+   "limitPx": "6.1875",
+   "sz": "606.0",
+   "oid": 570568385965,
+   "timestamp": 1791641290105,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "606.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "NEAR",
+   "side": "A",
+   "limitPx": "6.1563",
+   "sz": "606.0",
+   "oid": 570568385964,
+   "timestamp": 1791641290105,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "606.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "NEAR",
+   "side": "A",
+   "limitPx": "6.125",
+   "sz": "606.0",
+   "oid": 570568385963,
+   "timestamp": 1791641290105,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "606.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "NEAR",
+   "side": "A",
+   "limitPx": "6.0938",
+   "sz": "606.0",
+   "oid": 570568385962,
+   "timestamp": 1791641290105,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "606.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "A",
+   "limitPx": "1.45",
+   "sz": "240212.0",
+   "oid": 568788301191,
+   "timestamp": 1791470472903,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Limit",
+   "origSz": "240212.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "A",
+   "limitPx": "1.524",
+   "sz": "253296.0",
+   "oid": 567852757169,
+   "timestamp": 1791389999747,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Limit",
+   "origSz": "253296.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MON",
+   "side": "A",
+   "limitPx": "0.0297",
+   "sz": "1977046.0",
+   "oid": 566666808854,
+   "timestamp": 1791286256930,
+   "triggerCondition": "Price above 0.033",
+   "isTrigger": true,
+   "triggerPx": "0.033",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Take Profit Market",
+   "origSz": "1977046.0",
+   "tif": null,
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "A",
+   "limitPx": "1.54",
+   "sz": "15168.0",
+   "oid": 566249644510,
+   "timestamp": 1791243206560,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Limit",
+   "origSz": "198367.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "AVAX",
+   "side": "A",
+   "limitPx": "12.88",
+   "sz": "7593.95",
+   "oid": 564951931173,
+   "timestamp": 1791117385587,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Limit",
+   "origSz": "7593.95",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "2Z",
+   "side": "A",
+   "limitPx": "0.060871",
+   "sz": "407832.0",
+   "oid": 563522453774,
+   "timestamp": 1790949694106,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "407832.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "PONS",
+   "side": "A",
+   "limitPx": "0.58",
+   "sz": "900.0",
+   "oid": 561106833132,
+   "timestamp": 1790765267443,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Limit",
+   "origSz": "12538.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "NIL",
+   "side": "A",
+   "limitPx": "0.12",
+   "sz": "645203.0",
+   "oid": 560117252397,
+   "timestamp": 1790687444602,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Limit",
+   "origSz": "645203.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "WLD",
+   "side": "A",
+   "limitPx": "0.66",
+   "sz": "14466.8",
+   "oid": 556911205822,
+   "timestamp": 1790382682238,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Limit",
+   "origSz": "14466.8",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "WLD",
+   "side": "A",
+   "limitPx": "0.693",
+   "sz": "156100.3",
+   "oid": 556897396469,
+   "timestamp": 1790381194210,
+   "triggerCondition": "Price above 0.77",
+   "isTrigger": true,
+   "triggerPx": "0.77",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Take Profit Market",
+   "origSz": "156100.3",
+   "tif": null,
+   "cloid": null
+  },
+  {
+   "coin": "XPL",
+   "side": "A",
+   "limitPx": "0.144",
+   "sz": "463769.0",
+   "oid": 556168390734,
+   "timestamp": 1790326757495,
+   "triggerCondition": "Price above 0.16",
+   "isTrigger": true,
+   "triggerPx": "0.16",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Take Profit Market",
+   "origSz": "463769.0",
+   "tif": null,
+   "cloid": null
+  },
+  {
+   "coin": "CHIP",
+   "side": "B",
+   "limitPx": "0.04",
+   "sz": "106951.0",
+   "oid": 556110264132,
+   "timestamp": 1790321629881,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "106951.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "CHIP",
+   "side": "B",
+   "limitPx": "0.040156",
+   "sz": "106951.0",
+   "oid": 556110264131,
+   "timestamp": 1790321629881,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "106951.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "CHIP",
+   "side": "B",
+   "limitPx": "0.040313",
+   "sz": "106951.0",
+   "oid": 556110264130,
+   "timestamp": 1790321629881,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "106951.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "CHIP",
+   "side": "B",
+   "limitPx": "0.040469",
+   "sz": "106951.0",
+   "oid": 556110264129,
+   "timestamp": 1790321629881,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "106951.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "CHIP",
+   "side": "B",
+   "limitPx": "0.040625",
+   "sz": "106951.0",
+   "oid": 556110264128,
+   "timestamp": 1790321629881,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "106951.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "CHIP",
+   "side": "B",
+   "limitPx": "0.040781",
+   "sz": "106951.0",
+   "oid": 556110264127,
+   "timestamp": 1790321629881,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "106951.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "CHIP",
+   "side": "B",
+   "limitPx": "0.040938",
+   "sz": "106951.0",
+   "oid": 556110264126,
+   "timestamp": 1790321629881,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "106951.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "CHIP",
+   "side": "B",
+   "limitPx": "0.041094",
+   "sz": "106951.0",
+   "oid": 556110264125,
+   "timestamp": 1790321629881,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "106951.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "475.0",
+   "sz": "18.004",
+   "oid": 555137450931,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "476.34",
+   "sz": "18.004",
+   "oid": 555137450930,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "477.69",
+   "sz": "18.004",
+   "oid": 555137450929,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "479.03",
+   "sz": "18.004",
+   "oid": 555137450928,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "480.38",
+   "sz": "18.004",
+   "oid": 555137450927,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "481.72",
+   "sz": "18.004",
+   "oid": 555137450926,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "483.06",
+   "sz": "18.004",
+   "oid": 555137450925,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "484.41",
+   "sz": "18.004",
+   "oid": 555137450924,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "485.75",
+   "sz": "18.004",
+   "oid": 555137450923,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "487.09",
+   "sz": "18.004",
+   "oid": 555137450922,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "488.44",
+   "sz": "18.004",
+   "oid": 555137450921,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "489.78",
+   "sz": "18.004",
+   "oid": 555137450920,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "491.13",
+   "sz": "18.004",
+   "oid": 555137450919,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "492.47",
+   "sz": "18.004",
+   "oid": 555137450918,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "493.81",
+   "sz": "18.004",
+   "oid": 555137450917,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "495.16",
+   "sz": "18.004",
+   "oid": 555137450916,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "496.5",
+   "sz": "18.004",
+   "oid": 555137450915,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "497.84",
+   "sz": "18.004",
+   "oid": 555137450914,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "499.19",
+   "sz": "18.004",
+   "oid": 555137450913,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "500.53",
+   "sz": "18.004",
+   "oid": 555137450912,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "501.88",
+   "sz": "18.004",
+   "oid": 555137450911,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "503.22",
+   "sz": "18.004",
+   "oid": 555137450910,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "504.56",
+   "sz": "18.004",
+   "oid": 555137450909,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "505.91",
+   "sz": "18.004",
+   "oid": 555137450908,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "507.25",
+   "sz": "18.004",
+   "oid": 555137450907,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "508.59",
+   "sz": "18.004",
+   "oid": 555137450906,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "509.94",
+   "sz": "18.004",
+   "oid": 555137450905,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "511.28",
+   "sz": "18.004",
+   "oid": 555137450904,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "512.63",
+   "sz": "18.004",
+   "oid": 555137450903,
+   "timestamp": 1790245051423,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "18.004",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "LIT",
+   "side": "A",
+   "limitPx": "6.0",
+   "sz": "1963.0",
+   "oid": 553804646983,
+   "timestamp": 1790143945333,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1963.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "LIT",
+   "side": "A",
+   "limitPx": "5.975",
+   "sz": "1952.0",
+   "oid": 553804646982,
+   "timestamp": 1790143945333,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1952.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "LIT",
+   "side": "A",
+   "limitPx": "5.95",
+   "sz": "1942.0",
+   "oid": 553804646981,
+   "timestamp": 1790143945333,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1942.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "LIT",
+   "side": "A",
+   "limitPx": "5.925",
+   "sz": "1932.0",
+   "oid": 553804646980,
+   "timestamp": 1790143945333,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1932.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "LIT",
+   "side": "A",
+   "limitPx": "5.9",
+   "sz": "1922.0",
+   "oid": 553804646979,
+   "timestamp": 1790143945333,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1922.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "LIT",
+   "side": "A",
+   "limitPx": "5.875",
+   "sz": "1911.0",
+   "oid": 553804646978,
+   "timestamp": 1790143945333,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1911.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "LIT",
+   "side": "A",
+   "limitPx": "5.85",
+   "sz": "1901.0",
+   "oid": 553804646977,
+   "timestamp": 1790143945333,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1901.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "LIT",
+   "side": "A",
+   "limitPx": "5.825",
+   "sz": "1891.0",
+   "oid": 553804646976,
+   "timestamp": 1790143945333,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1891.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "LIT",
+   "side": "A",
+   "limitPx": "5.8",
+   "sz": "1881.0",
+   "oid": 553804646975,
+   "timestamp": 1790143945333,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1881.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "LIT",
+   "side": "A",
+   "limitPx": "5.775",
+   "sz": "1871.0",
+   "oid": 553804646974,
+   "timestamp": 1790143945333,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1871.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "GRASS",
+   "side": "B",
+   "limitPx": "0.42",
+   "sz": "2009388.0",
+   "oid": 552471876425,
+   "timestamp": 1790045379611,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "2009388.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.0033",
+   "sz": "1180637.0",
+   "oid": 543847316466,
+   "timestamp": 1789315286644,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1180637.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.003334",
+   "sz": "1180637.0",
+   "oid": 543847316465,
+   "timestamp": 1789315286644,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1180637.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.00315",
+   "sz": "1122334.0",
+   "oid": 543639689005,
+   "timestamp": 1789291342777,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1122334.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.003164",
+   "sz": "1122334.0",
+   "oid": 543639689004,
+   "timestamp": 1789291342777,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1122334.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.003178",
+   "sz": "1122334.0",
+   "oid": 543639689003,
+   "timestamp": 1789291342777,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1122334.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.003192",
+   "sz": "1122334.0",
+   "oid": 543639689002,
+   "timestamp": 1789291342777,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1122334.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.003206",
+   "sz": "1122334.0",
+   "oid": 543639689001,
+   "timestamp": 1789291342777,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1122334.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.00322",
+   "sz": "1122334.0",
+   "oid": 543639689000,
+   "timestamp": 1789291342777,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1122334.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.003234",
+   "sz": "1122334.0",
+   "oid": 543639688999,
+   "timestamp": 1789291342777,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1122334.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.003248",
+   "sz": "1122334.0",
+   "oid": 543639688998,
+   "timestamp": 1789291342777,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1122334.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.003263",
+   "sz": "1122334.0",
+   "oid": 543639688997,
+   "timestamp": 1789291342777,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1122334.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.003277",
+   "sz": "1122334.0",
+   "oid": 543639688996,
+   "timestamp": 1789291342777,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1122334.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.003291",
+   "sz": "1122334.0",
+   "oid": 543639688995,
+   "timestamp": 1789291342777,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1122334.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.003305",
+   "sz": "1122334.0",
+   "oid": 543639688994,
+   "timestamp": 1789291342777,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1122334.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.003319",
+   "sz": "1122334.0",
+   "oid": 543639688993,
+   "timestamp": 1789291342777,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1122334.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.003333",
+   "sz": "1122334.0",
+   "oid": 543639688992,
+   "timestamp": 1789291342777,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1122334.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.003347",
+   "sz": "1122334.0",
+   "oid": 543639688991,
+   "timestamp": 1789291342777,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1122334.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "REZ",
+   "side": "B",
+   "limitPx": "0.003361",
+   "sz": "1107033.0",
+   "oid": 543639688990,
+   "timestamp": 1789291342777,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "1122334.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "A",
+   "limitPx": "2452.7",
+   "sz": "191.2409",
+   "oid": 531716628909,
+   "timestamp": 1788159313372,
+   "triggerCondition": "Price above 2666",
+   "isTrigger": true,
+   "triggerPx": "2666.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Take Profit Market",
+   "origSz": "191.2409",
+   "tif": null,
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "75.0",
+   "sz": "131.18",
+   "oid": 522854536277,
+   "timestamp": 1787379924608,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "131.18",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.08",
+   "sz": "5959.0",
+   "oid": 520801370893,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.0831",
+   "sz": "5959.0",
+   "oid": 520801370892,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.0863",
+   "sz": "5959.0",
+   "oid": 520801370891,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.0894",
+   "sz": "5959.0",
+   "oid": 520801370890,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.0925",
+   "sz": "5959.0",
+   "oid": 520801370889,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.0956",
+   "sz": "5959.0",
+   "oid": 520801370888,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.0988",
+   "sz": "5959.0",
+   "oid": 520801370887,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1019",
+   "sz": "5959.0",
+   "oid": 520801370886,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.105",
+   "sz": "5959.0",
+   "oid": 520801370885,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1081",
+   "sz": "5959.0",
+   "oid": 520801370884,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1113",
+   "sz": "5959.0",
+   "oid": 520801370883,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1144",
+   "sz": "5959.0",
+   "oid": 520801370882,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1175",
+   "sz": "5959.0",
+   "oid": 520801370881,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1206",
+   "sz": "5959.0",
+   "oid": 520801370880,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1238",
+   "sz": "5959.0",
+   "oid": 520801370879,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1269",
+   "sz": "5959.0",
+   "oid": 520801370878,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.13",
+   "sz": "5959.0",
+   "oid": 520801370877,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1331",
+   "sz": "5959.0",
+   "oid": 520801370876,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1363",
+   "sz": "5959.0",
+   "oid": 520801370875,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1394",
+   "sz": "5959.0",
+   "oid": 520801370874,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1425",
+   "sz": "5959.0",
+   "oid": 520801370873,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1456",
+   "sz": "5959.0",
+   "oid": 520801370872,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1488",
+   "sz": "5959.0",
+   "oid": 520801370871,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1519",
+   "sz": "5959.0",
+   "oid": 520801370870,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.155",
+   "sz": "5959.0",
+   "oid": 520801370869,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1581",
+   "sz": "5959.0",
+   "oid": 520801370868,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1612",
+   "sz": "5959.0",
+   "oid": 520801370867,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1644",
+   "sz": "5959.0",
+   "oid": 520801370866,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1675",
+   "sz": "5959.0",
+   "oid": 520801370865,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1706",
+   "sz": "5959.0",
+   "oid": 520801370864,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1737",
+   "sz": "5959.0",
+   "oid": 520801370863,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.1769",
+   "sz": "5959.0",
+   "oid": 520801370862,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XRP",
+   "side": "B",
+   "limitPx": "1.18",
+   "sz": "5959.0",
+   "oid": 520801370861,
+   "timestamp": 1787228494594,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "5959.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "VVV",
+   "side": "A",
+   "limitPx": "13.579",
+   "sz": "4161.42",
+   "oid": 519318196669,
+   "timestamp": 1787095785205,
+   "triggerCondition": "Price above 14.76",
+   "isTrigger": true,
+   "triggerPx": "14.76",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Take Profit Market",
+   "origSz": "4161.42",
+   "tif": null,
+   "cloid": null
+  },
+  {
+   "coin": "VVV",
+   "side": "A",
+   "limitPx": "10.955",
+   "sz": "4161.42",
+   "oid": 519318196668,
+   "timestamp": 1787095785205,
+   "triggerCondition": "Price below 11.908",
+   "isTrigger": true,
+   "triggerPx": "11.908",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Stop Market",
+   "origSz": "4161.42",
+   "tif": null,
+   "cloid": null
+  },
+  {
+   "coin": "VVV",
+   "side": "B",
+   "limitPx": "13.35",
+   "sz": "4161.42",
+   "oid": 519318196667,
+   "timestamp": 1787095785205,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [
+    {
+     "coin": "VVV",
+     "side": "A",
+     "limitPx": "10.955",
+     "sz": "4161.42",
+     "oid": 519318196668,
+     "timestamp": 1787095785205,
+     "triggerCondition": "Price below 11.908",
+     "isTrigger": true,
+     "triggerPx": "11.908",
+     "children": [],
+     "isPositionTpsl": false,
+     "reduceOnly": true,
+     "orderType": "Stop Market",
+     "origSz": "4161.42",
+     "tif": null,
+     "cloid": null
+    },
+    {
+     "coin": "VVV",
+     "side": "A",
+     "limitPx": "13.579",
+     "sz": "4161.42",
+     "oid": 519318196669,
+     "timestamp": 1787095785205,
+     "triggerCondition": "Price above 14.76",
+     "isTrigger": true,
+     "triggerPx": "14.76",
+     "children": [],
+     "isPositionTpsl": false,
+     "reduceOnly": true,
+     "orderType": "Take Profit Market",
+     "origSz": "4161.42",
+     "tif": null,
+     "cloid": null
+    }
+   ],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "4161.42",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "A",
+   "limitPx": "1798.6",
+   "sz": "292.0899",
+   "oid": 519093825739,
+   "timestamp": 1787067999172,
+   "triggerCondition": "Price above 1955",
+   "isTrigger": true,
+   "triggerPx": "1955.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Take Profit Market",
+   "origSz": "292.0899",
+   "tif": null,
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "A",
+   "limitPx": "1706.6",
+   "sz": "292.0899",
+   "oid": 519093825738,
+   "timestamp": 1787067999172,
+   "triggerCondition": "Price below 1855",
+   "isTrigger": true,
+   "triggerPx": "1855.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Stop Market",
+   "origSz": "292.0899",
+   "tif": null,
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1902.0",
+   "sz": "292.0899",
+   "oid": 519093825737,
+   "timestamp": 1787067999172,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [
+    {
+     "coin": "ETH",
+     "side": "A",
+     "limitPx": "1706.6",
+     "sz": "292.0899",
+     "oid": 519093825738,
+     "timestamp": 1787067999172,
+     "triggerCondition": "Price below 1855",
+     "isTrigger": true,
+     "triggerPx": "1855.0",
+     "children": [],
+     "isPositionTpsl": false,
+     "reduceOnly": true,
+     "orderType": "Stop Market",
+     "origSz": "292.0899",
+     "tif": null,
+     "cloid": null
+    },
+    {
+     "coin": "ETH",
+     "side": "A",
+     "limitPx": "1798.6",
+     "sz": "292.0899",
+     "oid": 519093825739,
+     "timestamp": 1787067999172,
+     "triggerCondition": "Price above 1955",
+     "isTrigger": true,
+     "triggerPx": "1955.0",
+     "children": [],
+     "isPositionTpsl": false,
+     "reduceOnly": true,
+     "orderType": "Take Profit Market",
+     "origSz": "292.0899",
+     "tif": null,
+     "cloid": null
+    }
+   ],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "292.0899",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "VIRTUAL",
+   "side": "B",
+   "limitPx": "0.535",
+   "sz": "65420.5",
+   "oid": 518454588342,
+   "timestamp": 1786996786439,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "65420.5",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "377.0",
+   "sz": "265.251",
+   "oid": 518451484728,
+   "timestamp": 1786996471200,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "265.251",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MORPHO",
+   "side": "B",
+   "limitPx": "1.9",
+   "sz": "15316.0",
+   "oid": 518450363054,
+   "timestamp": 1786996351664,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "40935.2",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "XMR",
+   "side": "B",
+   "limitPx": "355.0",
+   "sz": "563.38",
+   "oid": 512953043389,
+   "timestamp": 1786229977642,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "563.38",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "A",
+   "limitPx": "1736.9",
+   "sz": "181.455",
+   "oid": 509142302921,
+   "timestamp": 1785770908786,
+   "triggerCondition": "Price above 1888",
+   "isTrigger": true,
+   "triggerPx": "1888.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Take Profit Market",
+   "origSz": "181.455",
+   "tif": null,
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "A",
+   "limitPx": "1615.5",
+   "sz": "181.455",
+   "oid": 509142302920,
+   "timestamp": 1785770908786,
+   "triggerCondition": "Price below 1756",
+   "isTrigger": true,
+   "triggerPx": "1756.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": true,
+   "orderType": "Stop Market",
+   "origSz": "181.455",
+   "tif": null,
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1837.0",
+   "sz": "181.455",
+   "oid": 509142302919,
+   "timestamp": 1785770908786,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [
+    {
+     "coin": "ETH",
+     "side": "A",
+     "limitPx": "1615.5",
+     "sz": "181.455",
+     "oid": 509142302920,
+     "timestamp": 1785770908786,
+     "triggerCondition": "Price below 1756",
+     "isTrigger": true,
+     "triggerPx": "1756.0",
+     "children": [],
+     "isPositionTpsl": false,
+     "reduceOnly": true,
+     "orderType": "Stop Market",
+     "origSz": "181.455",
+     "tif": null,
+     "cloid": null
+    },
+    {
+     "coin": "ETH",
+     "side": "A",
+     "limitPx": "1736.9",
+     "sz": "181.455",
+     "oid": 509142302921,
+     "timestamp": 1785770908786,
+     "triggerCondition": "Price above 1888",
+     "isTrigger": true,
+     "triggerPx": "1888.0",
+     "children": [],
+     "isPositionTpsl": false,
+     "reduceOnly": true,
+     "orderType": "Take Profit Market",
+     "origSz": "181.455",
+     "tif": null,
+     "cloid": null
+    }
+   ],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "181.455",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1813.0",
+   "sz": "10.8089",
+   "oid": 499971909303,
+   "timestamp": 1784637632968,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.8089",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1816.5",
+   "sz": "10.8089",
+   "oid": 499971909302,
+   "timestamp": 1784637632968,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.8089",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1820.0",
+   "sz": "10.8089",
+   "oid": 499971909301,
+   "timestamp": 1784637632968,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.8089",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1720.0",
+   "sz": "10.7858",
+   "oid": 495647925377,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1724.8",
+   "sz": "10.7858",
+   "oid": 495647925376,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1729.5",
+   "sz": "10.7858",
+   "oid": 495647925375,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1734.3",
+   "sz": "10.7858",
+   "oid": 495647925374,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1739.0",
+   "sz": "10.7858",
+   "oid": 495647925373,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1743.8",
+   "sz": "10.7858",
+   "oid": 495647925372,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1748.6",
+   "sz": "10.7858",
+   "oid": 495647925371,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1753.3",
+   "sz": "10.7858",
+   "oid": 495647925370,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1758.1",
+   "sz": "10.7858",
+   "oid": 495647925369,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1762.9",
+   "sz": "10.7858",
+   "oid": 495647925368,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1767.6",
+   "sz": "10.7858",
+   "oid": 495647925367,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1772.4",
+   "sz": "10.7858",
+   "oid": 495647925366,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1777.1",
+   "sz": "10.7858",
+   "oid": 495647925365,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1781.9",
+   "sz": "10.7858",
+   "oid": 495647925364,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1786.7",
+   "sz": "10.7858",
+   "oid": 495647925363,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1791.4",
+   "sz": "10.7858",
+   "oid": 495647925362,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1796.2",
+   "sz": "10.7858",
+   "oid": 495647925361,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "ETH",
+   "side": "B",
+   "limitPx": "1801.0",
+   "sz": "10.7858",
+   "oid": 495647925360,
+   "timestamp": 1784035837022,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "10.7858",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60000.0",
+   "sz": "0.44318",
+   "oid": 485832266138,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60049.0",
+   "sz": "0.44318",
+   "oid": 485832266137,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60097.0",
+   "sz": "0.44318",
+   "oid": 485832266136,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60146.0",
+   "sz": "0.44318",
+   "oid": 485832266135,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60194.0",
+   "sz": "0.44318",
+   "oid": 485832266134,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60243.0",
+   "sz": "0.44318",
+   "oid": 485832266133,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60292.0",
+   "sz": "0.44318",
+   "oid": 485832266132,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60340.0",
+   "sz": "0.44318",
+   "oid": 485832266131,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60389.0",
+   "sz": "0.44318",
+   "oid": 485832266130,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60437.0",
+   "sz": "0.44318",
+   "oid": 485832266129,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60486.0",
+   "sz": "0.44318",
+   "oid": 485832266128,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60535.0",
+   "sz": "0.44318",
+   "oid": 485832266127,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60583.0",
+   "sz": "0.44318",
+   "oid": 485832266126,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60632.0",
+   "sz": "0.44318",
+   "oid": 485832266125,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60680.0",
+   "sz": "0.44318",
+   "oid": 485832266124,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60729.0",
+   "sz": "0.44318",
+   "oid": 485832266123,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60778.0",
+   "sz": "0.44318",
+   "oid": 485832266122,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60826.0",
+   "sz": "0.44318",
+   "oid": 485832266121,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60875.0",
+   "sz": "0.44318",
+   "oid": 485832266120,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60923.0",
+   "sz": "0.44318",
+   "oid": 485832266119,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "60972.0",
+   "sz": "0.44318",
+   "oid": 485832266118,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "61020.0",
+   "sz": "0.44318",
+   "oid": 485832266117,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "61069.0",
+   "sz": "0.44318",
+   "oid": 485832266116,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "BTC",
+   "side": "B",
+   "limitPx": "61118.0",
+   "sz": "0.44318",
+   "oid": 485832266115,
+   "timestamp": 1783000565187,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "0.44318",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "44.0",
+   "sz": "216.32",
+   "oid": 459488410700,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "216.32",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "44.313",
+   "sz": "215.71",
+   "oid": 459488410699,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "215.71",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "44.625",
+   "sz": "215.1",
+   "oid": 459488410698,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "215.1",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "44.938",
+   "sz": "214.48",
+   "oid": 459488410697,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "214.48",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "45.25",
+   "sz": "213.87",
+   "oid": 459488410696,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "213.87",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "45.563",
+   "sz": "213.25",
+   "oid": 459488410695,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "213.25",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "45.875",
+   "sz": "212.64",
+   "oid": 459488410694,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "212.64",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "46.188",
+   "sz": "212.02",
+   "oid": 459488410693,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "212.02",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "46.5",
+   "sz": "211.41",
+   "oid": 459488410692,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "211.41",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "46.813",
+   "sz": "210.79",
+   "oid": 459488410691,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "210.79",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "47.125",
+   "sz": "210.18",
+   "oid": 459488410690,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "210.18",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "47.438",
+   "sz": "209.56",
+   "oid": 459488410689,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "209.56",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "47.75",
+   "sz": "208.95",
+   "oid": 459488410688,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "208.95",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "48.063",
+   "sz": "208.34",
+   "oid": 459488410687,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "208.34",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "48.375",
+   "sz": "207.72",
+   "oid": 459488410686,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "207.72",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "48.688",
+   "sz": "207.11",
+   "oid": 459488410685,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "207.11",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "49.0",
+   "sz": "206.49",
+   "oid": 459488410684,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "206.49",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "49.313",
+   "sz": "205.88",
+   "oid": 459488410683,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "205.88",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "49.625",
+   "sz": "205.26",
+   "oid": 459488410682,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "205.26",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "HYPE",
+   "side": "B",
+   "limitPx": "49.938",
+   "sz": "204.65",
+   "oid": 459488410681,
+   "timestamp": 1780675600008,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "204.65",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.036",
+   "sz": "178253.0",
+   "oid": 451966962463,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.035875",
+   "sz": "178253.0",
+   "oid": 451966962462,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.03575",
+   "sz": "178253.0",
+   "oid": 451966962461,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.035625",
+   "sz": "178253.0",
+   "oid": 451966962460,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.0355",
+   "sz": "178253.0",
+   "oid": 451966962459,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.035375",
+   "sz": "178253.0",
+   "oid": 451966962458,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.03525",
+   "sz": "178253.0",
+   "oid": 451966962457,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.035125",
+   "sz": "178253.0",
+   "oid": 451966962456,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.035",
+   "sz": "178253.0",
+   "oid": 451966962455,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.034875",
+   "sz": "178253.0",
+   "oid": 451966962454,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.03475",
+   "sz": "178253.0",
+   "oid": 451966962453,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.034625",
+   "sz": "178253.0",
+   "oid": 451966962452,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.0345",
+   "sz": "178253.0",
+   "oid": 451966962451,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.034375",
+   "sz": "178253.0",
+   "oid": 451966962450,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.03425",
+   "sz": "178253.0",
+   "oid": 451966962449,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.034125",
+   "sz": "178253.0",
+   "oid": 451966962448,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.034",
+   "sz": "178253.0",
+   "oid": 451966962447,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  },
+  {
+   "coin": "MERL",
+   "side": "A",
+   "limitPx": "0.033875",
+   "sz": "100580.0",
+   "oid": 451966962446,
+   "timestamp": 1780343637676,
+   "triggerCondition": "N/A",
+   "isTrigger": false,
+   "triggerPx": "0.0",
+   "children": [],
+   "isPositionTpsl": false,
+   "reduceOnly": false,
+   "orderType": "Limit",
+   "origSz": "178253.0",
+   "tif": "Gtc",
+   "cloid": null
+  }
+ ],
+ "userFees": {
+  "dailyUserVlm": [
+   {
+    "date": "2026-10-02",
+    "userCross": "1352.96",
+    "userAdd": "143257.71",
+    "exchange": "8891772148.2900009155"
+   },
+   {
+    "date": "2026-10-03",
+    "userCross": "0.0",
+    "userAdd": "0.0",
+    "exchange": "2169685337.3299999237"
+   },
+   {
+    "date": "2026-10-04",
+    "userCross": "0.0",
+    "userAdd": "0.0",
+    "exchange": "3059179185.5500001907"
+   },
+   {
+    "date": "2026-10-05",
+    "userCross": "35490.23",
+    "userAdd": "40074.51",
+    "exchange": "6311325373.4300003052"
+   },
+   {
+    "date": "2026-10-06",
+    "userCross": "3148.92",
+    "userAdd": "98276.45",
+    "exchange": "4628763584.5600004196"
+   },
+   {
+    "date": "2026-10-07",
+    "userCross": "0.0",
+    "userAdd": "527308.4300000001",
+    "exchange": "7516282050.470000267"
+   },
+   {
+    "date": "2026-10-08",
+    "userCross": "35672.75",
+    "userAdd": "132307.99",
+    "exchange": "10340423219.2399997711"
+   },
+   {
+    "date": "2026-10-09",
+    "userCross": "0.0",
+    "userAdd": "18627.99",
+    "exchange": "4580539125.0200004578"
+   },
+   {
+    "date": "2026-10-10",
+    "userCross": "2101.56",
+    "userAdd": "143914.42",
+    "exchange": "2997609612.6799998283"
+   },
+   {
+    "date": "2026-10-11",
+    "userCross": "0.0",
+    "userAdd": "51983.58",
+    "exchange": "3956954427.0"
+   },
+   {
+    "date": "2026-10-12",
+    "userCross": "1218.5",
+    "userAdd": "446000.13",
+    "exchange": "6971079652.529999733"
+   },
+   {
+    "date": "2026-10-13",
+    "userCross": "235532.53",
+    "userAdd": "0.0",
+    "exchange": "7041600964.3500003815"
+   },
+   {
+    "date": "2026-10-14",
+    "userCross": "0.0",
+    "userAdd": "642.78",
+    "exchange": "7076296224.5799999237"
+   },
+   {
+    "date": "2026-10-15",
+    "userCross": "0.0",
+    "userAdd": "533331.74",
+    "exchange": "10085763769.8999996185"
+   },
+   {
+    "date": "2026-10-16",
+    "userCross": "0.0",
+    "userAdd": "0.0",
+    "exchange": "1289142756.9000000954"
+   }
+  ],
+  "feeSchedule": {
+   "cross": "0.00045",
+   "add": "0.00015",
+   "spotCross": "0.0007",
+   "spotAdd": "0.0004",
+   "tiers": {
+    "vip": [
+     {
+      "ntlCutoff": "5000000.0",
+      "cross": "0.0004",
+      "add": "0.00012",
+      "spotCross": "0.0006",
+      "spotAdd": "0.0003"
+     },
+     {
+      "ntlCutoff": "25000000.0",
+      "cross": "0.00035",
+      "add": "0.00008",
+      "spotCross": "0.0005",
+      "spotAdd": "0.0002"
+     },
+     {
+      "ntlCutoff": "100000000.0",
+      "cross": "0.0003",
+      "add": "0.00004",
+      "spotCross": "0.0004",
+      "spotAdd": "0.0001"
+     },
+     {
+      "ntlCutoff": "500000000.0",
+      "cross": "0.00028",
+      "add": "0.0",
+      "spotCross": "0.00035",
+      "spotAdd": "0.0"
+     },
+     {
+      "ntlCutoff": "2000000000.0",
+      "cross": "0.00026",
+      "add": "0.0",
+      "spotCross": "0.0003",
+      "spotAdd": "0.0"
+     },
+     {
+      "ntlCutoff": "7000000000.0",
+      "cross": "0.00024",
+      "add": "0.0",
+      "spotCross": "0.00025",
+      "spotAdd": "0.0"
+     }
+    ],
+    "mm": [
+     {
+      "makerFractionCutoff": "0.005",
+      "add": "-0.00001"
+     },
+     {
+      "makerFractionCutoff": "0.015",
+      "add": "-0.00002"
+     },
+     {
+      "makerFractionCutoff": "0.03",
+      "add": "-0.00003"
+     }
+    ]
+   },
+   "referralDiscount": "0.04",
+   "stakingDiscountTiers": [
+    {
+     "bpsOfMaxSupply": "0.0",
+     "discount": "0.0"
+    },
+    {
+     "bpsOfMaxSupply": "0.0001",
+     "discount": "0.05"
+    },
+    {
+     "bpsOfMaxSupply": "0.001",
+     "discount": "0.1"
+    },
+    {
+     "bpsOfMaxSupply": "0.01",
+     "discount": "0.15"
+    },
+    {
+     "bpsOfMaxSupply": "0.1",
+     "discount": "0.2"
+    },
+    {
+     "bpsOfMaxSupply": "1.0",
+     "discount": "0.3"
+    },
+    {
+     "bpsOfMaxSupply": "5.0",
+     "discount": "0.4"
+    }
+   ]
+  },
+  "userCrossRate": "0.0004275",
+  "userAddRate": "0.0001425",
+  "userSpotCrossRate": "0.000665",
+  "userSpotAddRate": "0.00038",
+  "activeReferralDiscount": "0.0",
+  "trial": null,
+  "feeTrialEscrow": "0.0",
+  "nextTrialAvailableTimestamp": null,
+  "stakingLink": null,
+  "activeStakingDiscount": {
+   "bpsOfMaxSupply": "0.0009287727",
+   "discount": "0.05"
+  }
+ },
+ "userRateLimit": {
+  "cumVlm": "358189127.4900000095",
+  "nRequestsUsed": 20235,
+  "nRequestsCap": 358199127,
+  "nRequestsSurplus": 0
+ },
+ "referral": {
+  "referredBy": {
+   "referrer": "0x5e9ee1089755c3435139848e47e6635505d5a13a",
+   "code": "ALPHA"
+  },
+  "cumVlm": "357435468.6100000143",
+  "unclaimedRewards": "3806.8634337",
+  "claimedRewards": "539.71811052",
+  "builderRewards": "0.0",
+  "referrerState": {
+   "stage": "ready",
+   "data": {
+    "code": "APIST",
+    "nReferrals": 10,
+    "referralStates": [
+     {
+      "cumVlm": "120545543.2900000066",
+      "cumRewardedFeesSinceReferred": "36818.12163534",
+      "cumFeesRewardedToReferrer": "3681.7368456",
+      "timeJoined": 1701692973920,
+      "user": "0x9a15342876e19052c3fabcef9bad8507b9623c12",
+      "tokenToState": [
+       [
+        0,
+        {
+         "cumVlm": "120545543.2900000066",
+         "cumRewardedFeesSinceReferred": "36818.12163534",
+         "cumFeesRewardedToReferrer": "3681.7368456"
+        }
+       ]
+      ]
+     },
+     {
+      "cumVlm": "12520167.0199999996",
+      "cumRewardedFeesSinceReferred": "2970.63946491",
+      "cumFeesRewardedToReferrer": "297.0628801",
+      "timeJoined": 1778135204960,
+      "user": "0x1e7fa78a14ec6399e2678035974e4690c8caf226",
+      "tokenToState": [
+       [
+        0,
+        {
+         "cumVlm": "12520167.0199999996",
+         "cumRewardedFeesSinceReferred": "2970.63946491",
+         "cumFeesRewardedToReferrer": "297.0628801"
+        }
+       ]
+      ]
+     },
+     {
+      "cumVlm": "13294110.4900000002",
+      "cumRewardedFeesSinceReferred": "2457.183949",
+      "cumFeesRewardedToReferrer": "245.715813",
+      "timeJoined": 1704432119405,
+      "user": "0xc086fb8a40d2b7ef1eef0970ccdd842c2a8982bc",
+      "tokenToState": [
+       [
+        0,
+        {
+         "cumVlm": "13294110.4900000002",
+         "cumRewardedFeesSinceReferred": "2457.183949",
+         "cumFeesRewardedToReferrer": "245.715813"
+        }
+       ]
+      ]
+     },
+     {
+      "cumVlm": "3250074.9100000001",
+      "cumRewardedFeesSinceReferred": "1029.125326",
+      "cumFeesRewardedToReferrer": "97.24039",
+      "timeJoined": 1758038186080,
+      "user": "0xa2a95178ffed95ce9a2278bca9bb5bef8c0dc95c",
+      "tokenToState": [
+       [
+        0,
+        {
+         "cumVlm": "3250074.9100000001",
+         "cumRewardedFeesSinceReferred": "1029.125326",
+         "cumFeesRewardedToReferrer": "97.24039"
+        }
+       ]
+      ]
+     },
+     {
+      "cumVlm": "1094242.1599999999",
+      "cumRewardedFeesSinceReferred": "117.60288088",
+      "cumFeesRewardedToReferrer": "11.7602867",
+      "timeJoined": 1777104204251,
+      "user": "0xe2b1721405017c5d987e0fdb90ffdcfba742cacf",
+      "tokenToState": [
+       [
+        0,
+        {
+         "cumVlm": "1094242.1599999999",
+         "cumRewardedFeesSinceReferred": "117.60288088",
+         "cumFeesRewardedToReferrer": "11.7602867"
+        }
+       ]
+      ]
+     },
+     {
+      "cumVlm": "435745.89",
+      "cumRewardedFeesSinceReferred": "75.181103",
+      "cumFeesRewardedToReferrer": "7.51797",
+      "timeJoined": 1704435755714,
+      "user": "0x5985f2dcd317bb64113e45e4767b96c074c7f972",
+      "tokenToState": [
+       [
+        0,
+        {
+         "cumVlm": "435745.89",
+         "cumRewardedFeesSinceReferred": "75.181103",
+         "cumFeesRewardedToReferrer": "7.51797"
+        }
+       ]
+      ]
+     },
+     {
+      "cumVlm": "140601.71",
+      "cumRewardedFeesSinceReferred": "50.4941464",
+      "cumFeesRewardedToReferrer": "5.04938582",
+      "timeJoined": 1705078535115,
+      "user": "0x8ad540824d38c961392137ee3852de7bc44c8d12",
+      "tokenToState": [
+       [
+        0,
+        {
+         "cumVlm": "140601.71",
+         "cumRewardedFeesSinceReferred": "50.4941464",
+         "cumFeesRewardedToReferrer": "5.04938582"
+        }
+       ]
+      ]
+     },
+     {
+      "cumVlm": "4220.12",
+      "cumRewardedFeesSinceReferred": "0.405128",
+      "cumFeesRewardedToReferrer": "0.040511",
+      "timeJoined": 1704436315791,
+      "user": "0xd57a4657438a01e9bba99733c14769fe6d0d1096",
+      "tokenToState": [
+       [
+        0,
+        {
+         "cumVlm": "4220.12",
+         "cumRewardedFeesSinceReferred": "0.405128",
+         "cumFeesRewardedToReferrer": "0.040511"
+        }
+       ]
+      ]
+     },
+     {
+      "cumVlm": "98.01",
+      "cumRewardedFeesSinceReferred": "0.0",
+      "cumFeesRewardedToReferrer": "0.00245",
+      "timeJoined": 1692626848221,
+      "user": "0xa25243821277b10dff17a3276a51a772fd68c9de",
+      "tokenToState": [
+       [
+        0,
+        {
+         "cumVlm": "98.01",
+         "cumRewardedFeesSinceReferred": "0.0",
+         "cumFeesRewardedToReferrer": "0.00245"
+        }
+       ]
+      ]
+     },
+     {
+      "cumVlm": "52714.82",
+      "cumRewardedFeesSinceReferred": "0.0",
+      "cumFeesRewardedToReferrer": "0.455012",
+      "timeJoined": 1692627034973,
+      "user": "0xeefcfc26bee38027520b90392c2286965aa67ade",
+      "tokenToState": [
+       [
+        0,
+        {
+         "cumVlm": "52714.82",
+         "cumRewardedFeesSinceReferred": "0.0",
+         "cumFeesRewardedToReferrer": "0.455012"
+        }
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "rewardHistory": [],
+  "tokenToState": [
+   [
+    0,
+    {
+     "cumVlm": "357435468.6100000143",
+     "unclaimedRewards": "3806.8634337",
+     "claimedRewards": "539.71811052",
+     "builderRewards": "0.0"
+    }
+   ],
+   [
+    360,
+    {
+     "cumVlm": "57083.13",
+     "unclaimedRewards": "0.0",
+     "claimedRewards": "0.0",
+     "builderRewards": "0.0"
+    }
+   ]
+  ]
+ },
+ "subAccounts": null,
+ "userVaultEquities": [
+  {
+   "vaultAddress": "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303",
+   "equity": "0.000001",
+   "lockedUntilTimestamp": 1747235923731
+  }
+ ],
+ "delegatorSummary": {
+  "delegated": "92.88278337",
+  "undelegated": "0.0",
+  "totalPendingWithdrawal": "0.0",
+  "nPendingWithdrawals": 0
+ },
+ "extraAgents": [],
+ "portfolio": [
+  [
+   "day",
+   {
+    "accountValueHistory": [
+     [
+      1792050960043,
+      "2873555.5428729998"
+     ],
+     [
+      1792058160066,
+      "2870262.0327070002"
+     ],
+     [
+      1792066560015,
+      "2852022.2850210001"
+     ],
+     [
+      1792074960120,
+      "2878688.5338989999"
+     ],
+     [
+      1792083360047,
+      "2985506.1893219999"
+     ],
+     [
+      1792091760006,
+      "3037013.0700409999"
+     ],
+     [
+      1792100160093,
+      "3026772.0206490001"
+     ],
+     [
+      1792108560031,
+      "3015498.5167589998"
+     ],
+     [
+      1792115760063,
+      "3023507.2709940001"
+     ],
+     [
+      1792124160024,
+      "3022146.7533959998"
+     ],
+     [
+      1792131360038,
+      "3026777.4322589999"
+     ],
+     [
+      1792138560041,
+      "3034455.6434510001"
+     ],
+     [
+      1792143193572,
+      "3050808.428665"
+     ]
+    ],
+    "pnlHistory": [
+     [
+      1792050960043,
+      "0.0"
+     ],
+     [
+      1792058160066,
+      "-3293.510166"
+     ],
+     [
+      1792066560015,
+      "-21533.257852"
+     ],
+     [
+      1792074960120,
+      "5132.991026"
+     ],
+     [
+      1792083360047,
+      "111950.646449"
+     ],
+     [
+      1792091760006,
+      "163457.527168"
+     ],
+     [
+      1792100160093,
+      "153216.477776"
+     ],
+     [
+      1792108560031,
+      "141942.973886"
+     ],
+     [
+      1792115760063,
+      "149951.728121"
+     ],
+     [
+      1792124160024,
+      "148591.210523"
+     ],
+     [
+      1792131360038,
+      "153221.889386"
+     ],
+     [
+      1792138560041,
+      "160900.100578"
+     ],
+     [
+      1792143193572,
+      "177252.885792"
+     ]
+    ],
+    "vlm": "0.0"
+   }
+  ],
+  [
+   "week",
+   {
+    "accountValueHistory": [
+     [
+      1791536160010,
+      "3041821.8445689999"
+     ],
+     [
+      1791544560027,
+      "3012961.267308"
+     ],
+     [
+      1791551760102,
+      "3017996.7961550001"
+     ],
+     [
+      1791567360061,
+      "3021771.245536"
+     ],
+     [
+      1791574560127,
+      "3016299.3077099998"
+     ],
+     [
+      1791582960118,
+      "3044988.9590690001"
+     ],
+     [
+      1791599760088,
+      "3074398.3398879999"
+     ],
+     [
+      1791606960100,
+      "3070966.8473260002"
+     ],
+     [
+      1791615360022,
+      "3110102.2896250002"
+     ],
+     [
+      1791632160028,
+      "3096980.6672499999"
+     ],
+     [
+      1791639360052,
+      "3103933.1179979998"
+     ],
+     [
+      1791654960103,
+      "3147958.661963"
+     ],
+     [
+      1791663360019,
+      "3185018.8656680002"
+     ],
+     [
+      1791670560037,
+      "3208111.981985"
+     ],
+     [
+      1791686160054,
+      "3226751.295502"
+     ],
+     [
+      1791693360058,
+      "3161083.1542090001"
+     ],
+     [
+      1791708960052,
+      "3180754.8710670001"
+     ],
+     [
+      1791716160064,
+      "3194364.3513839999"
+     ],
+     [
+      1791724560091,
+      "3206635.9143960001"
+     ],
+     [
+      1791741360054,
+      "3244942.0295540001"
+     ],
+     [
+      1791748560060,
+      "3242412.8467529998"
+     ],
+     [
+      1791762960077,
+      "3248342.2234510002"
+     ],
+     [
+      1791770160095,
+      "3218712.0817109998"
+     ],
+     [
+      1791778560037,
+      "3223263.72334"
+     ],
+     [
+      1791795360024,
+      "3218877.9320049998"
+     ],
+     [
+      1791803760025,
+      "3201531.5396790002"
+     ],
+     [
+      1791810960032,
+      "3159613.5760169998"
+     ],
+     [
+      1791827760061,
+      "3088646.791247"
+     ],
+     [
+      1791836160044,
+      "3090817.6344860001"
+     ],
+     [
+      1791843360127,
+      "3057060.0263990001"
+     ],
+     [
+      1791858960036,
+      "3029420.9332050001"
+     ],
+     [
+      1791866160046,
+      "3061429.482727"
+     ],
+     [
+      1791881760021,
+      "3072566.7192020002"
+     ],
+     [
+      1791888960056,
+      "3026497.8790369998"
+     ],
+     [
+      1791897360025,
+      "3012349.1598359998"
+     ],
+     [
+      1791912960031,
+      "3038544.530183"
+     ],
+     [
+      1791921360053,
+      "3054254.118247"
+     ],
+     [
+      1791929760069,
+      "3044632.3345329999"
+     ],
+     [
+      1791945360039,
+      "3060087.198167"
+     ],
+     [
+      1791953760030,
+      "3080606.4924050001"
+     ],
+     [
+      1791960960045,
+      "3047838.4382750001"
+     ],
+     [
+      1791968160054,
+      "3055881.7158130002"
+     ],
+     [
+      1791976560022,
+      "3039356.9736119998"
+     ],
+     [
+      1791983760031,
+      "2982173.8181739999"
+     ],
+     [
+      1791990960058,
+      "2960476.106933"
+     ],
+     [
+      1791998160064,
+      "2951005.8930350002"
+     ],
+     [
+      1792006560017,
+      "2951198.1719269999"
+     ],
+     [
+      1792013760029,
+      "2967848.2243659999"
+     ],
+     [
+      1792020960033,
+      "2950838.194437"
+     ],
+     [
+      1792028160050,
+      "2927322.4947279999"
+     ],
+     [
+      1792035360071,
+      "2850024.6314960001"
+     ],
+     [
+      1792043760037,
+      "2840523.695394"
+     ],
+     [
+      1792050960043,
+      "2873555.5428729998"
+     ],
+     [
+      1792058160066,
+      "2870262.0327070002"
+     ],
+     [
+      1792066560015,
+      "2852022.2850210001"
+     ],
+     [
+      1792074960120,
+      "2878688.5338989999"
+     ],
+     [
+      1792083360047,
+      "2985506.1893219999"
+     ],
+     [
+      1792091760006,
+      "3037013.0700409999"
+     ],
+     [
+      1792100160093,
+      "3026772.0206490001"
+     ],
+     [
+      1792108560031,
+      "3015498.5167589998"
+     ],
+     [
+      1792115760063,
+      "3023507.2709940001"
+     ],
+     [
+      1792124160024,
+      "3022146.7533959998"
+     ],
+     [
+      1792131360038,
+      "3026777.4322589999"
+     ],
+     [
+      1792138560041,
+      "3034455.6434510001"
+     ],
+     [
+      1792143193572,
+      "3050808.428665"
+     ]
+    ],
+    "pnlHistory": [
+     [
+      1791536160010,
+      "0.0"
+     ],
+     [
+      1791544560027,
+      "-28860.577261"
+     ],
+     [
+      1791551760102,
+      "-23825.048414"
+     ],
+     [
+      1791567360061,
+      "-20050.599033"
+     ],
+     [
+      1791574560127,
+      "-25522.536859"
+     ],
+     [
+      1791582960118,
+      "3167.1145"
+     ],
+     [
+      1791599760088,
+      "32576.495319"
+     ],
+     [
+      1791606960100,
+      "29145.002757"
+     ],
+     [
+      1791615360022,
+      "68280.445056"
+     ],
+     [
+      1791632160028,
+      "55158.822681"
+     ],
+     [
+      1791639360052,
+      "62111.273429"
+     ],
+     [
+      1791654960103,
+      "106136.817394"
+     ],
+     [
+      1791663360019,
+      "143197.021099"
+     ],
+     [
+      1791670560037,
+      "166290.137416"
+     ],
+     [
+      1791686160054,
+      "184929.450933"
+     ],
+     [
+      1791693360058,
+      "119261.30964"
+     ],
+     [
+      1791708960052,
+      "138933.026498"
+     ],
+     [
+      1791716160064,
+      "152542.506815"
+     ],
+     [
+      1791724560091,
+      "164814.069827"
+     ],
+     [
+      1791741360054,
+      "203120.184985"
+     ],
+     [
+      1791748560060,
+      "200591.002184"
+     ],
+     [
+      1791762960077,
+      "206520.378882"
+     ],
+     [
+      1791770160095,
+      "176890.237142"
+     ],
+     [
+      1791778560037,
+      "181441.878771"
+     ],
+     [
+      1791795360024,
+      "177056.087436"
+     ],
+     [
+      1791803760025,
+      "159709.69511"
+     ],
+     [
+      1791810960032,
+      "117791.731448"
+     ],
+     [
+      1791827760061,
+      "46824.946678"
+     ],
+     [
+      1791836160044,
+      "48995.789917"
+     ],
+     [
+      1791843360127,
+      "15238.18183"
+     ],
+     [
+      1791858960036,
+      "-12400.911364"
+     ],
+     [
+      1791866160046,
+      "19607.638158"
+     ],
+     [
+      1791881760021,
+      "30744.874633"
+     ],
+     [
+      1791888960056,
+      "-15323.965532"
+     ],
+     [
+      1791897360025,
+      "-29472.684733"
+     ],
+     [
+      1791912960031,
+      "-3277.314386"
+     ],
+     [
+      1791921360053,
+      "12432.273678"
+     ],
+     [
+      1791929760069,
+      "2810.489964"
+     ],
+     [
+      1791945360039,
+      "18265.353598"
+     ],
+     [
+      1791953760030,
+      "38784.647836"
+     ],
+     [
+      1791960960045,
+      "6016.593706"
+     ],
+     [
+      1791968160054,
+      "14059.871244"
+     ],
+     [
+      1791976560022,
+      "-2464.870957"
+     ],
+     [
+      1791983760031,
+      "-59648.026395"
+     ],
+     [
+      1791990960058,
+      "-81345.737636"
+     ],
+     [
+      1791998160064,
+      "-90815.951534"
+     ],
+     [
+      1792006560017,
+      "-90623.672642"
+     ],
+     [
+      1792013760029,
+      "-73973.620203"
+     ],
+     [
+      1792020960033,
+      "-90983.650132"
+     ],
+     [
+      1792028160050,
+      "-114499.349841"
+     ],
+     [
+      1792035360071,
+      "-191797.213073"
+     ],
+     [
+      1792043760037,
+      "-201298.149175"
+     ],
+     [
+      1792050960043,
+      "-168266.301696"
+     ],
+     [
+      1792058160066,
+      "-171559.811862"
+     ],
+     [
+      1792066560015,
+      "-189799.559548"
+     ],
+     [
+      1792074960120,
+      "-163133.31067"
+     ],
+     [
+      1792083360047,
+      "-56315.655247"
+     ],
+     [
+      1792091760006,
+      "-4808.774528"
+     ],
+     [
+      1792100160093,
+      "-15049.82392"
+     ],
+     [
+      1792108560031,
+      "-26323.32781"
+     ],
+     [
+      1792115760063,
+      "-18314.573575"
+     ],
+     [
+      1792124160024,
+      "-19675.091173"
+     ],
+     [
+      1792131360038,
+      "-15044.41231"
+     ],
+     [
+      1792138560041,
+      "-7366.201118"
+     ],
+     [
+      1792143193572,
+      "8986.584096"
+     ]
+    ],
+    "vlm": "1439138.3400000001"
+   }
+  ],
+  [
+   "month",
+   {
+    "accountValueHistory": [
+     [
+      1789514160001,
+      "2446594.806717"
+     ],
+     [
+      1789602960024,
+      "2568901.6178959999"
+     ],
+     [
+      1789683360035,
+      "2673444.5792180002"
+     ],
+     [
+      1789772160064,
+      "2942456.3513520001"
+     ],
+     [
+      1789860960071,
+      "2855194.805708"
+     ],
+     [
+      1789948560065,
+      "2875207.1129700001"
+     ],
+     [
+      1790034960043,
+      "2998378.6533630001"
+     ],
+     [
+      1790121360014,
+      "3085650.126278"
+     ],
+     [
+      1790200560027,
+      "3069130.0933610001"
+     ],
+     [
+      1790294160055,
+      "3029222.8642469998"
+     ],
+     [
+      1790380560038,
+      "3037430.7770389998"
+     ],
+     [
+      1790460960100,
+      "3073667.5171309998"
+     ],
+     [
+      1790546160052,
+      "3073314.8740710001"
+     ],
+     [
+      1790639760066,
+      "3020206.2480950002"
+     ],
+     [
+      1790726160057,
+      "3049051.9859989998"
+     ],
+     [
+      1790805360052,
+      "3138579.4826059998"
+     ],
+     [
+      1790897760100,
+      "3107156.0166989998"
+     ],
+     [
+      1790979360014,
+      "3064327.4002990001"
+     ],
+     [
+      1791071760058,
+      "3149234.5998430001"
+     ],
+     [
+      1791155760035,
+      "3205999.6377969999"
+     ],
+     [
+      1791240960053,
+      "3260136.716486"
+     ],
+     [
+      1791329760004,
+      "3242221.4698359999"
+     ],
+     [
+      1791416160063,
+      "3105553.542349"
+     ],
+     [
+      1791448560047,
+      "3078645.5469479999"
+     ],
+     [
+      1791479760016,
+      "2942864.65705"
+     ],
+     [
+      1791510960061,
+      "3008061.049418"
+     ],
+     [
+      1791544560027,
+      "3012961.267308"
+     ],
+     [
+      1791574560127,
+      "3016299.3077099998"
+     ],
+     [
+      1791606960100,
+      "3070966.8473260002"
+     ],
+     [
+      1791639360052,
+      "3103933.1179979998"
+     ],
+     [
+      1791670560037,
+      "3208111.981985"
+     ],
+     [
+      1791708960052,
+      "3180754.8710670001"
+     ],
+     [
+      1791741360054,
+      "3244942.0295540001"
+     ],
+     [
+      1791770160095,
+      "3218712.0817109998"
+     ],
+     [
+      1791803760025,
+      "3201531.5396790002"
+     ],
+     [
+      1791836160044,
+      "3090817.6344860001"
+     ],
+     [
+      1791866160046,
+      "3061429.482727"
+     ],
+     [
+      1791897360025,
+      "3012349.1598359998"
+     ],
+     [
+      1791929760069,
+      "3044632.3345329999"
+     ],
+     [
+      1791960960045,
+      "3047838.4382750001"
+     ],
+     [
+      1791990960058,
+      "2960476.106933"
+     ],
+     [
+      1792020960033,
+      "2950838.194437"
+     ],
+     [
+      1792050960043,
+      "2873555.5428729998"
+     ],
+     [
+      1792083360047,
+      "2985506.1893219999"
+     ],
+     [
+      1792115760063,
+      "3023507.2709940001"
+     ],
+     [
+      1792143193572,
+      "3050808.428665"
+     ]
+    ],
+    "pnlHistory": [
+     [
+      1789514160001,
+      "0.0"
+     ],
+     [
+      1789602960024,
+      "122306.811179"
+     ],
+     [
+      1789683360035,
+      "226849.772501"
+     ],
+     [
+      1789772160064,
+      "495861.544635"
+     ],
+     [
+      1789860960071,
+      "408599.998991"
+     ],
+     [
+      1789948560065,
+      "428612.306253"
+     ],
+     [
+      1790034960043,
+      "551783.846646"
+     ],
+     [
+      1790121360014,
+      "639055.319561"
+     ],
+     [
+      1790200560027,
+      "622535.286644"
+     ],
+     [
+      1790294160055,
+      "582628.05753"
+     ],
+     [
+      1790380560038,
+      "590835.970322"
+     ],
+     [
+      1790460960100,
+      "627072.710414"
+     ],
+     [
+      1790546160052,
+      "626720.0673540001"
+     ],
+     [
+      1790639760066,
+      "573611.441378"
+     ],
+     [
+      1790726160057,
+      "602457.1792820001"
+     ],
+     [
+      1790805360052,
+      "691984.6758889999"
+     ],
+     [
+      1790897760100,
+      "660561.2099819999"
+     ],
+     [
+      1790979360014,
+      "617732.593582"
+     ],
+     [
+      1791071760058,
+      "702639.793126"
+     ],
+     [
+      1791155760035,
+      "759404.83108"
+     ],
+     [
+      1791240960053,
+      "813541.909769"
+     ],
+     [
+      1791329760004,
+      "795626.663119"
+     ],
+     [
+      1791416160063,
+      "658958.735632"
+     ],
+     [
+      1791448560047,
+      "632050.740231"
+     ],
+     [
+      1791479760016,
+      "496269.850333"
+     ],
+     [
+      1791510960061,
+      "561466.242701"
+     ],
+     [
+      1791544560027,
+      "566366.460591"
+     ],
+     [
+      1791574560127,
+      "569704.500993"
+     ],
+     [
+      1791606960100,
+      "624372.040609"
+     ],
+     [
+      1791639360052,
+      "657338.311281"
+     ],
+     [
+      1791670560037,
+      "761517.175268"
+     ],
+     [
+      1791708960052,
+      "734160.06435"
+     ],
+     [
+      1791741360054,
+      "798347.222837"
+     ],
+     [
+      1791770160095,
+      "772117.274994"
+     ],
+     [
+      1791803760025,
+      "754936.732962"
+     ],
+     [
+      1791836160044,
+      "644222.827769"
+     ],
+     [
+      1791866160046,
+      "614834.6760100001"
+     ],
+     [
+      1791897360025,
+      "565754.353119"
+     ],
+     [
+      1791929760069,
+      "598037.527816"
+     ],
+     [
+      1791960960045,
+      "601243.631558"
+     ],
+     [
+      1791990960058,
+      "513881.300216"
+     ],
+     [
+      1792020960033,
+      "504243.38772"
+     ],
+     [
+      1792050960043,
+      "426960.736156"
+     ],
+     [
+      1792083360047,
+      "538911.382605"
+     ],
+     [
+      1792115760063,
+      "576912.4642770001"
+     ],
+     [
+      1792143193572,
+      "604213.621948"
+     ]
+    ],
+    "vlm": "18608631.2399999984"
+   }
+  ],
+  [
+   "allTime",
+   {
+    "accountValueHistory": [
+     [
+      1692830700068,
+      "0.0"
+     ],
+     [
+      1692834300068,
+      "11664.199846"
+     ],
+     [
+      1693439100896,
+      "19002.818999"
+     ],
+     [
+      1694648700024,
+      "7717.4788"
+     ],
+     [
+      1695858300314,
+      "8672.392131"
+     ],
+     [
+      1696463100160,
+      "4802.91031"
+     ],
+     [
+      1697067900153,
+      "5935.011915"
+     ],
+     [
+      1698277500323,
+      "7789.703325"
+     ],
+     [
+      1699487100053,
+      "12380.344379"
+     ],
+     [
+      1700091900143,
+      "1508.76744"
+     ],
+     [
+      1700696700214,
+      "782.161936"
+     ],
+     [
+      1701906300001,
+      "1844.374196"
+     ],
+     [
+      1702511100387,
+      "1291.080263"
+     ],
+     [
+      1703115900026,
+      "979.877801"
+     ],
+     [
+      1704325500064,
+      "54.169979"
+     ],
+     [
+      1704930300269,
+      "9629.398706"
+     ],
+     [
+      1706139900027,
+      "5823.292583"
+     ],
+     [
+      1707344100044,
+      "5886.640353"
+     ],
+     [
+      1708559100135,
+      "6041.782133"
+     ],
+     [
+      1709765100386,
+      "26084.311386"
+     ],
+     [
+      1710368100256,
+      "36952.224915"
+     ],
+     [
+      1710971100230,
+      "25102.895667"
+     ],
+     [
+      1712186100223,
+      "22207.579705"
+     ],
+     [
+      1713392100352,
+      "21351.137277"
+     ],
+     [
+      1713995100003,
+      "25899.295375"
+     ],
+     [
+      1714601520393,
+      "19494.094335"
+     ],
+     [
+      1715817120014,
+      "27364.783832"
+     ],
+     [
+      1717023120076,
+      "28561.985323"
+     ],
+     [
+      1718232840075,
+      "26664.525779"
+     ],
+     [
+      1719440160069,
+      "19122.272982"
+     ],
+     [
+      1720649760099,
+      "19283.962801"
+     ],
+     [
+      1721861760100,
+      "21126.598736"
+     ],
+     [
+      1722470160020,
+      "83948.741677"
+     ],
+     [
+      1723070160124,
+      "55002.498723"
+     ],
+     [
+      1723677360091,
+      "42454.819894"
+     ],
+     [
+      1724887560067,
+      "42036.508303"
+     ],
+     [
+      1726092360106,
+      "36903.15094"
+     ],
+     [
+      1727307960023,
+      "42836.12958"
+     ],
+     [
+      1728515160109,
+      "45252.311059"
+     ],
+     [
+      1729721160004,
+      "47264.049601"
+     ],
+     [
+      1730933160025,
+      "55024.368141"
+     ],
+     [
+      1731541560162,
+      "103000.413615"
+     ],
+     [
+      1732141560013,
+      "126716.15605"
+     ],
+     [
+      1732749960116,
+      "152316.927643"
+     ],
+     [
+      1733349960139,
+      "419308.659118"
+     ],
+     [
+      1734564360116,
+      "583470.118598"
+     ],
+     [
+      1735770360184,
+      "592665.090415"
+     ],
+     [
+      1736978760187,
+      "504702.576612"
+     ],
+     [
+      1738193160050,
+      "537777.535383"
+     ],
+     [
+      1739396760088,
+      "470147.965053"
+     ],
+     [
+      1740612360037,
+      "360953.715911"
+     ],
+     [
+      1741817160040,
+      "252584.700756"
+     ],
+     [
+      1743032760041,
+      "283702.79526"
+     ],
+     [
+      1743632760015,
+      "210743.540833"
+     ],
+     [
+      1744237560117,
+      "165296.747904"
+     ],
+     [
+      1745448360072,
+      "210773.690627"
+     ],
+     [
+      1746654360112,
+      "329934.749004"
+     ],
+     [
+      1747870080021,
+      "465102.238072"
+     ],
+     [
+      1749075360071,
+      "499664.751553"
+     ],
+     [
+      1750289400044,
+      "468693.189528"
+     ],
+     [
+      1751498160052,
+      "619100.870149"
+     ],
+     [
+      1752705480053,
+      "835081.576339"
+     ],
+     [
+      1753916760077,
+      "746626.329284"
+     ],
+     [
+      1755128880045,
+      "1146770.7105970001"
+     ],
+     [
+      1756336560069,
+      "1082455.8064250001"
+     ],
+     [
+      1757547360056,
+      "1221677.8192749999"
+     ],
+     [
+      1758152160107,
+      "1563057.5737689999"
+     ],
+     [
+      1758755760059,
+      "2394495.7273110002"
+     ],
+     [
+      1759966560018,
+      "2491087.0904839998"
+     ],
+     [
+      1760565360056,
+      "1645219.3092420001"
+     ],
+     [
+      1761780960077,
+      "1940358.778989"
+     ],
+     [
+      1762986960043,
+      "1756746.079499"
+     ],
+     [
+      1764197760065,
+      "1716284.2777829999"
+     ],
+     [
+      1765404960056,
+      "1846066.1079869999"
+     ],
+     [
+      1766619360063,
+      "1938357.9048319999"
+     ],
+     [
+      1767828960066,
+      "1907835.8729069999"
+     ],
+     [
+      1769037360053,
+      "1818556.8332209999"
+     ],
+     [
+      1770246960043,
+      "1994047.4952680001"
+     ],
+     [
+      1771458960002,
+      "2082960.6975430001"
+     ],
+     [
+      1772667360105,
+      "2140262.6205139998"
+     ],
+     [
+      1773875760054,
+      "2192303.7211549999"
+     ],
+     [
+      1775086560039,
+      "2400382.07057"
+     ],
+     [
+      1776292560097,
+      "2491911.2268539998"
+     ],
+     [
+      1777504560015,
+      "2601789.6878709998"
+     ],
+     [
+      1778711760061,
+      "2567965.182124"
+     ],
+     [
+      1779923760034,
+      "2604976.7616400002"
+     ],
+     [
+      1781132160052,
+      "2627820.37806"
+     ],
+     [
+      1782339360000,
+      "2392335.953673"
+     ],
+     [
+      1783551360011,
+      "2224047.9622269999"
+     ],
+     [
+      1784758560072,
+      "2306349.7840240002"
+     ],
+     [
+      1785971760006,
+      "2123803.247095"
+     ],
+     [
+      1787182560021,
+      "2131651.3877610001"
+     ],
+     [
+      1788389760057,
+      "2347413.2446719999"
+     ],
+     [
+      1789427760044,
+      "2624784.3983169999"
+     ],
+     [
+      1790460960100,
+      "3073667.5171309998"
+     ],
+     [
+      1791455760075,
+      "3061993.3749620002"
+     ],
+     [
+      1792143193572,
+      "3050808.428665"
+     ]
+    ],
+    "pnlHistory": [
+     [
+      1692830700068,
+      "0.0"
+     ],
+     [
+      1692834300068,
+      "-6705.962139"
+     ],
+     [
+      1693439100896,
+      "632.657014"
+     ],
+     [
+      1694648700024,
+      "-15684.394291"
+     ],
+     [
+      1695858300314,
+      "-14739.010495"
+     ],
+     [
+      1696463100160,
+      "-18616.230602"
+     ],
+     [
+      1697067900153,
+      "-17497.377381"
+     ],
+     [
+      1698277500323,
+      "-15686.472693"
+     ],
+     [
+      1699487100053,
+      "-11097.010274"
+     ],
+     [
+      1700091900143,
+      "-21968.587213"
+     ],
+     [
+      1700696700214,
+      "-22695.192717"
+     ],
+     [
+      1701906300001,
+      "-21632.980457"
+     ],
+     [
+      1702511100387,
+      "-22186.27439"
+     ],
+     [
+      1703115900026,
+      "-22497.476852"
+     ],
+     [
+      1704325500064,
+      "-23423.184674"
+     ],
+     [
+      1704930300269,
+      "-21980.537973"
+     ],
+     [
+      1706139900027,
+      "-25786.644096"
+     ],
+     [
+      1707344100044,
+      "-25723.296326"
+     ],
+     [
+      1708559100135,
+      "-25568.154546"
+     ],
+     [
+      1709765100386,
+      "-26517.820396"
+     ],
+     [
+      1710368100256,
+      "-15649.906867"
+     ],
+     [
+      1710971100230,
+      "-27499.236115"
+     ],
+     [
+      1712186100223,
+      "-30394.552077"
+     ],
+     [
+      1713392100352,
+      "-31250.994505"
+     ],
+     [
+      1713995100003,
+      "-26702.836407"
+     ],
+     [
+      1714601520393,
+      "-33108.037447"
+     ],
+     [
+      1715817120014,
+      "-25237.34795"
+     ],
+     [
+      1717023120076,
+      "-24040.146459"
+     ],
+     [
+      1718232840075,
+      "-25937.606003"
+     ],
+     [
+      1719440160069,
+      "-33479.8588"
+     ],
+     [
+      1720649760099,
+      "-33318.168981"
+     ],
+     [
+      1721861760100,
+      "-31498.123776"
+     ],
+     [
+      1722470160020,
+      "-36133.660835"
+     ],
+     [
+      1723070160124,
+      "-65079.903789"
+     ],
+     [
+      1723677360091,
+      "-77627.582618"
+     ],
+     [
+      1724887560067,
+      "-78045.894209"
+     ],
+     [
+      1726092360106,
+      "-83179.251572"
+     ],
+     [
+      1727307960023,
+      "-77246.272932"
+     ],
+     [
+      1728515160109,
+      "-74913.498713"
+     ],
+     [
+      1729721160004,
+      "-72901.760171"
+     ],
+     [
+      1730933160025,
+      "-65141.441631"
+     ],
+     [
+      1731541560162,
+      "-17165.489179"
+     ],
+     [
+      1732141560013,
+      "26550.253256"
+     ],
+     [
+      1732749960116,
+      "52151.024849"
+     ],
+     [
+      1733349960139,
+      "313429.386324"
+     ],
+     [
+      1734564360116,
+      "463112.772636"
+     ],
+     [
+      1735770360184,
+      "472307.744453"
+     ],
+     [
+      1736978760187,
+      "384345.23065"
+     ],
+     [
+      1738193160050,
+      "417420.189421"
+     ],
+     [
+      1739396760088,
+      "349790.619091"
+     ],
+     [
+      1740612360037,
+      "240596.369949"
+     ],
+     [
+      1741817160040,
+      "132227.354794"
+     ],
+     [
+      1743032760041,
+      "163345.449298"
+     ],
+     [
+      1743632760015,
+      "90386.194871"
+     ],
+     [
+      1744237560117,
+      "44939.401942"
+     ],
+     [
+      1745448360072,
+      "90416.344665"
+     ],
+     [
+      1746654360112,
+      "194688.793042"
+     ],
+     [
+      1747870080021,
+      "300952.894895"
+     ],
+     [
+      1749075360071,
+      "335514.752554"
+     ],
+     [
+      1750289400044,
+      "304543.190529"
+     ],
+     [
+      1751498160052,
+      "454950.87115"
+     ],
+     [
+      1752705480053,
+      "670931.586339"
+     ],
+     [
+      1753916760077,
+      "660000.529284"
+     ],
+     [
+      1755128880045,
+      "1060144.910597"
+     ],
+     [
+      1756336560069,
+      "1125830.006425"
+     ],
+     [
+      1757547360056,
+      "1264682.969275"
+     ],
+     [
+      1758152160107,
+      "1606062.723769"
+     ],
+     [
+      1758755760059,
+      "2487500.8773110001"
+     ],
+     [
+      1759966560018,
+      "2581415.040484"
+     ],
+     [
+      1760565360056,
+      "1790064.969242"
+     ],
+     [
+      1761780960077,
+      "2085204.4389889999"
+     ],
+     [
+      1762986960043,
+      "1901591.7394989999"
+     ],
+     [
+      1764197760065,
+      "1858742.4677830001"
+     ],
+     [
+      1765404960056,
+      "2008625.2979870001"
+     ],
+     [
+      1766619360063,
+      "2100917.0948319999"
+     ],
+     [
+      1767828960066,
+      "2070395.0629070001"
+     ],
+     [
+      1769037360053,
+      "1981116.0232210001"
+     ],
+     [
+      1770246960043,
+      "2156606.6852679998"
+     ],
+     [
+      1771458960002,
+      "2245519.8875429998"
+     ],
+     [
+      1772667360105,
+      "2302821.8105139998"
+     ],
+     [
+      1773875760054,
+      "2354862.9111549999"
+     ],
+     [
+      1775086560039,
+      "2562941.2605699999"
+     ],
+     [
+      1776292560097,
+      "2654470.4168540002"
+     ],
+     [
+      1777504560015,
+      "2764348.8778710002"
+     ],
+     [
+      1778711760061,
+      "2730524.372124"
+     ],
+     [
+      1779923760034,
+      "2767535.9516400001"
+     ],
+     [
+      1781132160052,
+      "2790379.56806"
+     ],
+     [
+      1782339360000,
+      "2554895.1436729999"
+     ],
+     [
+      1783551360011,
+      "2411607.1522269999"
+     ],
+     [
+      1784758560072,
+      "2493908.9740240001"
+     ],
+     [
+      1785971760006,
+      "2433584.4370949999"
+     ],
+     [
+      1787182560021,
+      "2441432.577761"
+     ],
+     [
+      1788389760057,
+      "2657215.3746719998"
+     ],
+     [
+      1789427760044,
+      "2861943.268317"
+     ],
+     [
+      1790460960100,
+      "3310826.3871309999"
+     ],
+     [
+      1791455760075,
+      "3299152.2449619998"
+     ],
+     [
+      1792143193572,
+      "3287967.2986650001"
+     ]
+    ],
+    "vlm": "365071674.7699999809"
+   }
+  ],
+  [
+   "perpDay",
+   {
+    "accountValueHistory": [
+     [
+      1792050960043,
+      "1912843.274253"
+     ],
+     [
+      1792058160066,
+      "1900876.630809"
+     ],
+     [
+      1792066560015,
+      "1886078.9491320001"
+     ],
+     [
+      1792074960120,
+      "1914887.1913089999"
+     ],
+     [
+      1792083360047,
+      "2016646.764528"
+     ],
+     [
+      1792091760006,
+      "2065685.4382180001"
+     ],
+     [
+      1792100160093,
+      "2055000.9757960001"
+     ],
+     [
+      1792108560031,
+      "2044821.520392"
+     ],
+     [
+      1792115760063,
+      "2053348.7638689999"
+     ],
+     [
+      1792124160024,
+      "2054222.7948060001"
+     ],
+     [
+      1792131360038,
+      "2059417.9971940001"
+     ],
+     [
+      1792138560041,
+      "2064944.647627"
+     ],
+     [
+      1792143193572,
+      "2079993.198478"
+     ]
+    ],
+    "pnlHistory": [
+     [
+      1792050960043,
+      "0.0"
+     ],
+     [
+      1792058160066,
+      "-11966.643444"
+     ],
+     [
+      1792066560015,
+      "-26764.325121"
+     ],
+     [
+      1792074960120,
+      "2043.917056"
+     ],
+     [
+      1792083360047,
+      "103803.490275"
+     ],
+     [
+      1792091760006,
+      "152842.163965"
+     ],
+     [
+      1792100160093,
+      "142157.701543"
+     ],
+     [
+      1792108560031,
+      "131978.246139"
+     ],
+     [
+      1792115760063,
+      "140505.489616"
+     ],
+     [
+      1792124160024,
+      "141379.520553"
+     ],
+     [
+      1792131360038,
+      "146574.722941"
+     ],
+     [
+      1792138560041,
+      "152101.373374"
+     ],
+     [
+      1792143193572,
+      "167149.924225"
+     ]
+    ],
+    "vlm": "0.0"
+   }
+  ],
+  [
+   "perpWeek",
+   {
+    "accountValueHistory": [
+     [
+      1791536160010,
+      "2033731.163677"
+     ],
+     [
+      1791544560027,
+      "2006160.8859590001"
+     ],
+     [
+      1791551760102,
+      "2013450.7893300001"
+     ],
+     [
+      1791567360061,
+      "2017977.300817"
+     ],
+     [
+      1791574560127,
+      "2014501.2950520001"
+     ],
+     [
+      1791582960118,
+      "2040532.902463"
+     ],
+     [
+      1791599760088,
+      "2062777.9442710001"
+     ],
+     [
+      1791606960100,
+      "2059673.0282060001"
+     ],
+     [
+      1791615360022,
+      "2090433.8081420001"
+     ],
+     [
+      1791632160028,
+      "2046683.8855399999"
+     ],
+     [
+      1791639360052,
+      "2053606.7893709999"
+     ],
+     [
+      1791654960103,
+      "2101232.4634710001"
+     ],
+     [
+      1791663360019,
+      "2141586.573483"
+     ],
+     [
+      1791670560037,
+      "2164281.180431"
+     ],
+     [
+      1791686160054,
+      "2183842.3192949998"
+     ],
+     [
+      1791693360058,
+      "2117169.0987499999"
+     ],
+     [
+      1791708960052,
+      "2137997.7461239998"
+     ],
+     [
+      1791716160064,
+      "2151980.5142919999"
+     ],
+     [
+      1791724560091,
+      "2163596.7179950001"
+     ],
+     [
+      1791741360054,
+      "2117734.5328409998"
+     ],
+     [
+      1791748560060,
+      "2115694.925516"
+     ],
+     [
+      1791762960077,
+      "2125700.390836"
+     ],
+     [
+      1791770160095,
+      "2151659.424195"
+     ],
+     [
+      1791778560037,
+      "2154990.0376400002"
+     ],
+     [
+      1791795360024,
+      "2153376.8187719998"
+     ],
+     [
+      1791803760025,
+      "2135818.1027489998"
+     ],
+     [
+      1791810960032,
+      "2096198.331923"
+     ],
+     [
+      1791827760061,
+      "2030463.0365939999"
+     ],
+     [
+      1791836160044,
+      "2032103.0694550001"
+     ],
+     [
+      1791843360127,
+      "2000676.350937"
+     ],
+     [
+      1791858960036,
+      "2072744.207533"
+     ],
+     [
+      1791866160046,
+      "2102671.9306879998"
+     ],
+     [
+      1791881760021,
+      "2110209.679546"
+     ],
+     [
+      1791888960056,
+      "2065785.2385509999"
+     ],
+     [
+      1791897360025,
+      "2054163.945358"
+     ],
+     [
+      1791912960031,
+      "2077971.9262329999"
+     ],
+     [
+      1791921360053,
+      "2093347.2933660001"
+     ],
+     [
+      1791929760069,
+      "2081817.2282809999"
+     ],
+     [
+      1791945360039,
+      "2094870.798552"
+     ],
+     [
+      1791953760030,
+      "2115916.0838899999"
+     ],
+     [
+      1791960960045,
+      "2083163.118764"
+     ],
+     [
+      1791968160054,
+      "2089522.1829319999"
+     ],
+     [
+      1791976560022,
+      "2075802.6222880001"
+     ],
+     [
+      1791983760031,
+      "2024058.891567"
+     ],
+     [
+      1791990960058,
+      "1995018.9025409999"
+     ],
+     [
+      1791998160064,
+      "1985328.0067459999"
+     ],
+     [
+      1792006560017,
+      "1984567.5373859999"
+     ],
+     [
+      1792013760029,
+      "1999955.42148"
+     ],
+     [
+      1792020960033,
+      "1982016.3628720001"
+     ],
+     [
+      1792028160050,
+      "1960888.818162"
+     ],
+     [
+      1792035360071,
+      "1893193.941389"
+     ],
+     [
+      1792043760037,
+      "1883545.146648"
+     ],
+     [
+      1792050960043,
+      "1912843.274253"
+     ],
+     [
+      1792058160066,
+      "1900876.630809"
+     ],
+     [
+      1792066560015,
+      "1886078.9491320001"
+     ],
+     [
+      1792074960120,
+      "1914887.1913089999"
+     ],
+     [
+      1792083360047,
+      "2016646.764528"
+     ],
+     [
+      1792091760006,
+      "2065685.4382180001"
+     ],
+     [
+      1792100160093,
+      "2055000.9757960001"
+     ],
+     [
+      1792108560031,
+      "2044821.520392"
+     ],
+     [
+      1792115760063,
+      "2053348.7638689999"
+     ],
+     [
+      1792124160024,
+      "2054222.7948060001"
+     ],
+     [
+      1792131360038,
+      "2059417.9971940001"
+     ],
+     [
+      1792138560041,
+      "2064944.647627"
+     ],
+     [
+      1792143193572,
+      "2079993.198478"
+     ]
+    ],
+    "pnlHistory": [
+     [
+      1791536160010,
+      "0.0"
+     ],
+     [
+      1791544560027,
+      "-27570.277718"
+     ],
+     [
+      1791551760102,
+      "-20280.374347"
+     ],
+     [
+      1791567360061,
+      "-15753.86286"
+     ],
+     [
+      1791574560127,
+      "-19229.868625"
+     ],
+     [
+      1791582960118,
+      "6801.738786"
+     ],
+     [
+      1791599760088,
+      "32792.240594"
+     ],
+     [
+      1791606960100,
+      "29687.324529"
+     ],
+     [
+      1791615360022,
+      "60448.104465"
+     ],
+     [
+      1791632160028,
+      "50579.751863"
+     ],
+     [
+      1791639360052,
+      "57502.655694"
+     ],
+     [
+      1791654960103,
+      "97500.059794"
+     ],
+     [
+      1791663360019,
+      "137854.169806"
+     ],
+     [
+      1791670560037,
+      "160548.776754"
+     ],
+     [
+      1791686160054,
+      "180109.915618"
+     ],
+     [
+      1791693360058,
+      "113436.695073"
+     ],
+     [
+      1791708960052,
+      "134265.342447"
+     ],
+     [
+      1791716160064,
+      "148248.110615"
+     ],
+     [
+      1791724560091,
+      "159864.314318"
+     ],
+     [
+      1791741360054,
+      "194738.959164"
+     ],
+     [
+      1791748560060,
+      "192699.351839"
+     ],
+     [
+      1791762960077,
+      "202704.817159"
+     ],
+     [
+      1791770160095,
+      "173420.300518"
+     ],
+     [
+      1791778560037,
+      "176750.913963"
+     ],
+     [
+      1791795360024,
+      "175137.695095"
+     ],
+     [
+      1791803760025,
+      "157578.979072"
+     ],
+     [
+      1791810960032,
+      "117959.208246"
+     ],
+     [
+      1791827760061,
+      "52223.912917"
+     ],
+     [
+      1791836160044,
+      "53863.945778"
+     ],
+     [
+      1791843360127,
+      "22437.22726"
+     ],
+     [
+      1791858960036,
+      "1848.473856"
+     ],
+     [
+      1791866160046,
+      "31776.197011"
+     ],
+     [
+      1791881760021,
+      "39313.945869"
+     ],
+     [
+      1791888960056,
+      "-5110.495126"
+     ],
+     [
+      1791897360025,
+      "-16731.788319"
+     ],
+     [
+      1791912960031,
+      "7076.192556"
+     ],
+     [
+      1791921360053,
+      "22451.559689"
+     ],
+     [
+      1791929760069,
+      "10921.494604"
+     ],
+     [
+      1791945360039,
+      "23975.064875"
+     ],
+     [
+      1791953760030,
+      "45020.350213"
+     ],
+     [
+      1791960960045,
+      "12267.385087"
+     ],
+     [
+      1791968160054,
+      "18626.449255"
+     ],
+     [
+      1791976560022,
+      "4906.888611"
+     ],
+     [
+      1791983760031,
+      "-46836.84211"
+     ],
+     [
+      1791990960058,
+      "-67507.551136"
+     ],
+     [
+      1791998160064,
+      "-77198.446931"
+     ],
+     [
+      1792006560017,
+      "-77958.916291"
+     ],
+     [
+      1792013760029,
+      "-62571.032197"
+     ],
+     [
+      1792020960033,
+      "-80510.090805"
+     ],
+     [
+      1792028160050,
+      "-101637.635515"
+     ],
+     [
+      1792035360071,
+      "-169332.512288"
+     ],
+     [
+      1792043760037,
+      "-178981.307029"
+     ],
+     [
+      1792050960043,
+      "-149683.179424"
+     ],
+     [
+      1792058160066,
+      "-161649.822868"
+     ],
+     [
+      1792066560015,
+      "-176447.504545"
+     ],
+     [
+      1792074960120,
+      "-147639.262368"
+     ],
+     [
+      1792083360047,
+      "-45879.689149"
+     ],
+     [
+      1792091760006,
+      "3158.984541"
+     ],
+     [
+      1792100160093,
+      "-7525.477881"
+     ],
+     [
+      1792108560031,
+      "-17704.933285"
+     ],
+     [
+      1792115760063,
+      "-9177.689808"
+     ],
+     [
+      1792124160024,
+      "-8303.658871"
+     ],
+     [
+      1792131360038,
+      "-3108.456483"
+     ],
+     [
+      1792138560041,
+      "2418.19395"
+     ],
+     [
+      1792143193572,
+      "17466.744801"
+     ]
+    ],
+    "vlm": "1439138.3400000001"
+   }
+  ],
+  [
+   "perpMonth",
+   {
+    "accountValueHistory": [
+     [
+      1789514160001,
+      "1683407.422612"
+     ],
+     [
+      1789602960024,
+      "1804461.369308"
+     ],
+     [
+      1789683360035,
+      "1925164.3933679999"
+     ],
+     [
+      1789772160064,
+      "1891245.789319"
+     ],
+     [
+      1789860960071,
+      "1790850.763973"
+     ],
+     [
+      1789948560065,
+      "1854387.8815669999"
+     ],
+     [
+      1790034960043,
+      "1854781.4373600001"
+     ],
+     [
+      1790121360014,
+      "2328614.2612939999"
+     ],
+     [
+      1790200560027,
+      "2474267.4011969999"
+     ],
+     [
+      1790294160055,
+      "1765997.6408520001"
+     ],
+     [
+      1790380560038,
+      "1914237.119776"
+     ],
+     [
+      1790460960100,
+      "1995947.81797"
+     ],
+     [
+      1790546160052,
+      "2030803.599627"
+     ],
+     [
+      1790639760066,
+      "2038282.610992"
+     ],
+     [
+      1790726160057,
+      "1938767.7778769999"
+     ],
+     [
+      1790805360052,
+      "2055900.761037"
+     ],
+     [
+      1790897760100,
+      "1993480.2675350001"
+     ],
+     [
+      1790979360014,
+      "2023450.3389729999"
+     ],
+     [
+      1791071760058,
+      "2077125.803871"
+     ],
+     [
+      1791155760035,
+      "2122641.3849709998"
+     ],
+     [
+      1791240960053,
+      "2144379.589441"
+     ],
+     [
+      1791329760004,
+      "2110105.5447769999"
+     ],
+     [
+      1791416160063,
+      "2017801.7636909999"
+     ],
+     [
+      1791448560047,
+      "1994428.2888189999"
+     ],
+     [
+      1791479760016,
+      "1944466.0969189999"
+     ],
+     [
+      1791510960061,
+      "2002377.3190280001"
+     ],
+     [
+      1791544560027,
+      "2006160.8859590001"
+     ],
+     [
+      1791574560127,
+      "2014501.2950520001"
+     ],
+     [
+      1791606960100,
+      "2059673.0282060001"
+     ],
+     [
+      1791639360052,
+      "2053606.7893709999"
+     ],
+     [
+      1791670560037,
+      "2164281.180431"
+     ],
+     [
+      1791708960052,
+      "2137997.7461239998"
+     ],
+     [
+      1791741360054,
+      "2117734.5328409998"
+     ],
+     [
+      1791770160095,
+      "2151659.424195"
+     ],
+     [
+      1791803760025,
+      "2135818.1027489998"
+     ],
+     [
+      1791836160044,
+      "2032103.0694550001"
+     ],
+     [
+      1791866160046,
+      "2102671.9306879998"
+     ],
+     [
+      1791897360025,
+      "2054163.945358"
+     ],
+     [
+      1791929760069,
+      "2081817.2282809999"
+     ],
+     [
+      1791960960045,
+      "2083163.118764"
+     ],
+     [
+      1791990960058,
+      "1995018.9025409999"
+     ],
+     [
+      1792020960033,
+      "1982016.3628720001"
+     ],
+     [
+      1792050960043,
+      "1912843.274253"
+     ],
+     [
+      1792083360047,
+      "2016646.764528"
+     ],
+     [
+      1792115760063,
+      "2053348.7638689999"
+     ],
+     [
+      1792143193572,
+      "2079993.198478"
+     ]
+    ],
+    "pnlHistory": [
+     [
+      1789514160001,
+      "0.0"
+     ],
+     [
+      1789602960024,
+      "121053.946696"
+     ],
+     [
+      1789683360035,
+      "219043.320756"
+     ],
+     [
+      1789772160064,
+      "471715.106707"
+     ],
+     [
+      1789860960071,
+      "384874.571361"
+     ],
+     [
+      1789948560065,
+      "402307.918955"
+     ],
+     [
+      1790034960043,
+      "521029.304748"
+     ],
+     [
+      1790121360014,
+      "605497.188682"
+     ],
+     [
+      1790200560027,
+      "595251.018585"
+     ],
+     [
+      1790294160055,
+      "556903.05824"
+     ],
+     [
+      1790380560038,
+      "564710.157164"
+     ],
+     [
+      1790460960100,
+      "601146.415358"
+     ],
+     [
+      1790546160052,
+      "604681.677015"
+     ],
+     [
+      1790639760066,
+      "557111.06838"
+     ],
+     [
+      1790726160057,
+      "599317.0252649999"
+     ],
+     [
+      1790805360052,
+      "690487.918425"
+     ],
+     [
+      1790897760100,
+      "665822.344923"
+     ],
+     [
+      1790979360014,
+      "626285.0663609999"
+     ],
+     [
+      1791071760058,
+      "679960.531259"
+     ],
+     [
+      1791155760035,
+      "736897.232359"
+     ],
+     [
+      1791240960053,
+      "791158.206829"
+     ],
+     [
+      1791329760004,
+      "774925.892165"
+     ],
+     [
+      1791416160063,
+      "649944.561079"
+     ],
+     [
+      1791448560047,
+      "626571.086207"
+     ],
+     [
+      1791479760016,
+      "503807.314307"
+     ],
+     [
+      1791510960061,
+      "561718.536416"
+     ],
+     [
+      1791544560027,
+      "565502.103347"
+     ],
+     [
+      1791574560127,
+      "573842.51244"
+     ],
+     [
+      1791606960100,
+      "622759.7055940001"
+     ],
+     [
+      1791639360052,
+      "650575.036759"
+     ],
+     [
+      1791670560037,
+      "753621.157819"
+     ],
+     [
+      1791708960052,
+      "727337.7235120001"
+     ],
+     [
+      1791741360054,
+      "787811.340229"
+     ],
+     [
+      1791770160095,
+      "766492.681583"
+     ],
+     [
+      1791803760025,
+      "750651.360137"
+     ],
+     [
+      1791836160044,
+      "646936.326843"
+     ],
+     [
+      1791866160046,
+      "624848.578076"
+     ],
+     [
+      1791897360025,
+      "576340.592746"
+     ],
+     [
+      1791929760069,
+      "603993.875669"
+     ],
+     [
+      1791960960045,
+      "605339.7661520001"
+     ],
+     [
+      1791990960058,
+      "525564.829929"
+     ],
+     [
+      1792020960033,
+      "512562.29026"
+     ],
+     [
+      1792050960043,
+      "443389.201641"
+     ],
+     [
+      1792083360047,
+      "547192.691916"
+     ],
+     [
+      1792115760063,
+      "583894.691257"
+     ],
+     [
+      1792143193572,
+      "610539.125866"
+     ]
+    ],
+    "vlm": "18518570.1099999994"
+   }
+  ],
+  [
+   "perpAllTime",
+   {
+    "accountValueHistory": [
+     [
+      1714601520393,
+      "0.0"
+     ],
+     [
+      1715208720086,
+      "3045.621454"
+     ],
+     [
+      1716420720118,
+      "3102.061414"
+     ],
+     [
+      1717624320102,
+      "3176.71774"
+     ],
+     [
+      1718840160097,
+      "2830.432709"
+     ],
+     [
+      1720048560182,
+      "2776.082446"
+     ],
+     [
+      1721259360131,
+      "2866.914697"
+     ],
+     [
+      1722470160020,
+      "65440.231635"
+     ],
+     [
+      1723070160124,
+      "38459.097541"
+     ],
+     [
+      1723677360091,
+      "26003.858031"
+     ],
+     [
+      1724887560067,
+      "25224.524051"
+     ],
+     [
+      1726092360106,
+      "20242.693882"
+     ],
+     [
+      1726697160028,
+      "7927.769421"
+     ],
+     [
+      1727307960023,
+      "10617.534078"
+     ],
+     [
+      1728515160109,
+      "12818.008179"
+     ],
+     [
+      1729721160004,
+      "14700.704041"
+     ],
+     [
+      1730327160121,
+      "20505.956825"
+     ],
+     [
+      1731541560162,
+      "69864.190439"
+     ],
+     [
+      1732141560013,
+      "93448.424992"
+     ],
+     [
+      1732749960116,
+      "116998.275206"
+     ],
+     [
+      1733349960139,
+      "158371.26457"
+     ],
+     [
+      1733958360143,
+      "91800.645235"
+     ],
+     [
+      1734564360116,
+      "113668.584662"
+     ],
+     [
+      1735770360184,
+      "95941.904611"
+     ],
+     [
+      1736379960081,
+      "63680.035764"
+     ],
+     [
+      1737585960093,
+      "76777.514795"
+     ],
+     [
+      1738193160050,
+      "100734.39131"
+     ],
+     [
+      1738795560065,
+      "15517.556409"
+     ],
+     [
+      1740007560043,
+      "14547.352301"
+     ],
+     [
+      1740612360037,
+      "9481.47189"
+     ],
+     [
+      1741213560013,
+      "7100.039007"
+     ],
+     [
+      1741817160040,
+      "10374.717109"
+     ],
+     [
+      1742425560020,
+      "253479.811421"
+     ],
+     [
+      1743632760015,
+      "209141.652217"
+     ],
+     [
+      1744237560117,
+      "163808.291198"
+     ],
+     [
+      1745448360072,
+      "209052.693969"
+     ],
+     [
+      1746654360112,
+      "328091.029568"
+     ],
+     [
+      1747870080021,
+      "427009.948581"
+     ],
+     [
+      1749075360071,
+      "459564.535231"
+     ],
+     [
+      1750289400044,
+      "427995.961577"
+     ],
+     [
+      1751498160052,
+      "578164.010569"
+     ],
+     [
+      1752705480053,
+      "792742.143372"
+     ],
+     [
+      1753916760077,
+      "736647.322759"
+     ],
+     [
+      1755128880045,
+      "1135655.6290170001"
+     ],
+     [
+      1756336560069,
+      "1071970.086809"
+     ],
+     [
+      1757547360056,
+      "1209150.5656000001"
+     ],
+     [
+      1758152160107,
+      "1549550.9729520001"
+     ],
+     [
+      1758755760059,
+      "2383537.9054080001"
+     ],
+     [
+      1759966560018,
+      "2477487.851055"
+     ],
+     [
+      1760565360056,
+      "1547409.394544"
+     ],
+     [
+      1761780960077,
+      "1841024.0129219999"
+     ],
+     [
+      1762986960043,
+      "1658515.0533769999"
+     ],
+     [
+      1764197760065,
+      "1615743.0017639999"
+     ],
+     [
+      1765404960056,
+      "1755391.5981129999"
+     ],
+     [
+      1766619360063,
+      "1848257.9278210001"
+     ],
+     [
+      1767828960066,
+      "1817541.9058330001"
+     ],
+     [
+      1769037360053,
+      "1728775.0656910001"
+     ],
+     [
+      1770246960043,
+      "1902982.335773"
+     ],
+     [
+      1771458960002,
+      "1992491.3952309999"
+     ],
+     [
+      1772667360105,
+      "2049463.879031"
+     ],
+     [
+      1773875760054,
+      "2100561.0516920001"
+     ],
+     [
+      1775086560039,
+      "2308707.6590829999"
+     ],
+     [
+      1776292560097,
+      "2394604.3618910001"
+     ],
+     [
+      1777504560015,
+      "2507075.8435869999"
+     ],
+     [
+      1778711760061,
+      "2473436.3513790001"
+     ],
+     [
+      1779923760034,
+      "2508523.762561"
+     ],
+     [
+      1780528560054,
+      "858631.381465"
+     ],
+     [
+      1781736960064,
+      "843377.448097"
+     ],
+     [
+      1782339360000,
+      "647082.533672"
+     ],
+     [
+      1782942960040,
+      "912267.651627"
+     ],
+     [
+      1784157360027,
+      "968215.151224"
+     ],
+     [
+      1784758560072,
+      "1540855.706213"
+     ],
+     [
+      1785971760006,
+      "1370325.4761290001"
+     ],
+     [
+      1787182560021,
+      "1191632.5499170001"
+     ],
+     [
+      1787782560048,
+      "1755118.9021129999"
+     ],
+     [
+      1788990960074,
+      "1930816.2694639999"
+     ],
+     [
+      1789772160064,
+      "1891245.789319"
+     ],
+     [
+      1790121360014,
+      "2328614.2612939999"
+     ],
+     [
+      1790294160055,
+      "1765997.6408520001"
+     ],
+     [
+      1791071760058,
+      "2077125.803871"
+     ],
+     [
+      1791858960036,
+      "2072744.207533"
+     ],
+     [
+      1792143193572,
+      "2079993.198478"
+     ]
+    ],
+    "pnlHistory": [
+     [
+      1714601520393,
+      "0.0"
+     ],
+     [
+      1715208720086,
+      "3045.621454"
+     ],
+     [
+      1716420720118,
+      "3102.061414"
+     ],
+     [
+      1717624320102,
+      "3176.71774"
+     ],
+     [
+      1718840160097,
+      "2830.432709"
+     ],
+     [
+      1720048560182,
+      "2776.082446"
+     ],
+     [
+      1721259360131,
+      "2866.914697"
+     ],
+     [
+      1722470160020,
+      "-734.187791"
+     ],
+     [
+      1723070160124,
+      "-27715.321885"
+     ],
+     [
+      1723677360091,
+      "-40170.561395"
+     ],
+     [
+      1724887560067,
+      "-40949.895375"
+     ],
+     [
+      1726092360106,
+      "-45931.725544"
+     ],
+     [
+      1726697160028,
+      "-42704.096231"
+     ],
+     [
+      1727307960023,
+      "-40014.331574"
+     ],
+     [
+      1728515160109,
+      "-37850.224957"
+     ],
+     [
+      1729721160004,
+      "-35967.529095"
+     ],
+     [
+      1730327160121,
+      "-30162.276311"
+     ],
+     [
+      1731541560162,
+      "19195.957303"
+     ],
+     [
+      1732141560013,
+      "62780.191856"
+     ],
+     [
+      1732749960116,
+      "90265.249896"
+     ],
+     [
+      1733349960139,
+      "130497.15926"
+     ],
+     [
+      1733958360143,
+      "33497.246757"
+     ],
+     [
+      1734564360116,
+      "55365.186184"
+     ],
+     [
+      1735770360184,
+      "37638.506133"
+     ],
+     [
+      1736379960081,
+      "5376.637286"
+     ],
+     [
+      1737585960093,
+      "18474.116317"
+     ],
+     [
+      1738193160050,
+      "42430.992832"
+     ],
+     [
+      1738795560065,
+      "-42785.842069"
+     ],
+     [
+      1740007560043,
+      "-43756.046177"
+     ],
+     [
+      1740612360037,
+      "-48821.926588"
+     ],
+     [
+      1741213560013,
+      "-51203.359471"
+     ],
+     [
+      1741817160040,
+      "-47928.681369"
+     ],
+     [
+      1742425560020,
+      "-45646.707057"
+     ],
+     [
+      1743632760015,
+      "-89984.866261"
+     ],
+     [
+      1744237560117,
+      "-135318.22728"
+     ],
+     [
+      1745448360072,
+      "-90073.824509"
+     ],
+     [
+      1746654360112,
+      "14075.90109"
+     ],
+     [
+      1747870080021,
+      "118982.452888"
+     ],
+     [
+      1749075360071,
+      "151537.039538"
+     ],
+     [
+      1750289400044,
+      "119968.465884"
+     ],
+     [
+      1751498160052,
+      "270136.514876"
+     ],
+     [
+      1752705480053,
+      "484714.653372"
+     ],
+     [
+      1753916760077,
+      "475004.732759"
+     ],
+     [
+      1755128880045,
+      "874013.039017"
+     ],
+     [
+      1756336560069,
+      "940327.496809"
+     ],
+     [
+      1757547360056,
+      "1077507.9756"
+     ],
+     [
+      1758152160107,
+      "1417908.382952"
+     ],
+     [
+      1758755760059,
+      "2301895.3154079998"
+     ],
+     [
+      1759966560018,
+      "2395845.2610550001"
+     ],
+     [
+      1760565360056,
+      "1605366.804544"
+     ],
+     [
+      1761780960077,
+      "1898981.4229220001"
+     ],
+     [
+      1762986960043,
+      "1716472.4633770001"
+     ],
+     [
+      1764197760065,
+      "1673700.4117640001"
+     ],
+     [
+      1765404960056,
+      "1824699.1181129999"
+     ],
+     [
+      1766619360063,
+      "1917565.4478209999"
+     ],
+     [
+      1767828960066,
+      "1886849.4258330001"
+     ],
+     [
+      1769037360053,
+      "1798082.5856910001"
+     ],
+     [
+      1770246960043,
+      "1972289.855773"
+     ],
+     [
+      1771458960002,
+      "2061798.9152309999"
+     ],
+     [
+      1772667360105,
+      "2118771.3990310002"
+     ],
+     [
+      1773875760054,
+      "2169868.5716920001"
+     ],
+     [
+      1775086560039,
+      "2378015.1790829999"
+     ],
+     [
+      1776292560097,
+      "2463911.8818910001"
+     ],
+     [
+      1777504560015,
+      "2576383.3635869999"
+     ],
+     [
+      1778711760061,
+      "2542743.8713790001"
+     ],
+     [
+      1779923760034,
+      "2582398.6425609998"
+     ],
+     [
+      1780528560054,
+      "2466843.4214650001"
+     ],
+     [
+      1781736960064,
+      "2270082.798097"
+     ],
+     [
+      1782339360000,
+      "2382169.0136719998"
+     ],
+     [
+      1782942960040,
+      "2315095.421627"
+     ],
+     [
+      1784157360027,
+      "2215725.2812239998"
+     ],
+     [
+      1784758560072,
+      "2311553.1162129999"
+     ],
+     [
+      1785971760006,
+      "2251866.0061289999"
+     ],
+     [
+      1787182560021,
+      "2247853.479917"
+     ],
+     [
+      1787782560048,
+      "2419813.3221129999"
+     ],
+     [
+      1788990960074,
+      "2584165.0194640001"
+     ],
+     [
+      1789772160064,
+      "2962246.859319"
+     ],
+     [
+      1790121360014,
+      "3096028.941294"
+     ],
+     [
+      1790294160055,
+      "3047434.810852"
+     ],
+     [
+      1791071760058,
+      "3170492.2838710002"
+     ],
+     [
+      1791858960036,
+      "3085452.6075329999"
+     ],
+     [
+      1792143193572,
+      "3101070.8784779999"
+     ]
+    ],
+    "vlm": "363636518.0699999928"
+   }
+  ]
+ ],
+ "related": [
+  {
+   "address": "0x05ff69702a7d15a0788eb100ff8d839334a4671f",
+   "relation": "transfers",
+   "n_transfers": 3,
+   "transfer_usd": 158106.48103999998,
+   "role": "user",
+   "perp_account_value": 0.00747,
+   "all_time_pnl": 3061.469522,
+   "all_time_volume": 561061.84,
+   "account_value": 2.369522,
+   "hype_staked": 0.0,
+   "top_spot": [
+    [
+     "USDC",
+     1.71431162
+    ],
+    [
+     "HYPE",
+     0.0079456
+    ]
+   ]
+  },
+  {
+   "address": "0xe9fa7d35ab636f10a0e6817bdb84429669d5f774",
+   "relation": "transfers",
+   "n_transfers": 2,
+   "transfer_usd": 20100.0,
+   "role": "user",
+   "perp_account_value": 0.0,
+   "all_time_pnl": 9376.849631,
+   "all_time_volume": 274972.84,
+   "account_value": 29476.849631,
+   "hype_staked": 0.0,
+   "top_spot": [
+    [
+     "USDC",
+     29476.849631
+    ]
+   ]
+  },
+  {
+   "address": "0x24de6b77e8bc31c40aa452926daa6bbab7a71b0f",
+   "relation": "transfers",
+   "n_transfers": 2,
+   "transfer_usd": 2387.475641,
+   "role": "user",
+   "perp_account_value": 4500.0,
+   "all_time_pnl": -3155960241.76728,
+   "all_time_volume": 0.0,
+   "account_value": 2339131700.65272,
+   "hype_staked": 0.0,
+   "top_spot": [
+    [
+     "UMON",
+     99885676046.31993
+    ],
+    [
+     "USDC",
+     4439.0
+    ]
+   ]
+  },
+  {
+   "address": "0x995e92d4bb508276f839f1f191df0fbddb8582ba",
+   "relation": "transfers",
+   "n_transfers": 10,
+   "transfer_usd": 107.19266799999998,
+   "role": "user",
+   "perp_account_value": 4583.494499,
+   "all_time_pnl": 46065.774499,
+   "all_time_volume": 0.0,
+   "account_value": 4583.494499,
+   "hype_staked": 0.0,
+   "top_spot": []
+  },
+  {
+   "address": "0xbb5d8fc17421a9a71101032d4fc1ec0984fc85f8",
+   "relation": "transfers",
+   "n_transfers": 1,
+   "transfer_usd": 47.039776,
+   "role": "user",
+   "perp_account_value": 0.0,
+   "all_time_pnl": 554302.570001,
+   "all_time_volume": 0.0,
+   "account_value": 1e-06,
+   "hype_staked": 0.0,
+   "top_spot": [
+    [
+     "USDC",
+     1.04e-06
+    ]
+   ]
+  },
+  {
+   "address": "0x6f582a74e2710a27ce3e715628056e2a66062618",
+   "relation": "transfers",
+   "n_transfers": 1,
+   "transfer_usd": 22.59073,
+   "role": "user",
+   "perp_account_value": 0.0,
+   "all_time_pnl": 215693.74,
+   "all_time_volume": 17.59,
+   "account_value": 1.0,
+   "hype_staked": 0.0,
+   "top_spot": [
+    [
+     "USDC",
+     1.00000001
+    ]
+   ]
+  }
+ ]
+}
