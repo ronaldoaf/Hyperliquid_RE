@@ -1,0 +1,293 @@
+{
+ "user": "0x07fd993f0fa3a185f7207adccd29f7a87404689d",
+ "generated_at": "2026-10-16T16:36:15.177236+00:00",
+ "main_coins": [
+  "S",
+  "NEAR",
+  "MINA"
+ ],
+ "account_value": 9113401.570055,
+ "pnl_all_time": 275447.900055,
+ "pnl_perp_all_time": 275447.900055,
+ "volume_all_time": 1022918498.16,
+ "first_activity": "2025-01-29",
+ "n_fills": 24011,
+ "fills_from": "2026-10-13 10:43:18.724000",
+ "n_orders": 3465,
+ "funding_net": -2378062.9601930003,
+ "fees_fills_period": 926.186462,
+ "fills_cover_full_history": false,
+ "position_gaps": 63,
+ "decomp_NEAR": {
+  "carry": -2189.9693000000334,
+  "intraday": 1018.2156800000023,
+  "total": -1171.753620000031,
+  "mean_pos": -55373.399999999994,
+  "total_move": 0.06490000000000062,
+  "bias": -3593.733660000034,
+  "timing": 1403.7643599999988
+ },
+ "decomp_MINA": {
+  "carry": -49.679023999964556,
+  "intraday": 943.0939410000004,
+  "total": 893.4149170000359,
+  "mean_pos": -6224320.0,
+  "total_move": 7.999999999994123e-06,
+  "bias": -49.79455999996342,
+  "timing": 0.11553599999991704
+ },
+ "leverage_median": 2.7183047090754586,
+ "order_types": {
+  "Limit/Alo": 1304
+ },
+ "taker_share_ntl": 0.0,
+ "sessions_NEAR": {
+  "sess\u00f5es": {
+   "short+": 17.0,
+   "short-": 24.0
+  },
+  "r24h": {
+   "short+": -0.978389,
+   "short-": -4.537957
+  },
+  "p_r24h": {
+   "short+": 0.544252,
+   "short-": 0.796182
+  },
+  "r72h": {
+   "short+": -4.938248,
+   "short-": -5.118777
+  },
+  "p_r72h": {
+   "short+": 0.873626,
+   "short-": 0.910028
+  },
+  "r7d": {
+   "short+": -0.556389,
+   "short-": -1.554141
+  },
+  "p_r7d": {
+   "short+": 0.438109,
+   "short-": 0.789959
+  },
+  "rng7d": {
+   "short+": 0.427708,
+   "short-": 0.415828
+  },
+  "p_rng7d": {
+   "short+": 0.76553,
+   "short-": 0.922838
+  },
+  "top30": {
+   "short+": 0.0,
+   "short-": 0.0
+  },
+  "bottom30": {
+   "short+": 0.235294,
+   "short-": 0.375
+  }
+ },
+ "context_NEAR": {
+  "r24h": {
+   "short+": -2.655,
+   "short-": -3.09,
+   "base": -2.476
+  },
+  "r72h": {
+   "short+": -6.944,
+   "short-": -6.421,
+   "base": -5.127
+  },
+  "r7d": {
+   "short+": -1.933,
+   "short-": -2.585,
+   "base": -1.075
+  },
+  "rng7d": {
+   "short+": 0.377,
+   "short-": 0.391,
+   "base": 0.405
+  },
+  "f24h": {
+   "short+": 0.31,
+   "short-": -0.567,
+   "base": -1.054
+  },
+  "f7d": {
+   "short+": NaN,
+   "short-": NaN,
+   "base": NaN
+  }
+ },
+ "averaging_NEAR": {
+  "adds": 41,
+  "adds_underwater_share": 0.5609756097560976,
+  "adds_underwater_share_by_size": 0.5609756097560976,
+  "adds_median_dist_from_avg_pct": 0.9094730694785502,
+  "reductions": 43,
+  "reduction_win_rate": 0.7906976744186046,
+  "avg_win": 136.74716941176467,
+  "avg_loss": -61.65622311111112,
+  "realized": 4094.497752
+ },
+ "sessions_MINA": {
+  "sess\u00f5es": {
+   "short+": 6.0,
+   "short-": 6.0
+  },
+  "r24h": {
+   "short+": -2.31736,
+   "short-": -3.425302
+  },
+  "p_r24h": {
+   "short+": 0.578462,
+   "short-": 0.266586
+  },
+  "r72h": {
+   "short+": -13.105735,
+   "short-": -13.639553
+  },
+  "p_r72h": {
+   "short+": 0.753481,
+   "short-": 0.735274
+  },
+  "r7d": {
+   "short+": -17.609872,
+   "short-": -22.178761
+  },
+  "p_r7d": {
+   "short+": 0.200415,
+   "short-": 0.246349
+  },
+  "rng7d": {
+   "short+": 0.029651,
+   "short-": 0.01206
+  },
+  "p_rng7d": {
+   "short+": 0.922885,
+   "short-": 0.424006
+  },
+  "top30": {
+   "short+": 0.0,
+   "short-": 0.0
+  },
+  "bottom30": {
+   "short+": 1.0,
+   "short-": 1.0
+  }
+ },
+ "context_MINA": {
+  "r24h": {
+   "short+": -3.369,
+   "short-": -3.369,
+   "base": -2.544
+  },
+  "r72h": {
+   "short+": -12.028,
+   "short-": -12.028,
+   "base": -13.486
+  },
+  "r7d": {
+   "short+": -23.018,
+   "short-": -23.049,
+   "base": -20.346
+  },
+  "rng7d": {
+   "short+": 0.004,
+   "short-": 0.004,
+   "base": 0.031
+  },
+  "f24h": {
+   "short+": 1.879,
+   "short-": 1.545,
+   "base": 1.503
+  },
+  "f7d": {
+   "short+": NaN,
+   "short-": NaN,
+   "base": NaN
+  }
+ },
+ "averaging_MINA": {
+  "adds": 35,
+  "adds_underwater_share": 0.6285714285714286,
+  "adds_underwater_share_by_size": 0.6284043071656901,
+  "adds_median_dist_from_avg_pct": 0.5366123093429875,
+  "reductions": 37,
+  "reduction_win_rate": 0.0,
+  "avg_win": NaN,
+  "avg_loss": -95.11596894594594,
+  "realized": -3519.2908509999997
+ },
+ "episodes_all": {
+  "n": 50,
+  "win_rate": null,
+  "realized": 7345.039473000002,
+  "funding": -28242.914026,
+  "median_adverse_pct": 4.700013140217319
+ },
+ "copyability": {
+  "copyable": false,
+  "reasons": [
+   "padr\u00e3o de bot de market making (866 execu\u00e7\u00f5es por dia ativo, 100% maker): o lucro \u00e9 spread e rebate, que uma ordem a mercado com atraso paga em vez de ganhar"
+  ],
+  "notes": [],
+  "min_executions": 20,
+  "max_fast_share": 0.5,
+  "fast_minutes": 30.0,
+  "bot_orders_per_day": 300,
+  "bot_maker_share": 0.8,
+  "executions": 3465,
+  "active_days": 4,
+  "executions_per_active_day": 866.25,
+  "maker_share_ntl": 1.0,
+  "closed_ntl": 4510478.893641001,
+  "median_hold_hours": 1.591091111111111,
+  "fast_share": 0.2801030242879919,
+  "spot_share_ntl": 0.0,
+  "from": "2026-10-13 10:43:18.724000",
+  "to": "2026-10-16 16:25:23.220000"
+ },
+ "copy_sim": null,
+ "copy_lag": {
+  "NEAR": {
+   "0": -307.2988199999709,
+   "1": 4484.559160000008,
+   "4": -3027.2891599999793,
+   "12": 420.71835999998984,
+   "24": 801.8374399999939,
+   "72": 13025.397619999987,
+   "168": 0.0
+  },
+  "MINA": {
+   "0": -4250.158938999998,
+   "1": -5801.233587000022,
+   "4": -1081.5604470000362,
+   "12": 68.62385699995866,
+   "24": -5634.994732000063,
+   "72": 0.0,
+   "168": 0.0
+  }
+ },
+ "replication": {
+  "train": [
+   "2025-01-23",
+   "2025-12-04"
+  ],
+  "test": [
+   "2025-12-05",
+   "2026-10-15"
+  ],
+  "best_params": {
+   "ma": 50.0,
+   "rng": 7.0,
+   "bull_frac": 1.0,
+   "fade": 0.0
+  },
+  "rule_test_pnl": 143502.74898185648,
+  "rule_test_corr": 1.8094694766709777e-15,
+  "actual_test_pnl": -89658.81104153287,
+  "clone_r2_train": 0.9573085452608018,
+  "clone_r2_test": -5.312550166505596
+ }
+}
