@@ -1,5 +1,9 @@
 """One-shot pipeline: download wallet + market data, then build the report.
 
+When the wallet passes the copyability test, it also downloads the intraday
+prices (15m/1h candles, Binance 1h for older fills) the report uses to
+simulate a follower that copies every execution 30 min, 1h, 2h and 4h later.
+
 Usage:
     python -m hlre.run 0xWALLET [0xWALLET ...] [--top 3] [--no-binance]
 """
@@ -7,12 +11,45 @@ from __future__ import annotations
 
 import argparse
 
-from .analyze import Wallet, episodes, executions, rank_coins
+import pandas as pd
+
+from .analyze import Wallet, copy_window_start, copyability, episodes, executions, rank_coins
 from .api import InfoClient
 from .binance import fetch_klines
 from .collect import collect
-from .market import binance_symbol, fetch_candles, fetch_funding_history
+from .market import binance_symbol, candles_df, fetch_candles, fetch_funding_history
 from .report import build
+
+# how far back the API serves each interval (latest 5000 candles)
+CANDLE_REACH = {"15m": pd.Timedelta(days=52), "1h": pd.Timedelta(days=208)}
+
+
+def fetch_copy_prices(c: InfoClient, w: Wallet, data_dir: str = "data", binance: bool = True):
+    """Intraday prices for the delayed-copy simulation: Hyperliquid 15m and 1h
+    candles of every traded perp/HIP-3 coin, and Binance 1h klines for fills
+    older than the Hyperliquid 1h candles on disk."""
+    pf = w.fills[w.fills["kind"].isin(("perp", "hip3"))]
+    start = copy_window_start(w.fills)
+    if start is not None:
+        pf = pf[pf["t"] >= start]
+    now = pd.Timestamp.now("UTC").tz_localize(None)
+    coins = pf.groupby("coin")["t"].agg(["min", "max"])
+    print(f"intraday candles for the copy simulation: {len(coins)} coins", flush=True)
+    for coin, (t0, t1) in coins.iterrows():
+        for iv, reach in CANDLE_REACH.items():
+            if t1 >= now - reach:
+                try:
+                    fetch_candles(c, coin, iv, data_dir)
+                except Exception as e:
+                    print(f"  skip {iv} {coin}: {e}")
+        h1 = candles_df(coin, "1h", data_dir)
+        first = h1.index.min() if len(h1) else now
+        sym = binance_symbol(coin)
+        if binance and sym and t0 < first:
+            try:
+                fetch_klines(sym, "1h", start=str(t0.to_period("M")), end=str(first.to_period("M")), data_dir=data_dir)
+            except Exception as e:
+                print(f"  binance {sym}: {e}")
 
 
 def run(user: str, data_dir: str = "data", out: str = "reports", top: int = 3, binance: bool = True):
@@ -61,6 +98,8 @@ def run(user: str, data_dir: str = "data", out: str = "reports", top: int = 3, b
                              data_dir=data_dir)
             except Exception as e:
                 print(f"  binance {sym}: {e}")
+    if copyability(w.fills)["copyable"]:
+        fetch_copy_prices(c, w, data_dir, binance)
     print(build(user, data_dir, out, mains))
 
 

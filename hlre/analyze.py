@@ -12,7 +12,8 @@ import os
 import numpy as np
 import pandas as pd
 
-from .market import candles_df
+from .binance import klines_df
+from .market import binance_symbol, candles_df
 
 EPS = 1e-9
 
@@ -105,8 +106,8 @@ def position_gaps(fills: pd.DataFrame, min_gap_s: float = 1.0) -> pd.DataFrame:
             if abs(jump) > 1e-6 * max(1.0, abs(ends[i - 1])):
                 rows.append({"coin": coin, "after": pd.to_datetime(times[i - 1][1], unit="ms"),
                              "before": pd.to_datetime(times[i][0], unit="ms"), "jump": jump,
-                             "jump_ntl": abs(jump) * float(g["px"].iloc[0])})
-    return pd.DataFrame(rows, columns=["coin", "after", "before", "jump", "jump_ntl"])
+                             "jump_ntl": abs(jump) * float(g["px"].iloc[0]), "start_pos": ends[i - 1]})
+    return pd.DataFrame(rows, columns=["coin", "after", "before", "jump", "jump_ntl", "start_pos"])
 
 
 def load_funding(path: str) -> pd.DataFrame:
@@ -452,6 +453,334 @@ def copy_lag_pnl(fills: pd.DataFrame, coin: str, hourly: pd.Series, lags=(0, 1, 
     pos = pos_end_of_hour.reindex(idx).ffill().fillna(0.0)
     nxt = hourly.reindex(idx).shift(-1) - hourly.reindex(idx)  # close(h+1) - close(h)
     return pd.Series({lag: float((pos.shift(lag).fillna(0.0) * nxt).sum()) for lag in lags})
+
+
+# ------------------------------------------------------------- copy trading
+COPY_DELAYS = {"30 min": pd.Timedelta("30min"), "1h": pd.Timedelta("1h"),
+               "2h": pd.Timedelta("2h"), "4h": pd.Timedelta("4h")}
+TAKER_FEE = 0.00045  # base-tier taker fee on Hyperliquid perps (4.5 bp)
+
+
+def holding_times(fills: pd.DataFrame) -> pd.DataFrame:
+    """How long each closed piece of position stayed open, matching every
+    reduction against the most recent additions first (LIFO). A market maker
+    that buys and sells back within minutes shows minutes even while it carries
+    an old inventory. Position inherited from before the first fill is matched
+    but not counted. One row per matched piece: coin, seconds open, notional."""
+    rows = []
+    for coin, g in fills[fills["kind"].isin(("perp", "hip3"))].groupby("coin", sort=False):
+        lots: list[list[float]] = []  # [signed size, open time in ms (nan = inherited)]
+        p0 = float(g["startPosition"].iloc[0])
+        if abs(p0) > EPS:
+            lots.append([p0, np.nan])
+        for t, q, px in zip(g["time"].values, g["q"].values, g["px"].values):
+            while abs(q) > EPS and lots and np.sign(lots[-1][0]) != np.sign(q):
+                lot = lots[-1]
+                m = min(abs(q), abs(lot[0]))
+                if not np.isnan(lot[1]):
+                    rows.append((coin, (t - lot[1]) / 1000, m * px))
+                lot[0] -= np.sign(lot[0]) * m
+                q -= np.sign(q) * m
+                if abs(lot[0]) <= EPS:
+                    lots.pop()
+            if abs(q) > EPS:
+                lots.append([q, float(t)])
+    return pd.DataFrame(rows, columns=["coin", "hold_s", "ntl"])
+
+
+def copyability(fills: pd.DataFrame, min_executions: int = 20, max_fast_share: float = 0.5,
+                fast: pd.Timedelta = COPY_DELAYS["30 min"], bot_orders_per_day: float = 300,
+                bot_maker_share: float = 0.8) -> dict:
+    """Can a follower copy this wallet at all? It cannot when there is nothing
+    (or too little) to copy, when most of the volume is closed before the
+    shortest delay has passed (the follower would enter after the wallet left),
+    or when the book is a market-making bot (hundreds of orders a day, mostly
+    maker: the edge is the spread and the rebate, which a delayed market order
+    pays instead of earning). Returns the verdict, the reasons and the numbers."""
+    pf = fills[fills["kind"].isin(("perp", "hip3"))] if len(fills) else fills
+    out: dict = {"copyable": False, "reasons": [], "notes": [], "min_executions": min_executions,
+                 "max_fast_share": max_fast_share, "fast_minutes": fast.total_seconds() / 60,
+                 "bot_orders_per_day": bot_orders_per_day, "bot_maker_share": bot_maker_share}
+    if not len(pf):
+        out["reasons"].append("nenhum fill de perps ou HIP-3 no período disponível: não há o que copiar")
+        return out
+    ex = executions(pf)
+    days = int(ex["t"].dt.floor("D").nunique())
+    hold = holding_times(pf)
+    closed = float(hold["ntl"].sum())
+    x, wt = hold["hold_s"].values, hold["ntl"].values
+    if closed > 0:
+        o = np.argsort(x)
+        median_h = float(x[o][np.searchsorted(np.cumsum(wt[o]), closed / 2)] / 3600)
+        fast_share = float(wt[x < fast.total_seconds()].sum() / closed)
+    else:
+        median_h, fast_share = np.nan, np.nan
+    spot_ntl = float(fills.loc[fills["kind"] == "spot", "ntl"].sum()) if len(fills) else 0.0
+    out.update({
+        "executions": int(len(ex)), "active_days": days, "executions_per_active_day": len(ex) / max(days, 1),
+        "maker_share_ntl": float(1 - (ex["ntl"] * ex["taker"]).sum() / ex["ntl"].sum()),
+        "closed_ntl": closed, "median_hold_hours": median_h, "fast_share": fast_share,
+        "spot_share_ntl": spot_ntl / (spot_ntl + float(pf["ntl"].sum())),
+        "from": str(pf["t"].min()), "to": str(pf["t"].max()),
+    })
+    mins = int(out["fast_minutes"])
+    if len(ex) < min_executions:
+        out["reasons"].append(f"só {len(ex)} execuções de perps no período dos fills: pouco para copiar ou medir")
+    if fast_share >= max_fast_share:
+        out["reasons"].append(f"{fast_share:.0%} do volume fechado ficou aberto menos de {mins} min: a carteira sai "
+                              "antes de o copiador entrar")
+    if out["executions_per_active_day"] >= bot_orders_per_day and out["maker_share_ntl"] >= bot_maker_share:
+        out["reasons"].append(f"padrão de bot de market making ({out['executions_per_active_day']:,.0f} execuções por "
+                              f"dia ativo, {out['maker_share_ntl']:.0%} maker): o lucro é spread e rebate, que uma "
+                              "ordem a mercado com atraso paga em vez de ganhar")
+    if out["spot_share_ntl"] >= 0.05:
+        out["notes"].append(f"{out['spot_share_ntl']:.0%} do volume é spot e fica fora da cópia (só perps e HIP-3)")
+    out["copyable"] = not out["reasons"]
+    return out
+
+
+class DelayedPrice:
+    """Market price a follower gets some time after each fill: the open of the
+    candle that starts nearest to fill time + delay (the first candle opening at
+    or after t + delay - half a candle), from the finest source that covers it:
+    Hyperliquid 15m candles (last ~52 days), Hyperliquid 1h (~7 months), then
+    Binance 1h klines (public archive, when cached). The delay obtained is the
+    requested one +- half a candle, unbiased on average, and the fill's own
+    candle (often the wick the fill itself made) is never used."""
+
+    SOURCES = (("HL 15m", "15m"), ("HL 1h", "1h"), ("Binance 1h", "binance"))
+
+    def __init__(self, data_dir: str = "data"):
+        self.data_dir = data_dir
+        self._cache: dict[str, list] = {}
+
+    def _sources(self, coin: str) -> list:
+        if coin not in self._cache:
+            out = []
+            for label, iv in self.SOURCES:
+                if iv == "binance":
+                    sym = binance_symbol(coin)
+                    d = klines_df(sym, "1h", self.data_dir) if sym else pd.DataFrame()
+                    step = pd.Timedelta("1h")
+                    # same ticker, same token? daily closes must match Hyperliquid's within 3%
+                    hl = candles_df(coin, "1d", self.data_dir)
+                    if len(d) and len(hl):
+                        both = pd.concat([d["close"].resample("1D").last(), hl["close"]], axis=1, join="inner").dropna()
+                        if len(both) < 5 or abs((both.iloc[:, 0] / both.iloc[:, 1]).median() - 1) > 0.03:
+                            d = pd.DataFrame()
+                    else:
+                        d = pd.DataFrame()
+                else:
+                    d = candles_df(coin, iv, self.data_dir)
+                    step = pd.Timedelta(iv.replace("m", "min"))
+                if len(d):
+                    out.append((label, step.to_timedelta64(), d.index.values, d["open"].values))
+            self._cache[coin] = out
+        return self._cache[coin]
+
+    def at(self, coin: str, times: np.ndarray, delay: pd.Timedelta):
+        """times: datetime64[ns] fill times. Returns (price, candle start, source
+        label) arrays; nan / NaT / '' where no source covers the time."""
+        n = len(times)
+        px, when, src = np.full(n, np.nan), np.full(n, np.datetime64("NaT"), dtype="datetime64[ns]"), np.full(n, "", dtype=object)
+        for label, step, idx, op in self._sources(coin):
+            need = np.isnan(px)
+            if not need.any():
+                break
+            target = times[need] + delay.to_timedelta64() - step / 2
+            i = np.minimum(np.searchsorted(idx, target, side="left"), len(idx) - 1)
+            ok = (idx[i] >= target) & (idx[i] - target < step)  # the candle right at the target, not one after a gap
+            pos = np.flatnonzero(need)[ok]
+            px[pos], when[pos], src[pos] = op[i[ok]], idx[i[ok]], label
+        return px, when, src
+
+
+def copy_window_start(fills: pd.DataFrame) -> pd.Timestamp | None:
+    """Start of the fill history a follower could have copied: the first fill
+    that came from userFills. Older fills can only come from the TWAP endpoint
+    (it reaches further back), so they are fragments with the regular fills of
+    that time missing. None when nothing older than userFills is on disk."""
+    pf = fills[fills["kind"].isin(("perp", "hip3"))]
+    if "twapId" not in pf or not pf["twapId"].isna().any():
+        return None
+    start = pf.loc[pf["twapId"].isna(), "t"].min()
+    return start if (pf["t"] < start).any() else None
+
+
+def copiable_fills(fills: pd.DataFrame, start: pd.Timestamp | None = None) -> pd.DataFrame:
+    """The perp/HIP-3 fills a follower who starts at `start` (default: the
+    wallet's first fill) can copy. Positions already open before that are not
+    copied: in each coin the follower waits until the wallet is flat
+    (startPosition 0) or crosses zero; from a fill that crosses zero it copies
+    only the part that opens the new side. Column `inherited` flags the fills
+    (or parts) left out, including everything before `start`."""
+    f = fills[fills["kind"].isin(("perp", "hip3"))].copy()
+    f["inherited"] = f["t"] < start if start is not None else False
+    parts = []
+    for coin, g in f[~f["inherited"]].groupby("coin", sort=False):
+        s0, e = g["startPosition"].values, g["endPosition"].values
+        flat = np.flatnonzero((np.abs(s0) < EPS) | (np.sign(s0) * np.sign(e) < 0))
+        k = flat[0] if len(flat) else len(g)
+        f.loc[g.index[:k], "inherited"] = True
+        if k < len(g) and abs(s0[k]) >= EPS:  # crosses zero: split into the closing part and the new side
+            r = f.loc[g.index[k]]
+            frac = abs(e[k]) / abs(r["q"])
+            new = r.copy()
+            new[["q", "sz", "ntl", "fee"]] = [e[k], abs(e[k]), abs(e[k]) * r["px"], r["fee"] * frac]
+            old = r.copy()
+            old[["q", "sz", "ntl", "fee", "inherited"]] = [r["q"] - e[k], abs(r["q"] - e[k]),
+                                                           abs(r["q"] - e[k]) * r["px"], r["fee"] * (1 - frac), True]
+            parts += [old, new]
+            f = f.drop(index=g.index[k])
+    if parts:
+        f = pd.concat([f, pd.DataFrame(parts)]).sort_values("time", kind="mergesort")
+    return f.reset_index(drop=True)
+
+
+def gap_trades(gaps: pd.DataFrame, expo: pd.DataFrame | None = None) -> pd.DataFrame:
+    """Spread each position jump without a fill over the days the funding
+    history shows the size changing: the path goes from the position before
+    the gap through the daily average position of each whole day inside it
+    (`daily_exposure`) to the position after it, and each change sits at the
+    midpoint between its two samples. Without funding for the coin the whole
+    jump sits in the middle of the gap. The pieces always add up to the jump."""
+    rows = []
+    for _, g in gaps.iterrows():
+        e = expo[g["coin"]] if expo is not None and g["coin"] in expo else pd.Series(dtype=float)
+        # whole days inside the gap only: the edge days mix in the fills around it
+        e = e[(e.index > g["after"].floor("D")) & (e.index < g["before"].floor("D"))]
+        ts = [g["after"]] + [d + pd.Timedelta("12h") for d in e.index] + [g["before"]]
+        path = np.r_[g["start_pos"], e.values, g["start_pos"] + g["jump"]]
+        for k, q in enumerate(np.diff(path)):
+            if abs(q) > EPS:
+                rows.append({"t": ts[k] + (ts[k + 1] - ts[k]) / 2, "coin": g["coin"], "q": q})
+    return pd.DataFrame(rows, columns=["t", "coin", "q"])
+
+
+def copy_delay_sim(fills: pd.DataFrame, data_dir: str = "data", delays: dict | None = None,
+                   taker_fee: float = TAKER_FEE, funding: pd.DataFrame | None = None) -> dict:
+    """A follower starts flat at the wallet's first fill (after the last hole in
+    the fill history, `copy_window_start`) and repeats every perp/HIP-3 fill
+    of the positions opened from then on (`copiable_fills`)
+    with the same size, `delay` later, with a market order (taker fee) at the
+    price given by `DelayedPrice`. Wallet and copy are compared on the same
+    trades and marked at the same final price (last daily close), so they
+    differ only by the price and fee of each copied trade; funding, practically
+    the same for both with delays of hours, is left out. Fills without a
+    delayed price at every delay are dropped from both sides, so all delays
+    compare the same trades. Position jumps without a fill (`position_gaps`,
+    mostly TWAP slices the API no longer serves) enter as synthetic trades at
+    the market price, spread over the days the `funding` history shows the
+    size changing (`gap_trades`), the same for wallet and copy: they keep both
+    positions right without adding a delay cost.
+
+    Returns: fills (with the copy prices), summary (one row per delay: PnL,
+    share kept, price and fee cost, cost in bp of volume with a 95% interval
+    from day-to-day variation, max drawdown), by_coin, by_entry (wallet fill
+    maker vs. taker), curves (daily cumulative PnL of the wallet and of each
+    copy), coverage (share of notional copied, inherited, without price)."""
+    delays = delays or COPY_DELAYS
+    start = copy_window_start(fills) if len(fills) else None
+    f = copiable_fills(fills, start) if len(fills) else pd.DataFrame()
+    if f.empty:
+        return {}
+    total_ntl = float(f["ntl"].sum())
+    inherited_ntl = float(f.loc[f["inherited"], "ntl"].sum())
+    f = f.loc[~f["inherited"], ["t", "coin", "q", "sz", "px", "ntl", "fee", "crossed"]].reset_index(drop=True)
+    if f.empty:
+        return {"coverage": {"copied": 0.0, "inherited": 1.0, "unpriced": 0.0, "synthetic": 0.0}, "total_ntl": total_ntl}
+    f["synthetic"] = False
+    dp = DelayedPrice(data_dir)
+    gaps = position_gaps(fills)
+    if len(gaps):
+        opened = f.groupby("coin")["t"].min()
+        gaps = gaps[gaps["coin"].isin(opened.index)]
+        gaps = gaps[gaps["after"] >= gaps["coin"].map(opened)]  # only jumps in positions the follower holds
+    gt = gap_trades(gaps, daily_exposure(funding) if funding is not None and len(funding) else None) \
+        if len(gaps) else pd.DataFrame(columns=["t", "coin", "q"])
+    syn = []
+    for coin, g in gt.groupby("coin"):
+        px, _, _ = dp.at(coin, g["t"].values.astype("datetime64[ns]"), pd.Timedelta(0))
+        syn.append(g.assign(px=px, sz=g["q"].abs(), ntl=g["q"].abs() * px, fee=0.0, crossed=False, synthetic=True))
+    if syn:
+        syn = pd.concat(syn, ignore_index=True)
+        total_ntl += float(syn["ntl"].sum())  # unpriced pieces count as such below
+        f = pd.concat([f, syn], ignore_index=True).sort_values("t", kind="mergesort").reset_index(drop=True)
+    closes = {c: candles_df(c, "1d", data_dir) for c in f["coin"].unique()}
+    closes = {c: d["close"] for c, d in closes.items() if len(d)}
+    f["pend"] = f["coin"].map({c: s.iloc[-1] for c, s in closes.items()})
+    t = f["t"].values.astype("datetime64[ns]")
+    syn = f["synthetic"].values
+    for lab, d in delays.items():
+        f[f"p {lab}"], f[f"t {lab}"], f[f"src {lab}"] = np.nan, pd.NaT, ""
+        for coin, ix in f.groupby("coin").groups.items():
+            p, w, s = dp.at(coin, t[ix], d)
+            f.loc[ix, f"p {lab}"], f.loc[ix, f"t {lab}"], f.loc[ix, f"src {lab}"] = p, w, s
+        # synthetic trades: same time and price for the copy
+        f.loc[syn, f"p {lab}"], f.loc[syn, f"t {lab}"], f.loc[syn, f"src {lab}"] = f.loc[syn, "px"], f.loc[syn, "t"], "sintético"
+    f["copy_fee"] = np.where(f["synthetic"], 0.0, taker_fee)
+    priced = f["pend"].notna()
+    for lab in delays:
+        priced &= f[f"p {lab}"].notna()
+    unpriced_ntl = float(f.loc[~priced, "ntl"].sum())
+    unpriced_coins = f.loc[~priced].groupby("coin")["ntl"].sum().sort_values(ascending=False) / total_ntl
+    f = f[priced].reset_index(drop=True)
+    coverage = {"copied": float(f.loc[~f["synthetic"], "ntl"].sum()) / total_ntl, "inherited": inherited_ntl / total_ntl,
+                "unpriced": unpriced_ntl / total_ntl, "synthetic": float(f.loc[f["synthetic"], "ntl"].sum()) / total_ntl}
+    if f.empty or f["synthetic"].all():
+        return {"coverage": coverage, "total_ntl": total_ntl}
+
+    def pnl(g: pd.DataFrame, lab: str | None) -> float:
+        if lab is None:
+            return float((g["q"] * (g["pend"] - g["px"])).sum() - g["fee"].sum())
+        p = g[f"p {lab}"]
+        return float((g["q"] * (g["pend"] - p)).sum() - (g["copy_fee"] * g["sz"] * p).sum())
+
+    # daily curves: trades marked at each day's close (cumulative size x close - cash spent)
+    days = pd.date_range(f["t"].min().floor("D"), max(s.index.max() for s in closes.values()), freq="D")
+    marks = pd.DataFrame({c: s.reindex(s.index.union(days)).ffill().reindex(days) for c, s in closes.items()
+                          if c in set(f["coin"])})
+
+    def curve(when: pd.Series, price: pd.Series, fee: pd.Series) -> pd.Series:
+        day = when.dt.floor("D")
+        cq = f.assign(day=day).pivot_table(index="day", columns="coin", values="q", aggfunc="sum")
+        cq = cq.reindex(days).fillna(0.0).cumsum()
+        cash = (f["q"] * price + fee).groupby(day).sum().reindex(days).fillna(0.0).cumsum()
+        return (cq * marks[cq.columns]).sum(axis=1) - cash
+
+    curves = pd.DataFrame({"carteira": curve(f["t"], f["px"], f["fee"])})
+    wal = pnl(f, None)
+    real = f[~f["synthetic"]]
+    vol = float(real["ntl"].sum())
+    rows = {}
+    for lab in delays:
+        p = f[f"p {lab}"]
+        curves[f"cópia {lab}"] = curve(f[f"t {lab}"], p, f["copy_fee"] * f["sz"] * p)
+        cop = pnl(f, lab)
+        # what the delay costs on each fill does not depend on the final mark: worse price + extra fee
+        cost = f["q"] * (p - f["px"]) + f["copy_fee"] * f["sz"] * p - f["fee"]
+        daily = cost.groupby(f["t"].dt.floor("D")).sum()
+        half = 1.96 * daily.std(ddof=1) * np.sqrt(len(daily)) if len(daily) > 1 else np.nan
+        c = curves[f"cópia {lab}"]
+        rows[lab] = {"fills": int(len(real)), "synthetic": int(f["synthetic"].sum()),
+                     "mean_delay_min": float((real[f"t {lab}"] - real["t"]).dt.total_seconds().mean() / 60),
+                     "wallet": wal, "copy": cop, "kept": cop / wal if wal > 0 else np.nan,
+                     "price_cost": float((f["q"] * (p - f["px"])).sum()),
+                     "fee_cost": float((f["copy_fee"] * f["sz"] * p).sum() - f["fee"].sum()),
+                     "cost_bps": (wal - cop) / vol * 1e4, "cost_bps_lo": (wal - cop - half) / vol * 1e4,
+                     "cost_bps_hi": (wal - cop + half) / vol * 1e4, "max_drawdown": float((c - c.cummax()).min())}
+    summary = pd.DataFrame(rows).T
+    summary.attrs["wallet_max_drawdown"] = float((curves["carteira"] - curves["carteira"].cummax()).min())
+    by_coin = pd.DataFrame({c: {"wallet": pnl(g, None), "volume": float(g["ntl"].sum()),
+                                **{lab: pnl(g, lab) for lab in delays}} for c, g in f.groupby("coin")}).T
+    by_entry = pd.DataFrame({("taker" if k else "maker"): {"fills": int(len(g)), "volume": float(g["ntl"].sum()),
+                                                            "wallet": pnl(g, None), **{lab: pnl(g, lab) for lab in delays}}
+                             for k, g in real.groupby(real["crossed"].astype(bool))}).T
+    first = next(iter(delays))
+    return {"fills": f, "summary": summary, "by_coin": by_coin, "by_entry": by_entry, "curves": curves,
+            "coverage": coverage, "total_ntl": total_ntl, "volume": vol,
+            "sources": real.groupby(f"src {first}")["ntl"].sum() / vol, "taker_fee": taker_fee,
+            "period": (real["t"].min(), real["t"].max()), "window_start": start, "unpriced_coins": unpriced_coins}
 
 
 def sessions(ex: pd.DataFrame, gap_minutes: float = 30) -> pd.DataFrame:

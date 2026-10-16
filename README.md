@@ -26,11 +26,13 @@ Tudo é feito com dados públicos: a API `POST https://api.hyperliquid.xyz/info`
 pip install -r requirements.txt
 
 # pipeline completo: baixa dados da carteira e de mercado, gera o relatório
+# (se a carteira for copiável, baixa também os candles de 15m/1h usados na simulação de cópia)
 python -m hlre.run 0xENDERECO
 
 # ou etapa por etapa
 python -m hlre.collect 0xENDERECO                    # fills, funding, ledger, ordens, snapshot, carteiras ligadas
 python -m hlre.market BTC HYPE --intervals 1h 4h 1d  # candles + histórico de funding (Hyperliquid)
+python -m hlre.market LIT MET --intervals 1h 15m --no-funding  # preços intradiários para a cópia com atraso
 python -m hlre.binance BTCUSDT --start 2025-01       # 1h antigos (arquivo público Binance)
 python -m hlre.report 0xENDERECO --coins BTC HYPE    # gera reports/<carteira>/relatorio_auto.md
 
@@ -62,7 +64,7 @@ Saída em `reports/<carteira>/`:
 | Como gere risco? | aumentos com a posição no prejuízo (preço médio), taxa de acerto das reduções, alavancagem (exposição / equity), ordens de gatilho, liquidações e ADL |
 | É hedge de algo? | carteiras ligadas: conta de staking vinculada para desconto de taxa, contrapartes de transferências, airdrops idênticos |
 | Dá para replicar com regras? | busca em grade de regras (tendência + fade do range) com treino e teste separados, mais um clone por regressão; compara a correlação com a posição real e o PnL |
-| Dá para copiar? | PnL de espelhar a posição com 0 a 168h de atraso |
+| Dá para copiar? | primeiro, um teste de copiabilidade: há execuções de perps suficientes, menos da metade do volume fecha em menos de 30 min (tempo em posição por LIFO) e não é bot de market making (≥ 300 execuções por dia ativo e ≥ 80% maker). Se passar, simula um copiador que repete cada fill com **30 min, 1h, 2h e 4h** de atraso, no mesmo tamanho, a mercado e com taxa *taker*: PnL da cópia contra o da carteira nas mesmas operações, quanto fica, custo em bp do volume com IC 95%, drawdown, por ativo e por tipo de execução. Também mostra o PnL de espelhar a posição com 0 a 168h de atraso |
 | Cada trade, por dentro | episódios de zerado a zerado em todas as moedas: contexto antes da 1ª ordem (retornos, distância da máxima de 30 dias, funding), preço médio vs. 1ª ordem, excursão contra, pior PnL aberto, quanto capturou |
 | Como usa o dinheiro? | depósitos e saques contra o PnL dos dias anteriores e contra a variação da exposição (margem sob demanda) |
 | É long/short de cestas? | posição diária em US$ por moeda (funding), livro long × livro short, beta ao BTC e alfa com bootstrap, comparação com cestas fixas e teste fora da amostra (`analise_extra.py` da `0x0748`) |
@@ -76,7 +78,7 @@ hlre/
   collect.py    download e merge incremental dos dados da carteira + carteiras ligadas
   market.py     candles e histórico de funding da Hyperliquid; série horária costurada
   binance.py    klines horários do arquivo público da Binance (contexto antigo)
-  analyze.py    execuções, episódios, posições, PnL exato e aproximado, contexto, cópia com atraso
+  analyze.py    execuções, episódios, posições, PnL exato e aproximado, contexto, teste de copiabilidade e cópia com atraso
   replicate.py  backtest diário, regras replicantes, clone comportamental
   universe.py   testes de regras no universo inteiro de perps (eventos, funding, médias móveis)
   charts.py     gráficos estáticos (sem eixo duplo; azul = long/ganho, vermelho = short/perda)
@@ -92,4 +94,5 @@ reports/        relatórios por carteira; reports/estudos/ guarda os testes de u
 - O PnL por ativo **antes** do período com fills é aproximado (posição média diária × movimento do dia) e não captura day trade. No período com fills, a correlação diária com o valor exato foi 0,95.
 - Fatias de **TWAP** não aparecem em `userFills` e o endpoint delas só guarda as 2.000 mais recentes. O `Wallet` junta as que existem e `position_gaps` aponta saltos de posição sem fill. Quando há saltos, o relatório avisa e o PnL "exato" deixa de ser exato.
 - Intenção (aposta ou hedge) é inferência: a API não mostra CEXs nem outras chains.
+- **Cópia com atraso.** O preço da cópia é a abertura do candle que começa mais perto de *fill + atraso*. São candles de 15m da Hyperliquid nos últimos ~52 dias e de 1h da Hyperliquid (~7 meses) ou da Binance antes disso, então o atraso real varia meio candle para cada lado. Moedas só da Hyperliquid (e HIP-3) com fills mais antigos que os candles de 1h ficam sem preço; o relatório diz quanto do volume ficou de fora. O copiador começa zerado no primeiro fill do `userFills`, não copia posições já abertas e opera no mesmo tamanho (sem impacto de mercado). O funding fica de fora. Saltos de posição sem fill (TWAP) entram como execuções sintéticas iguais para os dois lados.
 - Nada aqui é recomendação de investimento.

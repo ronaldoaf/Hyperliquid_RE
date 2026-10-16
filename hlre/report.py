@@ -17,9 +17,10 @@ import pandas as pd
 
 from . import charts
 from .analyze import (
-    Wallet, approx_price_pnl, averaging_stats, baseline_context, copy_lag_pnl, daily_exposure,
-    daily_perp_pnl, episode_metrics, episodes, exact_mtm, executions, flow_behaviour, hold_decomposition,
-    leverage_frame, liquidation_events, market_context, position_gaps, rank_coins, session_context, sessions,
+    COPY_DELAYS, TAKER_FEE, Wallet, approx_price_pnl, averaging_stats, baseline_context, copy_delay_sim, copy_lag_pnl,
+    copyability, daily_exposure, daily_perp_pnl, episode_metrics, episodes, exact_mtm, executions, flow_behaviour,
+    hold_decomposition, leverage_frame, liquidation_events, market_context, position_gaps, rank_coins, session_context,
+    sessions,
 )
 from .market import funding_df, hourly_close
 from .replicate import features, grid_search, linear_clone
@@ -70,6 +71,126 @@ def md_table(df: pd.DataFrame, index=True) -> str:
     for _, r in d.iterrows():
         lines.append("| " + " | ".join("" if (isinstance(v, float) and np.isnan(v)) else str(v) for v in r.values) + " |")
     return "\n".join(lines)
+
+
+def copy_section(w: Wallet, fills: pd.DataFrame, fund: pd.DataFrame, data_dir: str, img: str, rel, M: dict) -> list[str]:
+    """Copyability test and, when the wallet can be copied, the simulation of a
+    follower that repeats every execution 30 min, 1h, 2h and 4h later."""
+    cp = copyability(fills)
+    M["copyability"] = cp
+    md = ["### Teste de copiabilidade", ""]
+    if "executions" not in cp:
+        M["copy_sim"] = None
+        return md + [f"**Não copiável:** {cp['reasons'][0]}.", ""]
+    mins = int(cp["fast_minutes"])
+    md += ["Antes de simular, o relatório confere se um copiador conseguiria seguir a carteira. O tempo em posição "
+           "casa cada redução com o aumento mais recente (LIFO), então um market maker que compra e revende em "
+           "minutos aparece com minutos, mesmo carregando estoque antigo.", "",
+           md_table(pd.DataFrame({
+               "critério": [f"execuções de perps e HIP-3 ({cp['from'][:10]} → {cp['to'][:10]})",
+                            f"volume fechado que ficou aberto menos de {mins} min",
+                            "tempo mediano em posição (ponderado pelo volume)",
+                            "execuções por dia ativo; parte maker do nocional"],
+               "valor": [f"{cp['executions']:,}", pct(cp["fast_share"], 0),
+                         "—" if np.isnan(cp["median_hold_hours"]) else
+                         (f"{cp['median_hold_hours'] * 60:.0f} min" if cp["median_hold_hours"] < 1 else
+                          f"{cp['median_hold_hours']:.1f} h" if cp["median_hold_hours"] < 48 else
+                          f"{cp['median_hold_hours'] / 24:.1f} dias"),
+                         f"{cp['executions_per_active_day']:,.0f}; {pct(cp['maker_share_ntl'], 0)}"],
+               "não copiável se": [f"< {cp['min_executions']}", f"≥ {pct(cp['max_fast_share'], 0)}", "",
+                                   f"≥ {cp['bot_orders_per_day']:.0f} e ≥ {pct(cp['bot_maker_share'], 0)} "
+                                   "(bot de market making)"]}), index=False), ""]
+    if not cp["copyable"]:
+        md += [f"**Não copiável:** {'; '.join(cp['reasons'])}. A simulação de cópia com atraso não é feita.", ""]
+        M["copy_sim"] = None
+        return md
+    md += ["**Copiável:** nenhum critério bloqueia. A simulação abaixo mede quanto do resultado sobra com atraso.", ""]
+    md += [f"- {n}." for n in cp["notes"]] + ([""] if cp["notes"] else [])
+
+    r = copy_delay_sim(fills, data_dir, funding=fund)
+    labels = list(COPY_DELAYS)
+    md += [f"### Copiar cada execução com {', '.join(labels[:-1])} e {labels[-1]} de atraso", ""]
+    if "summary" not in r:
+        M["copy_sim"] = {"coverage": r.get("coverage")}
+        return md + ["Nenhuma execução copiável tem preço intradiário em disco. Baixe os candles das moedas negociadas "
+                     "(`python -m hlre.market <moedas> --intervals 1h 15m`, ou rode `python -m hlre.run`) e gere o "
+                     "relatório de novo.", ""]
+    sm, cov = r["summary"], r["coverage"]
+    t0, t1 = r["period"]
+    start = r["window_start"] or t0
+    md += [f"O copiador começa zerado em {start:%Y-%m-%d} e repete cada fill de perps e HIP-3 da carteira no mesmo "
+           f"tamanho, com o atraso indicado, a mercado e pagando taxa *taker* de {TAKER_FEE * 100:.3f}%. Posições já "
+           "abertas antes não são copiadas: em cada moeda, a cópia começa quando a carteira zera ou inverte a posição"
+           + (" (fills mais antigos que o histórico do `userFills` são fragmentos de TWAP e ficam de fora)"
+              if r["window_start"] is not None else "") + ". "
+           "O preço da cópia é a abertura do candle que começa mais perto de *fill + atraso*: candles de 15m da "
+           "Hyperliquid nos últimos ~52 dias, de 1h da Hyperliquid ou da Binance antes disso. O atraso real varia "
+           "meio candle para cada lado, e o candle do próprio fill (muitas vezes o pavio que ele mesmo fez) nunca "
+           "é usado. Carteira e cópia são marcadas no mesmo preço final (último fechamento diário). O funding fica de "
+           "fora porque, com horas de atraso, é quase igual para as duas.", "",
+           f"Entram na comparação {pct(cov['copied'], 0)} do volume de perps dos fills, em operações de "
+           f"{t0:%Y-%m-%d} a {t1:%Y-%m-%d} (posições herdadas: {pct(cov['inherited'], 0)}; sem preço intradiário: "
+           f"{pct(cov['unpriced'], 0)}"
+           + (" — " + ", ".join(f"{c} {pct(v, 0)}" for c, v in r["unpriced_coins"].head(3).items() if v >= 0.005)
+              if cov["unpriced"] >= 0.01 else "")
+           + f"). Fonte do preço com {labels[0]} de atraso: "
+           + ", ".join(f"{k} {pct(v, 0)}" for k, v in r["sources"].sort_values(ascending=False).items()) + ".", ""]
+    if cov.get("synthetic", 0) > 0:
+        n_syn = int(sm["synthetic"].iloc[0])
+        md += [f"A posição muda sem fill visível (TWAP que a API não guarda) em pontos que somam {pct(cov['synthetic'], 0)} "
+               f"do volume. Esses saltos entram como {n_syn} execuções sintéticas, nos dias em que o histórico de "
+               "funding mostra a mudança de tamanho, ao preço de mercado e iguais para carteira e cópia. Assim as duas "
+               "posições ficam certas sem inventar custo de atraso.", ""]
+    wal = float(sm["wallet"].iloc[0])
+    tbl = pd.DataFrame({
+        "atraso médio real": sm["mean_delay_min"].map(lambda v: f"{v:.0f} min"),
+        "carteira": sm["wallet"].map(lambda v: usd(v, True)),
+        "cópia": sm["copy"].map(lambda v: usd(v, True)),
+        "fica com": sm["kept"].map(lambda v: pct(v, 0)),
+        "efeito do preço": sm["price_cost"].map(lambda v: usd(-v, True)),
+        "efeito da taxa": sm["fee_cost"].map(lambda v: usd(-v, True)),
+        "custo (bp do volume, IC 95%)": [f"{a:.1f} ({lo:.1f} a {hi:.1f})" for a, lo, hi in
+                                         zip(sm["cost_bps"], sm["cost_bps_lo"], sm["cost_bps_hi"])],
+        "maior drawdown": sm["max_drawdown"].map(usd),
+    }).rename_axis("atraso")
+    p = charts.copy_curves(r["curves"], os.path.join(img, "copy_delay.png"),
+                           "PnL acumulado das operações copiadas: carteira e cópia com atraso")
+    sig = [k for k in labels if sm.loc[k, "cost_bps_lo"] > 0]
+    if wal > 0:
+        verdict = (f"Com {labels[0]} de atraso a cópia fica com **{pct(sm['kept'].iloc[0], 0)}** do resultado; com "
+                   f"{labels[-1]}, **{pct(sm['kept'].iloc[-1], 0)}**. ")
+    else:
+        verdict = (f"A carteira perdeu {usd(wal)} nas operações copiáveis do período; a cópia perderia de "
+                   f"{usd(sm['copy'].min())} a {usd(sm['copy'].max())}. ")
+    verdict += ("O custo do atraso é maior que zero com 95% de confiança com "
+                + (f"{', '.join(sig[:-1])} e {sig[-1]}" if len(sig) > 1 else sig[0]) + " de atraso." if sig else
+                "Em nenhum atraso o custo é estatisticamente diferente de zero (o IC de 95% cruza o zero): com esta "
+                "amostra, a diferença entre os atrasos pode ser ruído.")
+    md += [md_table(tbl), "", f"Maior drawdown da carteira nas mesmas operações: {usd(sm.attrs['wallet_max_drawdown'])}. "
+           "*Efeito do preço* e *efeito da taxa*: quanto o preço da cópia e a taxa *taker* mudam o resultado em "
+           "relação à carteira (negativo = a cópia perde). O custo é carteira − cópia sobre o volume copiado; o IC "
+           "vem da variação de um dia para outro. Os valores somam só as operações copiadas, não o PnL total da "
+           "carteira.", "", verdict, "",
+           f"![Cópia com atraso]({rel(p)})", ""]
+    bc = r["by_coin"]
+    bc = bc.reindex(bc["wallet"].abs().sort_values(ascending=False).index[:12])
+    ct = pd.DataFrame({"volume": bc["volume"].map(usd), "carteira": bc["wallet"].map(lambda v: usd(v, True)),
+                       **{k: bc[k].map(lambda v: usd(v, True)) for k in labels},
+                       f"fica com ({labels[0]})": [pct(c / w_, 0) if w_ > 0 else "—" for c, w_ in zip(bc[labels[0]], bc["wallet"])]}
+                      ).rename_axis("ativo")
+    be = r["by_entry"].rename(index={"maker": "limite (maker)", "taker": "a mercado (taker)"})
+    et = pd.DataFrame({"fills": be["fills"].astype(int).map(lambda v: f"{v:,}"), "volume": be["volume"].map(usd),
+                       "carteira": be["wallet"].map(lambda v: usd(v, True)),
+                       **{k: be[k].map(lambda v: usd(v, True)) for k in labels}}).rename_axis("execução da carteira")
+    md += ["**Por ativo** (12 maiores pelo resultado da carteira):", "", md_table(ct), "",
+           "**Por tipo de execução da carteira.** Numa ordem limite a carteira compra abaixo e vende acima do preço "
+           "corrente; a cópia a mercado perde essa vantagem. Numa ordem a mercado as duas pagam o *spread*:", "",
+           md_table(et), ""]
+    M["copy_sim"] = {"window_start": str(r["window_start"]) if r["window_start"] is not None else None,
+                     "period": [str(t0), str(t1)], "coverage": cov, "taker_fee": TAKER_FEE,
+                     "wallet_max_drawdown": sm.attrs["wallet_max_drawdown"],
+                     "summary": {k: {c: float(v) for c, v in row.items()} for k, row in sm.iterrows()}}
+    return md
 
 
 def build(user: str, data_dir: str = "data", out_dir: str = "reports", coins: list[str] | None = None) -> str:
@@ -498,7 +619,9 @@ def build(user: str, data_dir: str = "data", out_dir: str = "reports", coins: li
         md += ["**Liquidações e ADL (auto-deleveraging) nos fills:**", "", md_table(lf, index=False), ""]
 
     # ------------------------------------------------------------ copy test
-    md += ["## 9. Dá para copiar? (espelhar a posição com atraso)", "",
+    md += ["## 9. Dá para copiar?", ""]
+    md += copy_section(w, fills, fund, data_dir, img, rel, M)
+    md += ["### Espelhar a posição com atraso longo (moedas principais)", "",
            "PnL de quem replicasse exatamente a posição da carteira, mas com N horas de atraso (marcação horária, "
            "sem custos). Se o PnL se mantém com atraso, a vantagem está em horizontes longos e é copiável; se "
            "desaba, depende de timing fino.", ""]

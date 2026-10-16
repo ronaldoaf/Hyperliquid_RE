@@ -25,6 +25,7 @@ AXIS = "#c3c2b7"
 SERIES = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"]
 POS = "#2a78d6"   # diverging pole: long / gain
 NEG = "#e34948"   # diverging pole: short / loss
+DELAY_RAMP = ["#184f95", "#2a78d6", "#5598e7", "#86b6ef"]  # ordinal blue ramp: shorter delay = darker
 
 plt.rcParams.update({
     "figure.facecolor": SURFACE, "axes.facecolor": SURFACE, "savefig.facecolor": SURFACE,
@@ -291,4 +292,31 @@ def flows_and_exposure(gross: pd.Series, flows: pd.Series, path: str, title: str
     a2.legend(loc="lower left")
     _dates(a2)
     fig.tight_layout()
+    return _save(fig, path)
+
+
+def copy_curves(curves: pd.DataFrame, path: str, title: str):
+    """Cumulative PnL of the wallet (first column, ink) and of each delayed copy
+    (one blue ramp, darker = shorter delay), each line labelled at its end."""
+    fig, ax = plt.subplots(figsize=(11, 4.6))
+    ends = []
+    for j, c in enumerate(curves.columns):
+        color = INK if j == 0 else DELAY_RAMP[min(j - 1, len(DELAY_RAMP) - 1)]
+        ax.plot(curves.index, curves[c].values, label=c, color=color, lw=2 if j == 0 else 1.6, zorder=3 if j == 0 else 2)
+        ends.append([float(curves[c].iloc[-1]), c])
+    # end labels in text ink, nudged apart so close lines stay readable
+    lo, hi = ax.get_ylim()
+    gap = (hi - lo) * 0.055
+    ends.sort()
+    ys: list[float] = []
+    for v, _ in ends:
+        ys.append(v if not ys else max(v, ys[-1] + gap))
+    for (v, name), y in zip(ends, ys):
+        ax.annotate(f"{name} {_money(v)}".replace("$", r"\$"), (curves.index[-1], y), xytext=(6, 0),
+                    textcoords="offset points", va="center", fontsize=8, color=INK2, annotation_clip=False)
+    ax.axhline(0, color=AXIS, lw=1)
+    ax.yaxis.set_major_formatter(mticker.FuncFormatter(_money))
+    _dates(ax)
+    ax.set_title(title)
+    ax.legend(loc="upper left")
     return _save(fig, path)

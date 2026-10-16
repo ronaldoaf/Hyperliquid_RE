@@ -33,19 +33,21 @@ def _read_zip(content: bytes) -> pd.DataFrame:
 
 
 def fetch_klines(symbol: str, interval: str = "1h", start: str = "2025-01",
-                 data_dir: str = "data") -> pd.DataFrame:
-    """Download monthly archives (falling back to daily files for the current
-    month) and cache them as one CSV per symbol/interval."""
+                 data_dir: str = "data", end: str | None = None) -> pd.DataFrame:
+    """Download monthly archives from `start` to `end` (default: this month),
+    falling back to daily files for the last two months, which may not be
+    published yet, and cache them as one CSV per symbol/interval."""
     out_dir = os.path.join(data_dir, "market")
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, f"binance_{symbol}_{interval}.csv.gz")
     have = pd.read_csv(path) if os.path.exists(path) else pd.DataFrame(columns=COLS)
     have_months = set(pd.to_datetime(have["open_time"], unit="ms").dt.strftime("%Y-%m")) if len(have) else set()
     now = pd.Timestamp.now("UTC").tz_localize(None)
-    months = pd.period_range(start, now.to_period("M"), freq="M")
+    last = min(pd.Period(end, freq="M"), now.to_period("M")) if end else now.to_period("M")
+    months = pd.period_range(start, last, freq="M")
     frames = [have]
     s = requests.Session()
-    recent = {str(m) for m in months[-2:]}  # re-fetch: may have been partial
+    recent = {str(now.to_period("M") - k) for k in (0, 1)}  # re-fetch: may have been partial
     for m in months:
         ms = str(m)
         if ms in have_months and ms not in recent:
@@ -54,12 +56,17 @@ def fetch_klines(symbol: str, interval: str = "1h", start: str = "2025-01",
         if r.status_code == 200:
             frames.append(_read_zip(r.content))
             continue
+        if ms not in recent:  # an older month without archive: the symbol did not trade then
+            continue
         # current (or not-yet-published) month: use the daily files
         for d in pd.date_range(m.start_time, min(m.end_time, now - pd.Timedelta(days=1)), freq="D"):
             r = s.get(f"{BASE}/daily/klines/{symbol}/{interval}/{symbol}-{interval}-{d:%Y-%m-%d}.zip", timeout=60)
             if r.status_code == 200:
                 frames.append(_read_zip(r.content))
-    df = pd.concat([f for f in frames if len(f)], ignore_index=True)
+    frames = [f for f in frames if len(f)]
+    if not frames:
+        return pd.DataFrame(columns=COLS)
+    df = pd.concat(frames, ignore_index=True)
     df = df[COLS].drop_duplicates("open_time").sort_values("open_time")
     df.to_csv(path, index=False)
     return df
